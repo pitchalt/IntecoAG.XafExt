@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Linq;
 using System.Reflection;
+using System.Collections.Generic;
+using System.Collections;
 //
 using DevExpress.ExpressApp.Model;
 using DevExpress.ExpressApp.Model.Core;
@@ -12,10 +14,10 @@ namespace IntecoaAG.XAFExt.CDS
         public Assembly assembly = Assembly.GetExecutingAssembly();
         //public Assembly assembly = Assembly.GetEntryAssembly();   // Не работает
         //public Assembly assembly = Assembly.GetCallingAssembly();
-        public string nameSpace = "IntecoaAG.XAFExt.CDS.Tests";
+        //public string nameSpace = "IntecoaAG.XAFExt.CDS.Tests";
 
         protected override void GenerateNodesCore(ModelNode node) {
-            Type[] typelist = GetTypesInNamespace(assembly, nameSpace);
+            Type[] typelist = GetTypesInNamespace(assembly);   //, nameSpace);
 
             for (int i = 0; i < typelist.Length; i++) {
                 string childNodeName = typelist[i].Name;
@@ -34,11 +36,35 @@ namespace IntecoaAG.XAFExt.CDS
             } 
         }
 
-        public virtual Type[] GetTypesInNamespace(Assembly assembly, string nameSpace) {
-            //Type T = typeof(LinqCollectionSource);
+        public virtual Type[] GetTypesInNamespace(Assembly assembly) {   //, string nameSpace) {
+            // Старый вариант - поиск только в указанной сборке.
             Type T = typeof(IQueryDataSource);
-            // чтобы что-то показывалось отменяется проверка на производность типов: " && t != T"    return assembly.GetTypes().Where(t => String.Equals(t.Namespace, nameSpace, StringComparison.Ordinal) && t.IsClass).Where(t => typeof(T).IsAssignableFrom(t) && t != typeof(T)).ToArray();
-            return assembly.GetTypes().Where(t => String.Equals(t.Namespace, nameSpace, StringComparison.Ordinal) && t.IsClass).Where(t => T.IsAssignableFrom(t)).Where(t => !t.IsAbstract).ToArray();
+            //return assembly.GetTypes().Where(t => String.Equals(t.Namespace, nameSpace, StringComparison.Ordinal) && t.IsClass).Where(t => T.IsAssignableFrom(t)).Where(t => !t.IsAbstract).ToArray();
+            return assembly.GetTypes().Where(t => t.IsClass).Where(t => T.IsAssignableFrom(t)).Where(t => !t.IsAbstract).ToArray();
+
+            /*
+            ArrayList list = new ArrayList();
+
+            Type ti = typeof(IQueryDataSource); 
+            foreach (Assembly asm in AppDomain.CurrentDomain.GetAssemblies()) { 
+                foreach (Type t in asm.GetTypes()) { 
+                    if (ti.IsAssignableFrom(t)) { 
+                        // here's your type in t 
+                        list.Add(t);
+                    } 
+                } 
+            }
+            return (System.Type[])list.ToArray();
+            */
+
+            /*
+            // Новый вариант - просмотр всех загруженных сборок и типов на предмет поиска таких, которые поддерживают нужный интерфейс IQueryDataSource и являются производными от LinqQuery
+            // НЕ РАБОТАЕТ, т.к. нужная сборка не подключена и о ней данная компонента ничего не знает
+            var type = typeof(IQueryDataSource);
+            var linqQuertType = typeof(LinqQuery);
+            Type[] res = AppDomain.CurrentDomain.GetAssemblies().SelectMany(s => s.GetTypes()).Where(p => type.IsAssignableFrom(p)).Where(p => p.IsSubclassOf(linqQuertType)).ToArray();
+            return res;
+            */
         } 
         
     }
