@@ -25,19 +25,21 @@ namespace IntecoaAG.XAFExt.CDS.Tests.Win {
         private void InitializeComponent() {
             this.module1 = new DevExpress.ExpressApp.SystemModule.SystemModule();
             this.module2 = new DevExpress.ExpressApp.Win.SystemModule.SystemWindowsFormsModule();
-            this.module3 = new IntecoaAG.XAFExt.CDS.Tests.Module.TestsModule();
-            //this.module4 = new IntecoaAG.XAFExt.CDS.Tests.Module.Win.TestsWindowsFormsModule();
+            this.module3 = new IntecoaAG.XAFExt.CDS.Tests.Module.XAFExtCDSTestsModule();
             this.module5 = new DevExpress.ExpressApp.Validation.ValidationModule();
             this.module6 = new DevExpress.ExpressApp.Objects.BusinessClassLibraryCustomizationModule();
             this.module7 = new DevExpress.ExpressApp.Validation.Win.ValidationWindowsFormsModule();
-
             this.securityModule1 = new DevExpress.ExpressApp.Security.SecurityModule();
             this.securitySimple = new DevExpress.ExpressApp.Security.SecurityStrategySimple();
             this.authenticationActiveDirectory1 = new DevExpress.ExpressApp.Security.AuthenticationActiveDirectory();
             this.sqlConnection1 = new System.Data.SqlClient.SqlConnection();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
-            // securitySimple1
+            // module5
+            // 
+            this.module5.AllowValidationDetailsAccess = true;
+            // 
+            // securitySimple
             // 
             this.securitySimple.Authentication = this.authenticationActiveDirectory1;
             this.securitySimple.UserType = typeof(DevExpress.ExpressApp.Security.SecuritySimpleUser);
@@ -45,11 +47,12 @@ namespace IntecoaAG.XAFExt.CDS.Tests.Win {
             // authenticationActiveDirectory1
             // 
             this.authenticationActiveDirectory1.CreateUserAutomatically = true;
-            this.authenticationActiveDirectory1.UserType = typeof(DevExpress.ExpressApp.Security.SecuritySimpleUser);
+            this.authenticationActiveDirectory1.LogonParametersType = null;
             // 
             // sqlConnection1
             // 
-            this.sqlConnection1.ConnectionString = "Data Source=(local);Initial Catalog=IntecoaAG.XAFExt.CDS.Tests;Integrated Security=SSPI;Pooling=false";
+            this.sqlConnection1.ConnectionString = "Data Source=(local);Initial Catalog=IntecoaAG.XAFExt.CDS.Tests;Integrated Securit" +
+    "y=SSPI;Pooling=false";
             this.sqlConnection1.FireInfoMessageEventOnUserErrors = false;
             // 
             // TestsWindowsFormsApplication
@@ -58,12 +61,11 @@ namespace IntecoaAG.XAFExt.CDS.Tests.Win {
             this.Connection = this.sqlConnection1;
             this.Modules.Add(this.module1);
             this.Modules.Add(this.module2);
-            this.Modules.Add(this.module3);
-            //this.Modules.Add(this.module4);
-            this.Modules.Add(this.module5);
             this.Modules.Add(this.module6);
-            this.Modules.Add(this.module7);
             this.Modules.Add(this.securityModule1);
+            this.Modules.Add(this.module3);
+            this.Modules.Add(this.module5);
+            this.Modules.Add(this.module7);
             this.Security = this.securitySimple;
             this.DatabaseVersionMismatch += new System.EventHandler<DevExpress.ExpressApp.DatabaseVersionMismatchEventArgs>(this.TestsWindowsFormsApplication_DatabaseVersionMismatch);
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
@@ -74,8 +76,7 @@ namespace IntecoaAG.XAFExt.CDS.Tests.Win {
 
         private DevExpress.ExpressApp.SystemModule.SystemModule module1;
         private DevExpress.ExpressApp.Win.SystemModule.SystemWindowsFormsModule module2;
-        private IntecoaAG.XAFExt.CDS.Tests.Module.TestsModule module3;
-        //private IntecoaAG.XAFExt.CDS.Tests.Module.Win.TestsWindowsFormsModule module4;
+        private IntecoaAG.XAFExt.CDS.Tests.Module.XAFExtCDSTestsModule module3;
         private DevExpress.ExpressApp.Validation.ValidationModule module5;
         private DevExpress.ExpressApp.Objects.BusinessClassLibraryCustomizationModule module6;
         private DevExpress.ExpressApp.Validation.Win.ValidationWindowsFormsModule module7;

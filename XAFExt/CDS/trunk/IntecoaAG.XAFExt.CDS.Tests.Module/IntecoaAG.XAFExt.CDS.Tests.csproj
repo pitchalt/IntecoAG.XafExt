@@ -8,7 +8,7 @@
     <ProjectGuid>{84B90D28-DD3C-433B-B39E-6CF7C9742D20}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>IntecoaAG.XAFExt.CDS.Tests.Module</RootNamespace>
+    <RootNamespace>IntecoaAG.XAFExt.CDS.Tests</RootNamespace>
     <AssemblyName>IntecoaAG.XAFExt.CDS.Tests.Module</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileUpgradeFlags>
@@ -84,6 +84,7 @@
     <Reference Include="DevExpress.Xpo.v11.2">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
+    <Reference Include="nunit.framework, Version=2.6.0.11340, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL" />
     <Reference Include="System">
       <Name>System</Name>
       <Private>False</Private>
@@ -98,6 +99,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BusinessObjects\Country.cs" />
+    <Compile Include="CustomCollectionSources\Country1.cs" />
+    <Compile Include="CustomCollectionSources\Country2.cs" />
+    <Compile Include="CustomCollectionSources\Country4.cs" />
+    <Compile Include="CustomCollectionSources\LinqCollectionSourceCountry1.cs" />
+    <Compile Include="CustomCollectionSources\LinqCollectionSourceCountry2.cs" />
+    <Compile Include="CustomCollectionSources\LinqCollectionSourceCountry3.cs" />
     <Compile Include="Module.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -113,6 +121,7 @@
       <SubType>Designer</SubType>
       <DependentUpon>Module.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="DatabaseUpdate\ReadMe.txt" />
@@ -155,6 +164,12 @@
       <ProductName>Windows Installer 3.1</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\IntecoaAG.XAFExt.CDS\IntecoaAG.XAFExt.CDS.csproj">
+      <Project>{20194556-A061-4715-8C68-1B157F06F9C0}</Project>
+      <Name>IntecoaAG.XAFExt.CDS</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

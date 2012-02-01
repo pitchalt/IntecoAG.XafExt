@@ -1,5 +1,5 @@
 namespace IntecoaAG.XAFExt.CDS.Tests.Module {
-    partial class TestsModule {
+    partial class XAFExtCDSTestsModule {
         /// <summary> 
         /// Required designer variable.
         /// </summary>
@@ -24,11 +24,13 @@ namespace IntecoaAG.XAFExt.CDS.Tests.Module {
         /// </summary>
         private void InitializeComponent() {
             // 
-            // TestsModule
+            // XAFExtCDSTestsModule
             // 
             this.RequiredModuleTypes.Add(typeof(DevExpress.ExpressApp.SystemModule.SystemModule));
             this.RequiredModuleTypes.Add(typeof(DevExpress.ExpressApp.Objects.BusinessClassLibraryCustomizationModule));
             this.RequiredModuleTypes.Add(typeof(DevExpress.ExpressApp.Security.SecurityModule));
+            this.RequiredModuleTypes.Add(typeof(IntecoaAG.XAFExt.CDS.XAFExtCDSModule));
+
         }
 
         #endregion

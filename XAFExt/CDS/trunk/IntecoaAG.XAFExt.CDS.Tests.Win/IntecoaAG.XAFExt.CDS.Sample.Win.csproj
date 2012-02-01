@@ -8,8 +8,8 @@
     <ProjectGuid>{E427727E-0FEC-4870-AF76-84548BE3290E}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>IntecoaAG.XAFExt.CDS.Tests.Win</RootNamespace>
-    <AssemblyName>IntecoaAG.XAFExt.CDS.Tests.Win</AssemblyName>
+    <RootNamespace>IntecoaAG.XAFExt.CDS.Tests</RootNamespace>
+    <AssemblyName>IntecoaAG.XAFExt.CDS.Sample.Win</AssemblyName>
     <ApplicationIcon>ExpressApp.ico</ApplicationIcon>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileUpgradeFlags>
@@ -142,6 +142,7 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -185,6 +186,10 @@
     <ProjectReference Include="..\IntecoaAG.XAFExt.CDS.Tests.Module\IntecoaAG.XAFExt.CDS.Tests.csproj">
       <Project>{84B90D28-DD3C-433B-B39E-6CF7C9742D20}</Project>
       <Name>IntecoaAG.XAFExt.CDS.Tests</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IntecoaAG.XAFExt.CDS\IntecoaAG.XAFExt.CDS.csproj">
+      <Project>{20194556-A061-4715-8C68-1B157F06F9C0}</Project>
+      <Name>IntecoaAG.XAFExt.CDS</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
