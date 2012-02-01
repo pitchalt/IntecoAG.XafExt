@@ -35,47 +35,11 @@ namespace IntecoaAG.XAFExt.CDS.Tests.Module {
             base.AddGeneratorUpdaters(updaters);
             updaters.Add(new CustomChildNodesUpdater());
         }
-
     }
 
     public class CustomChildNodesUpdater : ModelNodesGeneratorUpdater<CustomDataSourceNodesGenerator> {
-
-        public Assembly assembly = Assembly.GetExecutingAssembly();
-        //public string nameSpace = "IntecoaAG.XAFExt.CDS.Tests";
-
-        //public Type[] GetTypesInNamespace(Assembly assembly, string nameSpace) {
-        public Type[] GetTypesInNamespace(Assembly assembly) {
-            //Type T = typeof(LinqCollectionSource);
-            Type T = typeof(IQueryDataSource);
-            // чтобы что-то показывалось отмен€етс€ проверка на производность типов: " && t != T"    return assembly.GetTypes().Where(t => String.Equals(t.Namespace, nameSpace, StringComparison.Ordinal) && t.IsClass).Where(t => typeof(T).IsAssignableFrom(t) && t != typeof(T)).ToArray();
-            //return assembly.GetTypes().Where(t => String.Equals(t.Namespace, nameSpace, StringComparison.Ordinal) && t.IsClass).Where(t => T.IsAssignableFrom(t)).Where(t => !t.IsAbstract).ToArray();
-            return assembly.GetTypes().Where(t => t.IsClass).Where(t => T.IsAssignableFrom(t)).Where(t => !t.IsAbstract).ToArray();
-
-            //var type = typeof(IQueryDataSource);
-            //var linqQuertType = typeof(LinqQuery);
-            //Type[] res = AppDomain.CurrentDomain.GetAssemblies().SelectMany(s => s.GetTypes()).Where(p => type.IsAssignableFrom(p)).Where(p => p.IsSubclassOf(linqQuertType)).ToArray();
-            //return res;
-
-        }
-
-
         public override void UpdateNode(ModelNode node) {
-            Type[] typelist = GetTypesInNamespace(assembly);
-
-            for (int i = 0; i < typelist.Length; i++) {
-                string childNodeName = typelist[i].Name;
-                node.AddNode<IModelCustomDataSource>(childNodeName);
-                ((IModelCustomDataSource)node.GetNode(childNodeName)).Description = typelist[i].Name;
-                ((IModelCustomDataSource)node.GetNode(childNodeName)).CustomDataSourceType = typelist[i];
-
-                // ¬ыходной тип linq-запроса
-                Type baseType = typelist[i].BaseType;
-                Type[] paramTypes = baseType.GetGenericArguments();
-                foreach (Type type in paramTypes) {
-                    ((IModelCustomDataSource)node.GetNode(childNodeName)).ObjectType = type;
-                    break;
-                }
-            }
+            CustomDataSourceNodesGenerator.GenerateNodesCoreSub(node, Assembly.GetExecutingAssembly());
         }
     }
 }

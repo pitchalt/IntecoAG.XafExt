@@ -17,6 +17,10 @@ namespace IntecoaAG.XAFExt.CDS
         //public string nameSpace = "IntecoaAG.XAFExt.CDS.Tests";
 
         protected override void GenerateNodesCore(ModelNode node) {
+            GenerateNodesCoreSub(node, assembly);
+        }
+
+        public static void GenerateNodesCoreSub(ModelNode node, Assembly assembly) {
             Type[] typelist = GetTypesInNamespace(assembly);   //, nameSpace);
 
             for (int i = 0; i < typelist.Length; i++) {
@@ -33,14 +37,15 @@ namespace IntecoaAG.XAFExt.CDS
                     ((IModelCustomDataSource)node.GetNode(childNodeName)).ObjectType = type;
                     break;
                 }
-            } 
+            }
         }
 
-        public virtual Type[] GetTypesInNamespace(Assembly assembly) {   //, string nameSpace) {
+        public static Type[] GetTypesInNamespace(Assembly assembly) {   //, string nameSpace) {
             // Старый вариант - поиск только в указанной сборке.
             Type T = typeof(IQueryDataSource);
+            var linqQuertType = typeof(LinqQuery);
             //return assembly.GetTypes().Where(t => String.Equals(t.Namespace, nameSpace, StringComparison.Ordinal) && t.IsClass).Where(t => T.IsAssignableFrom(t)).Where(t => !t.IsAbstract).ToArray();
-            return assembly.GetTypes().Where(t => t.IsClass).Where(t => T.IsAssignableFrom(t)).Where(t => !t.IsAbstract).ToArray();
+            return assembly.GetTypes().Where(t => t.IsClass).Where(t => T.IsAssignableFrom(t)).Where(t => !t.IsAbstract).Where(p => p.IsSubclassOf(linqQuertType)).ToArray();
 
             /*
             ArrayList list = new ArrayList();
