@@ -96,6 +96,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BusinessObjects\CollectionDataSource.cs" />
+    <Compile Include="BusinessObjects\CustomCollectionGenerator.cs" />
+    <Compile Include="BusinessObjects\CustomDataSourceNodesGenerator.cs" />
+    <Compile Include="BusinessObjects\IModelCollectionDataSource.cs" />
+    <Compile Include="BusinessObjects\IModelCustomDataSources.cs" />
+    <Compile Include="BusinessObjects\IQueryDataSource.cs" />
+    <Compile Include="BusinessObjects\LinqCollectionSource.cs" />
     <Compile Include="Module.cs">
       <SubType>Component</SubType>
     </Compile>
