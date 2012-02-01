@@ -103,9 +103,13 @@
     <Compile Include="CustomCollectionSources\Country1.cs" />
     <Compile Include="CustomCollectionSources\Country2.cs" />
     <Compile Include="CustomCollectionSources\Country4.cs" />
-    <Compile Include="CustomCollectionSources\LinqCollectionSourceCountry1.cs" />
-    <Compile Include="CustomCollectionSources\LinqCollectionSourceCountry2.cs" />
-    <Compile Include="CustomCollectionSources\LinqCollectionSourceCountry3.cs" />
+    <Compile Include="CustomCollectionSources\LinqCountry1.cs" />
+    <Compile Include="CustomCollectionSources\LinqCountry2.cs" />
+    <Compile Include="CustomCollectionSources\LinqCountry3.cs" />
+    <Compile Include="FunctionalTests\BaseTest.cs" />
+    <Compile Include="FunctionalTests\Common.cs" />
+    <Compile Include="FunctionalTests\CreateDBForAnalysisTests.cs" />
+    <Compile Include="FunctionalTests\Test1.cs" />
     <Compile Include="Module.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -141,7 +145,14 @@
     <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="FunctionalTests\Config.xml" />
+    <Content Include="FunctionalTests\Config.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="FunctionalTests\Config_source.xml" />
+    <None Include="UnusableNodes3.xml">
+      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.0">

@@ -19,7 +19,7 @@ namespace IntecoaAG.XAFExt.CDS.Tests.Module {
         }
 
         void Application_CreateCustomCollectionSource(object sender, CreateCustomCollectionSourceEventArgs e) {
-            CollectionSourceBase collectionSourceBase = CustomCollectionGenerator.Create((XafApplication)sender, e.ObjectSpace, e.ListViewID);
+            CollectionSourceBase collectionSourceBase = CustomCollectionSourceGenerator.Create((XafApplication)sender, e.ObjectSpace, e.ListViewID);
             if (collectionSourceBase != null) e.CollectionSource = collectionSourceBase;
         }
 

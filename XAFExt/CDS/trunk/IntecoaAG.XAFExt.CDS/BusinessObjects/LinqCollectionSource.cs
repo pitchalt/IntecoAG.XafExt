@@ -5,19 +5,41 @@ using System.ComponentModel;
 //
 using DevExpress.Xpo;
 using DevExpress.ExpressApp;
+using DevExpress.ExpressApp.DC;
+using DevExpress.Data.Filtering;
 
 namespace IntecoaAG.XAFExt.CDS 
 {
-    public abstract class LinqCollectionSource<T> : CollectionDataSource, IQueryDataSource
+    public class LinqCollectionSource<T> : CollectionSourceBase //, IQueryDataSource
     {
-        protected IQueryable<T> queryCore = null;
-        protected Session session = null;
+        private IQueryable queryCore = null;
+        private Session session = null;
+
         
-        protected LinqCollectionSource(IObjectSpace objectSpace)
+        private IBindingList collectionCore;
+        private ITypeInfo objectTypeInfoCore;
+        
+        //protected CollectionDataSource(IObjectSpace objectSpace)
+        //    : base(objectSpace) {
+        //}
+        
+        public override bool? IsObjectFitForCollection(object obj) {
+            return collectionCore.Contains(obj);
+        }
+        
+        protected override void ApplyCriteriaCore(CriteriaOperator criteria) { }
+
+        public override ITypeInfo ObjectTypeInfo {
+            get { return objectTypeInfoCore; }
+        }
+
+
+
+        public LinqCollectionSource(IObjectSpace objectSpace, IQueryable query)
             : base(objectSpace) {
             session = ((ObjectSpace)(this.ObjectSpace)).Session;
             objectTypeInfoCore = XafTypesInfo.Instance.FindTypeInfo(typeof(T));
-            queryCore = GetQuery();
+            queryCore = query;
         }
 
         protected override object CreateCollection() {
@@ -26,9 +48,14 @@ namespace IntecoaAG.XAFExt.CDS
             return Activator.CreateInstance(typeof(BindingList<>).MakeGenericType(queryCore.ElementType), queryList);
         }
 
-        public virtual IQueryable<T> GetQuery() {
-            return null;
+        public IQueryable Query {
+            get { return queryCore; }
+            set { queryCore = value; }
         }
+
+        //public virtual IQueryable<T> GetQuery() {
+        //    return null;
+        //}
 
     }
 }

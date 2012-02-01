@@ -12,20 +12,19 @@ using DevExpress.Data.Filtering;
 namespace IntecoaAG.XAFExt.CDS.Tests 
 {
     [NonPersistent]
-    public class LinqCollectionSourceCountry2 : LinqCollectionSource<testCountry2>
+    public class LinqQueryCountry2 : LinqQuery
     {
-        public LinqCollectionSourceCountry2(IObjectSpace objectSpace)
-            : base(objectSpace) {
+        public LinqQueryCountry2(IObjectSpace os)
+            : base(os) {
         }
 
-        public override IQueryable<testCountry2> GetQuery() {
+        public override IQueryable GetQuery() {
             XPQuery<testCountry> countries = new XPQuery<testCountry>(session);
-            queryCore = from item in countries
+            var queryCore = from item in countries
                         select new testCountry2 {
                             Name = item.NameShort + " (" + item.NameFull + ")"
                         };
             return queryCore;
         }
-
     }
 }
