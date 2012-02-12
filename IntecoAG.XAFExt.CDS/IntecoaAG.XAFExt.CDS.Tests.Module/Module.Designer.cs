@@ -1,4 +1,4 @@
-namespace IntecoaAG.XAFExt.CDS.Tests.Module {
+namespace IntecoAG.XAFExt.CDS.Tests.Module {
     partial class XAFExtCDSTestsModule {
         /// <summary> 
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace IntecoaAG.XAFExt.CDS.Tests.Module {
             this.RequiredModuleTypes.Add(typeof(DevExpress.ExpressApp.SystemModule.SystemModule));
             this.RequiredModuleTypes.Add(typeof(DevExpress.ExpressApp.Objects.BusinessClassLibraryCustomizationModule));
             this.RequiredModuleTypes.Add(typeof(DevExpress.ExpressApp.Security.SecurityModule));
-            this.RequiredModuleTypes.Add(typeof(IntecoaAG.XAFExt.CDS.XAFExtCDSModule));
+            this.RequiredModuleTypes.Add(typeof(IntecoAG.XAFExt.CDS.XAFExtCDSModule));
 
         }
 

@@ -6,9 +6,9 @@ using DevExpress.ExpressApp;
 using DevExpress.ExpressApp.Model;
 using DevExpress.ExpressApp.Model.Core;
 //
-using IntecoaAG.XAFExt.CDS.Model;
+using IntecoAG.XAFExt.CDS.Model;
 //
-namespace IntecoaAG.XAFExt.CDS {
+namespace IntecoAG.XAFExt.CDS {
     public sealed partial class XAFExtCDSModule : ModuleBase {
         public XAFExtCDSModule() {
             InitializeComponent();

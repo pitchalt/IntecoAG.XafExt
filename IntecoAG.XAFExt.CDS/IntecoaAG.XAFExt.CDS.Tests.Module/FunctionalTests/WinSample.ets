@@ -1,6 +1,6 @@
-;#DropDB IntecoaAG.XAFExt.CDS.TestsEasyTest
+;#DropDB IntecoAG.XAFExt.CDS.TestsEasyTest
 
-#Application IntecoaAG.XAFExt.CDS.Tests.Win
+#Application IntecoAG.XAFExt.CDS.Tests.Win
 
 *Action Navigation(User)
 

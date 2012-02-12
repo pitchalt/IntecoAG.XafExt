@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Application Title="IntecoaAG.XAFExt.CDS.Tests" Logo="ExpressAppLogo">
+<Application Title="IntecoAG.XAFExt.CDS.Tests" Logo="ExpressAppLogo">
   <SchemaModules>
     <SchemaModule Name="SystemModule" Version="11.2.8.0" IsNewNode="True" />
   </SchemaModules>
   <Views>
     <ListView Id="testCountry1_ListView" CollectionDataSource="LinqQueryCountry1" />
     <ListView Id="testCountry2_ListView" CollectionDataSource="LinqQueryCountry2" />
-    <ListView Id="testCountry4_ListView" CollectionDataSource="LinqQueryCountry3" />
+    <ListView Id="testCountry4_ListView" CollectionDataSource="testCountry4" />
   </Views>
 </Application>

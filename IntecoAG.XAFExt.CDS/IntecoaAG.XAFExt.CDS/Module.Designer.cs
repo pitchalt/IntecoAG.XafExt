@@ -1,4 +1,4 @@
-namespace IntecoaAG.XAFExt.CDS {
+namespace IntecoAG.XAFExt.CDS {
     partial class XAFExtCDSModule {
         /// <summary> 
         /// Required designer variable.

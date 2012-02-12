@@ -9,7 +9,7 @@ using DevExpress.ExpressApp;
 using DevExpress.ExpressApp.DC;
 using DevExpress.Data.Filtering;
 
-namespace IntecoaAG.XAFExt.CDS 
+namespace IntecoAG.XAFExt.CDS 
 {
     public class LinqCollectionSource : CollectionSourceBase //, IQueryDataSource
     {

@@ -8,7 +8,7 @@ using DevExpress.Persistent.BaseImpl;
 using DevExpress.Persistent.Validation;
 using System.ComponentModel;
 
-namespace IntecoaAG.XAFExt.CDS.Tests
+namespace IntecoAG.XAFExt.CDS.Tests
 {
     [NavigationItem(true)]
     [NonPersistent]

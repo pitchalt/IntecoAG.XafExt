@@ -3,9 +3,9 @@ using System.Linq;
 using System.Collections.Generic;
 //
 using DevExpress.ExpressApp;
-using IntecoaAG.XAFExt.CDS;
+using IntecoAG.XAFExt.CDS;
 //
-namespace IntecoaAG.XAFExt.CDS.Tests.Module {
+namespace IntecoAG.XAFExt.CDS.Tests.Module {
     public sealed partial class XAFExtCDSTestsModule : ModuleBase {
         public XAFExtCDSTestsModule() {
             InitializeComponent();
@@ -16,6 +16,7 @@ namespace IntecoaAG.XAFExt.CDS.Tests.Module {
             CustomCollectionSourceManager.Register(typeof(LinqQueryCountry1));
             CustomCollectionSourceManager.Register(typeof(LinqQueryCountry2));
             CustomCollectionSourceManager.Register(typeof(LinqQueryCountry3));
+            CustomCollectionSourceManager.Register(typeof(testCountry4));
         }
         
     }
