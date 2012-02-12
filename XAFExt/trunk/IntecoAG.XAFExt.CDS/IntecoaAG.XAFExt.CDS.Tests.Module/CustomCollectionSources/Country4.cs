@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Collections.Generic;
 
 using DevExpress.Xpo;
@@ -8,14 +9,16 @@ using DevExpress.Persistent.BaseImpl;
 using DevExpress.Persistent.Validation;
 using System.ComponentModel;
 
-namespace IntecoaAG.XAFExt.CDS.Tests
+namespace IntecoAG.XAFExt.CDS.Tests
 {
 
     [NavigationItem(true)]
     [NonPersistent]
-    public class testCountry4
+    public class testCountry4: LinqQuery<testCountry4, testCountry>
     {
         #region ПОЛЯ КЛАССА
+        public testCountry4() : base(null) { }
+        public testCountry4(Session ses) : base(ses) { }
 
         private string _NameFull;
         private string _Comment;
@@ -37,6 +40,15 @@ namespace IntecoaAG.XAFExt.CDS.Tests
         #endregion
 
         #region МЕТОДЫ
+
+        public override IQueryable<testCountry4> GetQuery() {
+            var queryCore = from item in Provider
+                            select new testCountry4 {
+                                NameFull = item.NameShort + " (" + item.NameFull + "): " + item.Comment,
+                                Comment = item.Comment
+                            };
+            return queryCore;
+        }
 
         #endregion
     }

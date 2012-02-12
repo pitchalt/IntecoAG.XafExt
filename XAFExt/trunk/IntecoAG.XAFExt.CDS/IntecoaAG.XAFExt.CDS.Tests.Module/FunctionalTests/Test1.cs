@@ -9,7 +9,7 @@ using NUnit.Framework;
 using DevExpress.Xpo.DB.Helpers;
 using DevExpress.Xpo;
 
-namespace IntecoaAG.XAFExt.CDS.Tests.FunctionalTests {
+namespace IntecoAG.XAFExt.CDS.Tests.FunctionalTests {
     //[TestFixture, Description("Проверка получения данных")]
     public class Test1 {
 

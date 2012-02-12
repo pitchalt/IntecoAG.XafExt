@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace IntecoaAG.XAFExt.CDS.Tests.Properties {
+namespace IntecoAG.XAFExt.CDS.Tests.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]

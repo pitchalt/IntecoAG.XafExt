@@ -5,9 +5,9 @@ using System.Linq;
 using DevExpress.ExpressApp;
 using DevExpress.ExpressApp.Model;
 //
-using IntecoaAG.XAFExt.CDS.Model;
+using IntecoAG.XAFExt.CDS.Model;
 //
-namespace IntecoaAG.XAFExt.CDS 
+namespace IntecoAG.XAFExt.CDS 
 {
     public static class CustomCollectionSourceManager
     {
@@ -35,7 +35,7 @@ namespace IntecoaAG.XAFExt.CDS
             //if (objectType == null) return null;
 
             // Создание объекта запроса 
-            IQueryable query = Activator.CreateInstance(customDataSourceType, objectSpace) as IQueryable;  // as IQueryable;
+            IQueryable query = Activator.CreateInstance(customDataSourceType, ((ObjectSpace)objectSpace).Session) as IQueryable;  // as IQueryable;
 
             // Создание коллекции с типом customDataSourceType
             //var outCollection = Activator.CreateInstance(customDataSourceType, objectSpace);

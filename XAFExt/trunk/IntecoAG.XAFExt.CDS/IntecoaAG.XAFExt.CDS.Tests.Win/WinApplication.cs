@@ -5,7 +5,7 @@ using DevExpress.ExpressApp.Win;
 using DevExpress.ExpressApp.Updating;
 using DevExpress.ExpressApp;
 
-namespace IntecoaAG.XAFExt.CDS.Tests.Win {
+namespace IntecoAG.XAFExt.CDS.Tests.Win {
     public partial class TestsWindowsFormsApplication : WinApplication {
         public TestsWindowsFormsApplication() {
             InitializeComponent();

@@ -7,7 +7,7 @@ using DevExpress.Data.Filtering;
 using DevExpress.Persistent.BaseImpl;
 using DevExpress.ExpressApp.Security;
 
-namespace IntecoaAG.XAFExt.CDS.Tests.Module.DatabaseUpdate {
+namespace IntecoAG.XAFExt.CDS.Tests.Module.DatabaseUpdate {
     public class Updater : ModuleUpdater {
         public Updater(IObjectSpace objectSpace, Version currentDBVersion) : base(objectSpace, currentDBVersion) { }
         public override void UpdateDatabaseAfterUpdateSchema() {

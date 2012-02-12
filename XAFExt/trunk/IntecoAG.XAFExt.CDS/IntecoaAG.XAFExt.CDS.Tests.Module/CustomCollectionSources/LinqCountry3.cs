@@ -9,12 +9,12 @@ using DevExpress.ExpressApp;
 using DevExpress.ExpressApp.DC;
 using DevExpress.Data.Filtering;
 
-namespace IntecoaAG.XAFExt.CDS.Tests 
+namespace IntecoAG.XAFExt.CDS.Tests 
 {
     public class LinqQueryCountry3 : LinqQuery<testCountry2, testCountry>
     {
-        public LinqQueryCountry3(IObjectSpace os)
-            : base(os) {
+        public LinqQueryCountry3(Session ses)
+            : base(ses) {
         }
 
         public override IQueryable<testCountry2> GetQuery() {

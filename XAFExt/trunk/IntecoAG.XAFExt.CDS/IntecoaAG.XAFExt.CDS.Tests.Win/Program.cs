@@ -8,7 +8,7 @@ using DevExpress.ExpressApp.Win;
 using DevExpress.Persistent.Base;
 using DevExpress.Persistent.BaseImpl;
 
-namespace IntecoaAG.XAFExt.CDS.Tests.Win {
+namespace IntecoAG.XAFExt.CDS.Tests.Win {
     static class Program {
         /// <summary>
         /// The main entry point for the application.

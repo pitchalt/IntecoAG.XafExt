@@ -4,7 +4,7 @@ using System.ComponentModel;
 using DevExpress.ExpressApp.Model;
 using DevExpress.Persistent.Base;
 
-namespace IntecoaAG.XAFExt.CDS.Model
+namespace IntecoAG.XAFExt.CDS.Model
 {
     public interface IModelCustomDataSource : IModelNode {
         [Localizable(true)]

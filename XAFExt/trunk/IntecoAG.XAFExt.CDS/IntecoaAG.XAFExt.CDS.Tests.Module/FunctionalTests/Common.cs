@@ -15,7 +15,7 @@ using DevExpress.Xpo.DB;
 using DevExpress.Xpo.DB.Helpers;
 using DevExpress.Data.Filtering;
 
-namespace IntecoaAG.XAFExt.CDS.Tests.FunctionalTests {
+namespace IntecoAG.XAFExt.CDS.Tests.FunctionalTests {
     class Common {
 
     // Полный путь к файлу конфигурации (в случае его задания)

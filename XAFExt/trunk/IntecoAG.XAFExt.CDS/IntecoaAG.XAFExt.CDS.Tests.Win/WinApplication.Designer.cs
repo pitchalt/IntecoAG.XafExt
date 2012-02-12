@@ -1,4 +1,4 @@
-namespace IntecoaAG.XAFExt.CDS.Tests.Win {
+namespace IntecoAG.XAFExt.CDS.Tests.Win {
     partial class TestsWindowsFormsApplication {
         /// <summary> 
         /// Required designer variable.
@@ -25,7 +25,7 @@ namespace IntecoaAG.XAFExt.CDS.Tests.Win {
         private void InitializeComponent() {
             this.module1 = new DevExpress.ExpressApp.SystemModule.SystemModule();
             this.module2 = new DevExpress.ExpressApp.Win.SystemModule.SystemWindowsFormsModule();
-            this.module3 = new IntecoaAG.XAFExt.CDS.Tests.Module.XAFExtCDSTestsModule();
+            this.module3 = new IntecoAG.XAFExt.CDS.Tests.Module.XAFExtCDSTestsModule();
             this.module5 = new DevExpress.ExpressApp.Validation.ValidationModule();
             this.module6 = new DevExpress.ExpressApp.Objects.BusinessClassLibraryCustomizationModule();
             this.module7 = new DevExpress.ExpressApp.Validation.Win.ValidationWindowsFormsModule();
@@ -51,13 +51,13 @@ namespace IntecoaAG.XAFExt.CDS.Tests.Win {
             // 
             // sqlConnection1
             // 
-            this.sqlConnection1.ConnectionString = "Data Source=(local);Initial Catalog=IntecoaAG.XAFExt.CDS.Tests;Integrated Securit" +
+            this.sqlConnection1.ConnectionString = "Data Source=(local);Initial Catalog=IntecoAG.XAFExt.CDS.Tests;Integrated Securit" +
     "y=SSPI;Pooling=false";
             this.sqlConnection1.FireInfoMessageEventOnUserErrors = false;
             // 
             // TestsWindowsFormsApplication
             // 
-            this.ApplicationName = "IntecoaAG.XAFExt.CDS.Tests";
+            this.ApplicationName = "IntecoAG.XAFExt.CDS.Tests";
             this.Connection = this.sqlConnection1;
             this.Modules.Add(this.module1);
             this.Modules.Add(this.module2);
@@ -76,7 +76,7 @@ namespace IntecoaAG.XAFExt.CDS.Tests.Win {
 
         private DevExpress.ExpressApp.SystemModule.SystemModule module1;
         private DevExpress.ExpressApp.Win.SystemModule.SystemWindowsFormsModule module2;
-        private IntecoaAG.XAFExt.CDS.Tests.Module.XAFExtCDSTestsModule module3;
+        private IntecoAG.XAFExt.CDS.Tests.Module.XAFExtCDSTestsModule module3;
         private DevExpress.ExpressApp.Validation.ValidationModule module5;
         private DevExpress.ExpressApp.Objects.BusinessClassLibraryCustomizationModule module6;
         private DevExpress.ExpressApp.Validation.Win.ValidationWindowsFormsModule module7;

@@ -10,7 +10,7 @@ using DevExpress.ExpressApp;
 using DevExpress.ExpressApp.DC;
 using DevExpress.Data.Filtering;
 
-namespace IntecoaAG.XAFExt.CDS 
+namespace IntecoAG.XAFExt.CDS 
 {
 
     public abstract class LinqQuery<TResult, TSource> : IQueryDataSource, IQueryable<TResult>, IQueryable
@@ -19,10 +19,12 @@ namespace IntecoaAG.XAFExt.CDS
         protected Session session = null;
         protected XPQuery<TSource> _Provider;
 
-        public LinqQuery(IObjectSpace os) {
+        public LinqQuery(Session ses) {
             //objectSpace = os;
-            session = ((ObjectSpace)os).Session;
-            _Provider = new XPQuery<TSource>(session);
+            //session = ((ObjectSpace)os).Session;
+            session = ses;
+            if (session != null)
+                _Provider = new XPQuery<TSource>(session);
         }
 
         public abstract IQueryable<TResult> GetQuery();
@@ -35,18 +37,26 @@ namespace IntecoaAG.XAFExt.CDS
             return GetEnumerator();
         }
 
+        [Browsable(false)]
         public Type ElementType {
             get { return typeof(TResult); }
         }
 
+        [Browsable(false)]
         public Expression Expression {
-            get { return GetQuery().Expression; }
+            get { 
+                if (session != null)
+                    return GetQuery().Expression;
+                else
+                    return null;
+            }
         }
 
+        [Browsable(false)]
         public XPQuery<TSource> Provider {
             get { return _Provider; }
         }
-
+        [Browsable(false)]
         IQueryProvider IQueryable.Provider {
             get { return _Provider; }
         }

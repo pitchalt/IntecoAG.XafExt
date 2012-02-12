@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 using System.Collections.Generic;
 
-namespace IntecoaAG.XAFExt.CDS
+namespace IntecoAG.XAFExt.CDS
 {
     public interface IQueryDataSource {
         IQueryable GetQuery();

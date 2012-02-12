@@ -7,7 +7,7 @@ using System.Collections;
 using DevExpress.ExpressApp.Model;
 using DevExpress.ExpressApp.Model.Core;
 
-namespace IntecoaAG.XAFExt.CDS.Model
+namespace IntecoAG.XAFExt.CDS.Model
 {
     public class CustomDataSourceNodesGenerator : ModelNodesGeneratorBase {
 

@@ -4,7 +4,7 @@ using System.ComponentModel;
 using DevExpress.ExpressApp.Model;
 using DevExpress.Persistent.Base;
 
-namespace IntecoaAG.XAFExt.CDS.Model
+namespace IntecoAG.XAFExt.CDS.Model
 {
     [ModelNodesGenerator(typeof(CustomDataSourceNodesGenerator))]
     public interface IModelCustomDataSources : IModelNode, IModelList<IModelCustomDataSource> {
@@ -15,7 +15,7 @@ namespace IntecoaAG.XAFExt.CDS.Model
     }
 
     public interface IModelListViewExtension : IModelNode { //, IModelList<IModelBOModel> {
-        [DataSourceProperty("Application.CustomDataSources")]   //IntecoaAG.XAFExt.CDS")]
+        [DataSourceProperty("Application.CustomDataSources")]   //IntecoAG.XAFExt.CDS")]
         IModelCustomDataSource CollectionDataSource { get; set; }
     }
 }

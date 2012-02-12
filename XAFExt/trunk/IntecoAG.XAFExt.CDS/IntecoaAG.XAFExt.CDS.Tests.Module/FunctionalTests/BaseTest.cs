@@ -16,7 +16,7 @@ using DevExpress.Persistent.Validation;
 
 using NUnit.Framework;
 
-namespace IntecoaAG.XAFExt.CDS.Tests.FunctionalTests
+namespace IntecoAG.XAFExt.CDS.Tests.FunctionalTests
 {
     public class BaseTest
     {
