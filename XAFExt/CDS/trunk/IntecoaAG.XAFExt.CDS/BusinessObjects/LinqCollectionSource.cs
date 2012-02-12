@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 //
@@ -10,13 +11,13 @@ using DevExpress.Data.Filtering;
 
 namespace IntecoaAG.XAFExt.CDS 
 {
-    public class LinqCollectionSource<T> : CollectionSourceBase //, IQueryDataSource
+    public class LinqCollectionSource : CollectionSourceBase //, IQueryDataSource
     {
         private IQueryable queryCore = null;
-        private Session session = null;
+        //private Session session = null;
 
         
-        private IBindingList collectionCore;
+        //private IBindingList collectionCore;
         private ITypeInfo objectTypeInfoCore;
         
         //protected CollectionDataSource(IObjectSpace objectSpace)
@@ -24,7 +25,7 @@ namespace IntecoaAG.XAFExt.CDS
         //}
         
         public override bool? IsObjectFitForCollection(object obj) {
-            return collectionCore.Contains(obj);
+            return false;
         }
         
         protected override void ApplyCriteriaCore(CriteriaOperator criteria) { }
@@ -37,15 +38,20 @@ namespace IntecoaAG.XAFExt.CDS
 
         public LinqCollectionSource(IObjectSpace objectSpace, IQueryable query)
             : base(objectSpace) {
-            session = ((ObjectSpace)(this.ObjectSpace)).Session;
-            objectTypeInfoCore = XafTypesInfo.Instance.FindTypeInfo(typeof(T));
+            //session = ((ObjectSpace)(this.ObjectSpace)).Session;
             queryCore = query;
+            objectTypeInfoCore = XafTypesInfo.Instance.FindTypeInfo(query.ElementType);
         }
 
         protected override object CreateCollection() {
-            ((XPQueryBase)queryCore).Session = ((ObjectSpace)ObjectSpace).Session;
-            var queryList = Activator.CreateInstance(typeof(List<>).MakeGenericType(queryCore.ElementType), queryCore);
-            return Activator.CreateInstance(typeof(BindingList<>).MakeGenericType(queryCore.ElementType), queryList);
+//            ((XPQueryBase)queryCore).Session = ((ObjectSpace)ObjectSpace).Session;
+//            var queryList = Activator.CreateInstance(typeof(List<>).MakeGenericType(queryCore.ElementType), queryCore);
+//            return Activator.CreateInstance(typeof(BindingList<>).MakeGenericType(queryCore.ElementType), queryList);
+            BindingList<Object> result = new BindingList<Object>();
+            foreach (var item in Query) {
+                result.Add(item);
+            }
+            return result;
         }
 
         public IQueryable Query {

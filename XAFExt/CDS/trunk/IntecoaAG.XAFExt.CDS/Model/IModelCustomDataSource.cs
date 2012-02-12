@@ -2,8 +2,9 @@
 using System.ComponentModel;
 //
 using DevExpress.ExpressApp.Model;
+using DevExpress.Persistent.Base;
 
-namespace IntecoaAG.XAFExt.CDS
+namespace IntecoaAG.XAFExt.CDS.Model
 {
     public interface IModelCustomDataSource : IModelNode {
         [Localizable(true)]
@@ -11,12 +12,5 @@ namespace IntecoaAG.XAFExt.CDS
         Type CustomDataSourceType { get; set; }
         Type ObjectType { get; set; } // Тип объекта на выходе запроса Linq
     }
-    
-    [ModelNodesGenerator(typeof(CustomDataSourceNodesGenerator))]
-    public interface IModelCustomDataSources : IModelNode, IModelList<IModelCustomDataSource> {
-    }
 
-    public interface IModelCustomDataSourceExtension : IModelNode {
-        IModelCustomDataSources CustomDataSources { get; }
-    }
 }

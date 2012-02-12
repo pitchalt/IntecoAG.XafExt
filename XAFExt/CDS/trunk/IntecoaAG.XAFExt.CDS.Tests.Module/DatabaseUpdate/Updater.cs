@@ -14,7 +14,6 @@ namespace IntecoaAG.XAFExt.CDS.Tests.Module.DatabaseUpdate {
             base.UpdateDatabaseAfterUpdateSchema();
 
             IObjectSpace objSpace = this.ObjectSpace;
-            Session ssn = ((ObjectSpace)objSpace).Session;
 
             #region Заполняем базу
 

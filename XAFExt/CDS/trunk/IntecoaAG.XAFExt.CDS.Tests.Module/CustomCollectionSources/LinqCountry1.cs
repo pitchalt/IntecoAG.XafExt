@@ -11,16 +11,14 @@ using DevExpress.Data.Filtering;
 
 namespace IntecoaAG.XAFExt.CDS.Tests 
 {
-    [NonPersistent]
-    public class LinqQueryCountry1 : LinqQuery
+    public class LinqQueryCountry1 : LinqQuery<testCountry1, testCountry>
     {
         public LinqQueryCountry1(IObjectSpace os)
             : base(os) {
         }
 
-        public override IQueryable GetQuery() {
-            XPQuery<testCountry> countries = new XPQuery<testCountry>(session);
-            var queryCore = from item in countries
+        public override IQueryable<testCountry1> GetQuery() {
+            var queryCore = from item in Provider
                         select new testCountry1 {
                             NameShort = item.NameShort,
                             Comment = item.Comment

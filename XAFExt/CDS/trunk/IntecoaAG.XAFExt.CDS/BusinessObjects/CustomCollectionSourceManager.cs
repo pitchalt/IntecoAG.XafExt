@@ -1,15 +1,29 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 //
 using DevExpress.ExpressApp;
 using DevExpress.ExpressApp.Model;
-
+//
+using IntecoaAG.XAFExt.CDS.Model;
+//
 namespace IntecoaAG.XAFExt.CDS 
 {
-    public static class CustomCollectionSourceGenerator
+    public static class CustomCollectionSourceManager
     {
+        private static IList<Type> _CollectionTypes = new List<Type>();
+
+        public static IList<Type> CollectionTypes {
+            get { return _CollectionTypes; }
+        }
+
+        public static void Register(Type type) {
+            if (!CollectionTypes.Contains(type))
+                CollectionTypes.Add(type);
+        }
+
         public static CollectionSourceBase Create(XafApplication application, IObjectSpace objectSpace, IModelListView listViewNode) {
-            IModelCustomDataSource modelCustomDataSource = ((IModelCollectionDataSource)listViewNode).CollectionDataSource;
+            IModelCustomDataSource modelCustomDataSource = ((IModelListViewExtension)listViewNode).CollectionDataSource;
             if (modelCustomDataSource == null) return null;
 
             Type customDataSourceType = modelCustomDataSource.CustomDataSourceType;   // Тип коллекции
@@ -21,12 +35,13 @@ namespace IntecoaAG.XAFExt.CDS
             //if (objectType == null) return null;
 
             // Создание объекта запроса 
-            var query = ((IQueryDataSource)Activator.CreateInstance(customDataSourceType, objectSpace)).GetQuery();  // as IQueryable;
+            IQueryable query = Activator.CreateInstance(customDataSourceType, objectSpace) as IQueryable;  // as IQueryable;
 
             // Создание коллекции с типом customDataSourceType
             //var outCollection = Activator.CreateInstance(customDataSourceType, objectSpace);
-            var outCollection = Activator.CreateInstance(typeof(LinqCollectionSource<>).MakeGenericType(query.ElementType), objectSpace, query);
-            return outCollection as CollectionSourceBase;
+
+            LinqCollectionSource outCollection = new LinqCollectionSource(objectSpace, query);
+            return outCollection ;
         }
 
         public static CollectionSourceBase Create(XafApplication application, IObjectSpace objectSpace, string listViewID) {
