@@ -1,0 +1,773 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\author 2090608151 "paul" 
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Формирование произвольного источника данных для XAF с применением Linq (для
+ XPO).
+\change_inserted 2090608151 1327563760
+
+\end_layout
+
+\begin_layout Section
+Введение.
+\end_layout
+
+\begin_layout Standard
+Данная спецификация описывает расширение стандартного механизма XAF для
+ построения источников данных посредством применения Linq для XPO.
+ За рабочее название компонента примем аббревиатуру LDS (LinqDataSource),
+ однако, следует учитывать, что в будущем возможно расширение средств формирован
+ия источников данных.
+ 
+\end_layout
+
+\begin_layout Section
+Окружение и назначение компонента.
+\end_layout
+
+\begin_layout Standard
+Компонент предназначен для работы в среде XAF-базированных приложений на
+ платформе Windows.
+\end_layout
+
+\begin_layout Section
+Заинтересованные лица.
+\end_layout
+
+\begin_layout Standard
+Характеристики пользовательской среды.
+ Компонента предназначена для следующих категорий пользователей: 
+\end_layout
+
+\begin_layout Itemize
+Прикладные программисты: создание необходимых классов источников данных
+ непосредственно в процессе разработки.
+\end_layout
+
+\begin_layout Itemize
+Администраторы системы в период эксплуатации: размещение текста linq-запросов
+ в секцию CustomDataSource модели.
+ Эта функциональность предполагается к разработке на втором этапе реализации.
+\end_layout
+
+\begin_layout Section
+Потребности, цели, выгоды.
+\end_layout
+
+\begin_layout Standard
+Потребности и цели:
+\end_layout
+
+\begin_layout Itemize
+получить гибкое средство формирования источников данных для ряда компонентов
+ системы (см.
+ далее Область применения);
+\end_layout
+
+\begin_layout Itemize
+упростить работу прикладного програмиста при разработке подключения к источнику
+ данных;
+\end_layout
+
+\begin_layout Itemize
+расширить реестр хранилищ данных пригодных для формирования источников данных
+ в XAF;
+\end_layout
+
+\begin_layout Itemize
+расширить спектр возможных представлений данных для конечного пользователя
+ (сверх тех, что предоставляются XAF).
+\end_layout
+
+\begin_layout Standard
+Выгоды:
+\end_layout
+
+\begin_layout Itemize
+уменьшение трудозатрат на формирование источников данных и подключение к
+ ним в процессе разработки средств представления данных для конечного пользовате
+ля;
+\end_layout
+
+\begin_layout Itemize
+предоставление конечному пользователю инструментов для самостоятельного
+ формирования представлений данных (второй этап разрабтки, см.
+ далее);
+\end_layout
+
+\begin_layout Itemize
+уменьшение ошибок в период разработки и модифкации программного продукта,
+ связанного с проверкой запросов по типам на ранних этапах проектирования
+ источника данных и компиляции.
+\end_layout
+
+\begin_layout Itemize
+Уменьшение количества обращений конечных пользователей в службу поддержки.
+\end_layout
+
+\begin_layout Section
+Требования.
+\end_layout
+
+\begin_layout Subsection
+Функциональные требования.
+\end_layout
+
+\begin_layout Standard
+Общие характеристики.
+\end_layout
+
+\begin_layout Itemize
+поддерживаются только такие linq-запросы, результатом которых являются списки;
+\end_layout
+
+\begin_layout Itemize
+Запрос должен выполняться на стороне сервере.
+\end_layout
+
+\begin_layout Standard
+Этапность.
+\end_layout
+
+\begin_layout Enumerate
+Первый этап разработки.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Создание гибкого и простого механизма формирования источников данных (на
+ первом этапе разработки рассматриваются такие источники, в основе которых
+ лежат linq-запросы).
+\end_layout
+
+\begin_layout Itemize
+Поддержка запросов Linq для произвольных типов 
+\change_inserted 2090608151 1327895372
+(скорее хранимых бизнес это пользовательская ) 
+\change_deleted 2090608151 1327895288
+бизнес-
+\change_unchanged
+объектов системы.
+ 
+\end_layout
+
+\begin_layout Itemize
+Для каждого типа объектов допустимо несколько классов источников данных.
+ 
+\end_layout
+
+\begin_layout Itemize
+Выходной тип linq-запроса должен быть зарегистрированным в системе типом.
+\end_layout
+
+\begin_layout Itemize
+Результат Linq-запроса непосредственно, без преобразовния к типу BindingList<>,
+ является источником данных на вход XAF.
+\end_layout
+
+\begin_layout Itemize
+Рассматривается применение компонента главным образом к корневым спискам
+ и спискам Lookup.
+ (Применение к вложенным спискам требует дополнительного исследования.)
+\end_layout
+
+\begin_layout Itemize
+Применение компонента сводится к созданию класса linq-запроса и класса для
+ выходного типа этого linq-запроса.
+\end_layout
+
+\begin_layout Itemize
+Компонент подключается как библиотека.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Второй этап разработки.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Параметризация запроса Linq в части его условий на выбор объектов (параметризаци
+я производиться посредством передачи объекта критерий с целью фильтрации
+ результатов запроса).
+ 
+\end_layout
+
+\begin_layout Itemize
+Результат запроса может иметь неявный тип, не зарегистрированный в системе.
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+Технические (нефункциональные) требования.
+\end_layout
+
+\begin_layout Subsubsection
+Область применения.
+\end_layout
+
+\begin_layout Standard
+Основными областями применения компонента LDS, диктуемые генетическими свойствам
+и Linq-запросов, могут быть следующие:
+\end_layout
+
+\begin_layout Itemize
+формирование источников данных для отчётов системы Report;
+\end_layout
+
+\begin_layout Itemize
+формирование источников данных для системы Analysis;
+\end_layout
+
+\begin_layout Itemize
+формирование источников данных для экранных справок.
+\end_layout
+
+\begin_layout Itemize
+формирование источников данных для внешних средств представления, например,
+ для документов Excel и т.д.
+\end_layout
+
+\begin_layout Itemize
+применение Linq для формирования выборок данных для списков ListView (особенно
+ NonPersistent).
+ В случае некорневых списков необходимо проверить, что Linq для XPO учитывает
+ изменения, оперативно внесённые в подсессию.
+\end_layout
+
+\begin_layout Subsubsection
+Безопасность.
+\end_layout
+
+\begin_layout Standard
+Первый этап разработки.
+ 
+\end_layout
+
+\begin_layout Itemize
+Компонент LDS должен поддерживать модель безопасности той XAF-базированной
+ системы, в которой он применяется..
+\end_layout
+
+\begin_layout Standard
+На втором этапе разработки вводятся запросы с неявными типаи.
+ Для них необходимо дополнительное исследование вопросов безопасности (особенно
+ при формировании запросов конечными пользователями (администраторами)).
+\end_layout
+
+\begin_layout Subsubsection
+Производительность.
+\end_layout
+
+\begin_layout Itemize
+Производительность компонента зависит главным образом от производительности
+ средств Linq для XPO.
+ Время отклика системы в аналогичных случаях с обращением к компоненте LDS
+ и без обращения к ней не должно заметно различаться.
+ 
+\end_layout
+
+\begin_layout Itemize
+Не должно быть необоснованных перегрузок сервера данных (без учёта оптимальности
+ самого linq-запроса).
+\end_layout
+
+\begin_layout Itemize
+Не должно быть неуместных (без которых принципиально можно обойтись) преобразова
+ний типов для обеспечения прозрачности цепочки доставки данных от хранилища
+ к потребителю.
+\end_layout
+
+\begin_layout Itemize
+Не должно быть заметного влияния на производительность системы в целом:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+времени начальной загрузки системы;
+\end_layout
+
+\begin_layout Itemize
+времени отклика пользовательского интерфейса.
+\end_layout
+
+\end_deeper
+\begin_layout Subsubsection
+Размещение.
+\end_layout
+
+\begin_layout Itemize
+Компонент LDS размещается в отдельной библиотеке, подключаемой к проекту.
+\end_layout
+
+\begin_layout Subsubsection
+Взаимодействие.
+\end_layout
+
+\begin_layout Standard
+
+\change_deleted 2090608151 1327895673
+Компонент LDS работает в среде XAF и взаимодействует с ней в следующих точках:
+\end_layout
+
+\begin_layout Itemize
+
+\change_deleted 2090608151 1327895673
+Декларативно - в модели, где расположены классы самого компонента, классы
+ источников данных, ListView.
+\end_layout
+
+\begin_layout Itemize
+
+\change_deleted 2090608151 1327895673
+Во время выполнения - момент старта системы, в Module - метод Application_Create
+CustomCollectionSource.
+\change_inserted 2090608151 1327895684
+
+\end_layout
+
+\begin_layout Itemize
+
+\change_inserted 2090608151 1327895692
+Не понятно о чем.
+\change_unchanged
+
+\end_layout
+
+\begin_layout Section
+Архитектура решения.
+\end_layout
+
+\begin_layout Standard
+По своему смыслу компонента LDS является плагином к системе XAF, расширяя
+ его функциональность.
+ 
+\end_layout
+
+\begin_layout Itemize
+Модель расширяется для обеспечения хранения данных, необходимых для обеспечения
+ предиката с сигнатурой ((Тип объекта, Идентификатор ListViewID), источник
+ данных).
+ Связь Идентификатор ListViewID с парой (Тип объекта, Идентификатор ListViewID)
+ имеет тип 
+\begin_inset Quotes eld
+\end_inset
+
+один к одному
+\begin_inset Quotes erd
+\end_inset
+
+ ЗДЕСЬ НЕТОЧНО.
+\end_layout
+
+\begin_layout Itemize
+Абстрактный класс CollectionDataSource для произвольного источника данных.
+ Класс LinqDataSource, поддерживающий linq-запросы, является производным
+ от него.
+\change_inserted 2090608151 1327895974
+
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted 2090608151 1327896006
+Я не уверен, что он абстрактный, внимательно посмотрите иерархию XAF
+\change_unchanged
+ - Этот класс собственный и является абстрактным в имеющейся реализации.
+\end_layout
+
+\begin_layout Standard
+Правила применения компонента.
+\end_layout
+
+\begin_layout Itemize
+Необходимо создать NonPersistent класс С, описывающий тип выходных данных
+ linq-запроса, создать порождённый от LinqCollectionSource<T> конкретный
+ класс, где в качестве T указать раннее созданный класс C:
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+[NavigationItem(true)] 
+\end_layout
+
+\begin_layout LyX-Code
+[NonPersistent]
+\end_layout
+
+\begin_layout LyX-Code
+public class ИМЯ_КЛАССА {
+\end_layout
+
+\begin_layout LyX-Code
+}
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout LyX-Code
+[NonPersistent]     
+\end_layout
+
+\begin_layout LyX-Code
+public class LinqCollectionSource_ИМЯ_КЛАССА : LinqCollectionSource<ИМЯ_КЛАССА>
+ { }
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+В модели для представления ListView класса C в подразделе CollectionDataSource
+ в одноимённом поле этого подраздела выбрать из списка созданный на предыдущем
+ шаге источник данных.
+\end_layout
+
+\begin_layout Standard
+Принципы функционирования компонента:
+\end_layout
+
+\begin_layout Itemize
+Компонент LDS во время выполнения автоматически привязывает ListViewID и
+ тип объекта с коллекцией, построенные в пункте 
+\begin_inset Quotes eld
+\end_inset
+
+Принципы применения компонента
+\begin_inset Quotes erd
+\end_inset
+
+.
+ Привязка осуществялется путём вызова метода CreateMapElement() класса QueryMapp
+er в методе Application_CreateCustomCollectionSource класса Module.
+\end_layout
+
+\begin_layout Standard
+Второй этап разработки.
+\end_layout
+
+\begin_layout Itemize
+Модель расширяется следующим образом.
+ В корень модели добавляется узел UserDataSources, содержащий в свою очередь
+ узлы с текстами linq-запросов.
+ 
+\end_layout
+
+\begin_layout Itemize
+при старте системы производится обход подузлов узла CustomDataSource.
+ Считывается текст запроса, проверяется, если запрос порождает анонимный
+ выходной тип, то динамически строится подходящий NonPersistent класс, запрос
+ подправляется и динамически компилируется.
+ Далее работает стандартная схема XAF.
+\change_inserted 2090608151 1327896072
+
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted 2090608151 1327896113
+ПОдправлять плохо, но обсуждаемо,
+\change_unchanged
+ Пункт пока в доработке.
+\end_layout
+
+\begin_layout Standard
+Остаётся также возможность предоставить пользователю определять источник
+ данных для данного списка ListView в момент его открытия.
+ Но это уже выходит за рамки возможностей компонента LDS.
+\change_inserted 2090608151 1327896149
+
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted 2090608151 1327896227
+Технически это звучит как: неподдерживается смена источника данных у ListView
+ пользователем во время работы приложения.
+\change_unchanged
+
+\end_layout
+
+\begin_layout Section
+Представление о реализации.
+\end_layout
+
+\begin_layout Subsection
+Этапы реализации.
+\end_layout
+
+\begin_layout Standard
+Реализация компоненты расчитана на два этапа.
+ 
+\end_layout
+
+\begin_layout Itemize
+На первом этапе будет реализовано применение LinqDataSource в качестве источника
+ данных и расширение модели системы.
+ Этап в основном предназначен для прикладных программистов системы.
+\end_layout
+
+\begin_layout Itemize
+На втором этапе модель расширяется для обеспечения поддержки запросов с
+ анонимными выходными типами, что снабдит пользователя с надлежащими правами
+ и квалификацией (например, администратора системы) достаточно гибким средством
+ удовлетворения потребностей конечных пользователей по представлению данных.
+\end_layout
+
+\begin_layout Subsection
+Конкретика реализации.
+\end_layout
+
+\begin_layout Standard
+Компонента LDS реализована как набор интерфейсов и классов.
+\end_layout
+
+\begin_layout Itemize
+Интерфейсы и классы расширения модели.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+IModelCustomDataSources.
+ Интерфейс подкорневого узла для хранения списка источников данных типа
+ IModelCustomDataSource.
+\end_layout
+
+\begin_layout Itemize
+IModelCustomDataSource.
+ Интерфейс узла хранения данных о типе источника данных и его выходном типе
+ (типе объектов результирующего списка linq-запроса).
+ 
+\end_layout
+
+\begin_layout Itemize
+IModelCollectionDataSource.
+ Интерфейс подузлов узлов типа IModelListView предназначенный для хранения
+ привязки ListView к конкретному источнику данных через указание ссылки
+ на удел типа IModelCustomDataSource.
+\end_layout
+
+\begin_layout Itemize
+CustomDataSourceNodesGenerator.
+ Класс, инкапсулирующий функциональность автоматическую генерацию списка
+ источников данных в узле IModelCustomDataSources.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Класс расширения модели.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+CustomDataSourceNodesGenerator.
+ Выполняет автоматическую регистрацию источников данных, имеющих интерфейс
+ IQueryDataSource, и в модели.
+ Этот
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Программные интерфейсы.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+IQueryDataSource.
+ Интерфейс, (в настоящий момент) помечающий поддерживаемые компонентом LDS
+ источники данных.
+\end_layout
+
+\begin_layout Itemize
+IQueryMapper.
+ Интерфейс для представления объекта, инкапсулирующего функциональность
+ привязки ListView к типу данных и источника данных.
+ МОЖЕТ БЫТЬ БЕЗ НЕГО ОБОЙТИСЬ?
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Классы.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Абстрактный класс CollectionDataSource : CollectionSourceBase для поддержки
+ произвольных источников данных.
+\end_layout
+
+\begin_layout Itemize
+LinqCollectionSource : CollectionDataSource - базовый класс-обёртка источников
+ данных на основе linq-запросов.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+Регистрация в модели узлов, описанных в пункте 
+\begin_inset Quotes eld
+\end_inset
+
+Интерфейсы и классы расширения модели
+\begin_inset Quotes erd
+\end_inset
+
+, выполняется в Module следующим образом:
+\end_layout
+
+\begin_layout LyX-Code
+public override void ExtendModelInterfaces(ModelInterfaceExtenders extenders)
+ {
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+base.ExtendModelInterfaces(extenders);
+\end_layout
+
+\begin_layout LyX-Code
+extenders.Add<IModelApplication, IModelCustomDataSourceExtension>(); extenders.Add
+<IModelListView, IModelCustomDataSourceListViewExtension>(); 
+\end_layout
+
+\end_deeper
+\begin_layout LyX-Code
+}
+\end_layout
+
+\begin_layout Standard
+Метод привязки источника данных с парой (Тип объекта, Идентификатор ListViewID)
+ вызывается в Module:
+\end_layout
+
+\begin_layout LyX-Code
+void Application_CreateCustomCollectionSource(object sender, CreateCustomCollect
+ionSourceEventArgs e) {
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+QueryMapper qm = new QueryMapper((XafApplication)sender, e); e.CollectionSource
+ = qm.CreateMapElement();
+\end_layout
+
+\end_deeper
+\begin_layout LyX-Code
+} 
+\end_layout
+
+\begin_layout Bibliography
+\labelwidthstring References
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-1"
+
+\end_inset
+
+http://www.devexpress.com/Support/Center/e/E859.aspx
+\end_layout
+
+\begin_layout Bibliography
+\labelwidthstring References
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-2"
+
+\end_inset
+
+http://www.devexpress.com/Support/Center/p/K18107.aspx
+\end_layout
+
+\begin_layout Bibliography
+\labelwidthstring References
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-3"
+
+\end_inset
+
+http://svn2.xp-dev.com/svn/intecoagProject/Vlad/LinqDataSource
+\end_layout
+
+\begin_layout Bibliography
+\labelwidthstring References
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-4"
+
+\end_inset
+
+http://svn2.xp-dev.com/svn/intecoagProject/Vlad/TestOfLinqAndReport
+\end_layout
+
+\begin_layout Bibliography
+\labelwidthstring References
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-5"
+
+\end_inset
+
+ http://www.devexpress.com/Support/Center/p/Q258412.aspx
+\end_layout
+
+\end_body
+\end_document
