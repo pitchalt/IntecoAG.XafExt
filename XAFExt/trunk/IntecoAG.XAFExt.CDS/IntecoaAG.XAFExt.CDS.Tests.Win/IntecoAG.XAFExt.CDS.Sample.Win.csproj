@@ -184,13 +184,13 @@
     <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\IntecoaAG.XAFExt.CDS.Tests.Module\IntecoaAG.XAFExt.CDS.Tests.csproj">
+    <ProjectReference Include="..\IntecoaAG.XAFExt.CDS.Tests.Module\IntecoAG.XAFExt.CDS.Tests.csproj">
       <Project>{84B90D28-DD3C-433B-B39E-6CF7C9742D20}</Project>
-      <Name>IntecoaAG.XAFExt.CDS.Tests</Name>
+      <Name>IntecoAG.XAFExt.CDS.Tests</Name>
     </ProjectReference>
-    <ProjectReference Include="..\IntecoaAG.XAFExt.CDS\IntecoaAG.XAFExt.CDS.csproj">
+    <ProjectReference Include="..\IntecoaAG.XAFExt.CDS\IntecoAG.XAFExt.CDS.csproj">
       <Project>{20194556-A061-4715-8C68-1B157F06F9C0}</Project>
-      <Name>IntecoaAG.XAFExt.CDS</Name>
+      <Name>IntecoAG.XAFExt.CDS</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
