@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntecoaAG.XAFExt.CDS", "IntecoaAG.XAFExt.CDS\IntecoaAG.XAFExt.CDS.csproj", "{20194556-A061-4715-8C68-1B157F06F9C0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntecoAG.XAFExt.CDS", "IntecoaAG.XAFExt.CDS\IntecoAG.XAFExt.CDS.csproj", "{20194556-A061-4715-8C68-1B157F06F9C0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntecoaAG.XAFExt.CDS.Tests", "IntecoaAG.XAFExt.CDS.Tests.Module\IntecoaAG.XAFExt.CDS.Tests.csproj", "{84B90D28-DD3C-433B-B39E-6CF7C9742D20}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntecoAG.XAFExt.CDS.Tests", "IntecoaAG.XAFExt.CDS.Tests.Module\IntecoAG.XAFExt.CDS.Tests.csproj", "{84B90D28-DD3C-433B-B39E-6CF7C9742D20}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntecoaAG.XAFExt.CDS.Sample.Win", "IntecoaAG.XAFExt.CDS.Tests.Win\IntecoaAG.XAFExt.CDS.Sample.Win.csproj", "{E427727E-0FEC-4870-AF76-84548BE3290E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntecoAG.XAFExt.CDS.Sample.Win", "IntecoaAG.XAFExt.CDS.Tests.Win\IntecoAG.XAFExt.CDS.Sample.Win.csproj", "{E427727E-0FEC-4870-AF76-84548BE3290E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{71436135-22B3-4980-98EE-37D5A873A123}"
 	ProjectSection(SolutionItems) = preProject
