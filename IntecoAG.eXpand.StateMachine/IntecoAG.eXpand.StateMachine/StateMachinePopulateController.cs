@@ -14,7 +14,7 @@ using Xpand.ExpressApp.SystemModule;
 //using Xpand.Utils.Helpers;
 //using Xpand.Persistent.Base.General;
 
-namespace IntecoAG.eXpand.ExpressApp.StateMachine.Security {
+namespace XAFExt.StateMachine {
     public class StateMachinePopulateController : PopulateController<IStateMachineTransitionPermission> {
         protected override void OnViewControlsCreated() {
             base.OnViewControlsCreated();

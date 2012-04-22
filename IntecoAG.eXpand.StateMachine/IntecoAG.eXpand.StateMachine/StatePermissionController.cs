@@ -6,11 +6,10 @@ using DevExpress.ExpressApp.Security;
 using DevExpress.ExpressApp.StateMachine;
 using DevExpress.ExpressApp.StateMachine.Xpo;
 
-using IntecoAG.eXpand.ExpressApp.StateMachine.Security.Improved;
 //using Xpand.ExpressApp.Security.Core;
 //using Xpand.ExpressApp.StateMachine.Security.Improved;
 
-namespace IntecoAG.eXpand.ExpressApp.StateMachine.Security {
+namespace XAFExt.StateMachine {
     public interface IModelOptionsStateMachine {
         bool PermissionsForActionState { get; set; }
     }
@@ -36,7 +35,7 @@ namespace IntecoAG.eXpand.ExpressApp.StateMachine.Security {
         bool IsNotGranted(XpoState state) {
 //            if (!((ISecurityComplex)SecuritySystem.Instance).IsNewSecuritySystem())
 //                return IsNotGranted(new StateMachineTransitionPermission(StateMachineTransitionModifier.Deny, state.Caption, state.StateMachine.Name));
-            var stateMachineTransitionPermission = new Improved.StateMachineTransitionPermission {
+            var stateMachineTransitionPermission = new StateMachineTransitionPermission {
                 Modifier = StateMachineTransitionModifier.Deny,
                 StateCaption = state.Caption,
                 StateMachineName = state.StateMachine.Name

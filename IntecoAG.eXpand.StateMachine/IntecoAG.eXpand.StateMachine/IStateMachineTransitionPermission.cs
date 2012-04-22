@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace IntecoAG.eXpand.ExpressApp.StateMachine.Security {
+namespace XAFExt.StateMachine {
     public interface IStateMachineTransitionPermission {
         StateMachineTransitionModifier Modifier { get; set; }
         string StateMachineName { get; set; }

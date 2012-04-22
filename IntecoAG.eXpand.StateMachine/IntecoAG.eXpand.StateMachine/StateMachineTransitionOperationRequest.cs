@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using DevExpress.ExpressApp.Security;
 
-namespace IntecoAG.eXpand.ExpressApp.StateMachine.Security.Improved {
+namespace XAFExt.StateMachine {
     [Serializable]
     public class StateMachineTransitionOperationRequest : OperationPermissionRequestBase, IStateMachineTransitionPermission {
         public StateMachineTransitionOperationRequest(IStateMachineTransitionPermission permission)
