@@ -111,16 +111,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IStringLookupPropertyEditor.cs" />
-    <Compile Include="PopulateController.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="StateMachineTransitionRequestProcessor.cs" />
-    <Compile Include="StateMachineTransitionOperationRequest.cs" />
+    <Compile Include="StateMachineTransitionPermissionRequest.cs" />
     <Compile Include="IStateMachineTransitionPermission.cs" />
-    <Compile Include="StateMachineTransitionOperationPermissionData.cs" />
-    <Compile Include="StateMachinePopulateController.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="StateMachineTransitionPermissionData.cs" />
     <Compile Include="StateMachineTransitionPermission.cs" />
     <Compile Include="StatePermissionController.cs">
       <SubType>Component</SubType>

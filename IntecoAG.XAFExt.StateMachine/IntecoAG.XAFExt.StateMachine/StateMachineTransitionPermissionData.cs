@@ -5,6 +5,7 @@ using System.Reflection;
 //
 using DevExpress.ExpressApp;
 using DevExpress.ExpressApp.Security;
+using DevExpress.ExpressApp.StateMachine;
 using DevExpress.Persistent.Base;
 using DevExpress.Xpo;
 //using Xpand.ExpressApp.PropertyEditors;
@@ -14,8 +15,8 @@ using DevExpress.Xpo;
 
 namespace IntecoAG.XAFExt.StateMachine {
 //    public class StateMachineTransitionOperationPermissionData : XpandPermissionData, IStateMachineTransitionPermission {
-    public class StateMachineTransitionOperationPermissionData : PermissionData, IStateMachineTransitionPermission {
-        public StateMachineTransitionOperationPermissionData(Session session)
+    public class StateMachineTransitionPermissionData : PermissionData, IStateMachineTransitionPermission {
+        public StateMachineTransitionPermissionData(Session session)
             : base(session) {
         }
          IEnumerable<PropertyInfo> _propertyInfos;
@@ -76,6 +77,20 @@ namespace IntecoAG.XAFExt.StateMachine {
                 SetPropertyValue("StateCaption", ref _stateCaption, value);
             }
         }
+
+        IStateMachine _StateMachine;
+        public IStateMachine StateMachine {
+            get { return _StateMachine; }
+            set { _StateMachine = value; }
+        }
+
+        ITransition _Transition;
+        public ITransition Transition {
+            get { return _Transition; }
+            set { _Transition = value; }
+        }
+
+
         IList<string> _stateCaptions = new List<string>();
         [Browsable(false)]
         public IList<string> StateCaptions { get { return _stateCaptions; } }

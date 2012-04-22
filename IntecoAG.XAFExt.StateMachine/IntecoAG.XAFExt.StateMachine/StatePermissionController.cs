@@ -40,7 +40,7 @@ namespace IntecoAG.XAFExt.StateMachine {
                 StateCaption = state.Caption,
                 StateMachineName = state.StateMachine.Name
             };
-            return !SecuritySystem.IsGranted(new StateMachineTransitionOperationRequest(stateMachineTransitionPermission));
+            return !SecuritySystem.IsGranted(new StateMachineTransitionPermissionRequest(stateMachineTransitionPermission));
         }
 
         static bool IsNotGranted(IPermission permission) {

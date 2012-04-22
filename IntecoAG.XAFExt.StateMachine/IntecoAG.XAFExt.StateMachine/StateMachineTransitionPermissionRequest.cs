@@ -4,8 +4,8 @@ using DevExpress.ExpressApp.Security;
 
 namespace IntecoAG.XAFExt.StateMachine {
     [Serializable]
-    public class StateMachineTransitionOperationRequest : OperationPermissionRequestBase, IStateMachineTransitionPermission {
-        public StateMachineTransitionOperationRequest(IStateMachineTransitionPermission permission)
+    public class StateMachineTransitionPermissionRequest : OperationPermissionRequestBase, IStateMachineTransitionPermission {
+        public StateMachineTransitionPermissionRequest(IStateMachineTransitionPermission permission)
             : base(StateMachineTransitionPermission.OperationName) {
             Modifier = permission.Modifier;
             StateCaption = permission.StateCaption;
