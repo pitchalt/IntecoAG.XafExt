@@ -1,4 +1,4 @@
-namespace XAFExt.StateMachine {
+namespace IntecoAG.XAFExt.StateMachine {
     partial class XAFExtStateMachineModule {
         /// <summary> 
         /// Required designer variable.

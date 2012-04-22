@@ -9,7 +9,7 @@ using DevExpress.ExpressApp.Security;
 //using Xpand.ExpressApp.Security.Permissions;
 //using Xpand.Persistent.Base.General.CustomAttributes;
 
-namespace XAFExt.StateMachine {
+namespace IntecoAG.XAFExt.StateMachine {
     public enum StateMachineTransitionModifier {
         Allow,
         Deny

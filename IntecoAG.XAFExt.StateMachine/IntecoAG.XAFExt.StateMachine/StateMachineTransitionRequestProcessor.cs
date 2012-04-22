@@ -1,6 +1,6 @@
 using DevExpress.ExpressApp.Security;
 
-namespace XAFExt.StateMachine {
+namespace IntecoAG.XAFExt.StateMachine {
     public class StateMachineTransitionRequestProcessor : PermissionRequestProcessorBase<StateMachineTransitionOperationRequest> {
 
         protected override bool IsRequestFit(StateMachineTransitionOperationRequest permissionRequest, OperationPermissionBase permission, IRequestSecurityStrategy securityInstance) {
