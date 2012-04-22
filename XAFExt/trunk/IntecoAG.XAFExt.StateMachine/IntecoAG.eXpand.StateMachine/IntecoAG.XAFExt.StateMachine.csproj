@@ -8,8 +8,8 @@
     <ProjectGuid>{5F9E1E64-7384-475E-99A6-50407FAF329A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>IntecoAG.eXpand.StateMachine</RootNamespace>
-    <AssemblyName>IntecoAG.eXpand.StateMachine</AssemblyName>
+    <RootNamespace>IntecoAG.XAFExt.StateMachine</RootNamespace>
+    <AssemblyName>IntecoAG.XAFExt.StateMachine</AssemblyName>
     <AssemblyOriginatorKeyFile>..\..\..\Xpand.Key\Xpand.snk</AssemblyOriginatorKeyFile>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
