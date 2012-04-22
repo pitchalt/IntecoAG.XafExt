@@ -1,5 +1,5 @@
 namespace IntecoAG.eXpand.ExpressApp.StateMachine {
-    partial class IntecoAGeXpandStateMachineModule {
+    partial class XAFExtStateMachineModule {
         /// <summary> 
         /// Required designer variable.
         /// </summary>

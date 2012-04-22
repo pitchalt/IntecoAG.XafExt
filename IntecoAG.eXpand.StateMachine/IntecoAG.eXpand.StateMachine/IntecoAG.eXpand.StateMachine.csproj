@@ -88,26 +88,6 @@
     <Reference Include="DevExpress.Xpo.v11.2">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="Xpand.ExpressApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=x86">
-      <SpecificVersion>False</SpecificVersion>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Xpand.ExpressApp.Security, Version=11.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Xpand.DLL\Xpand.ExpressApp.Security.dll</HintPath>
-    </Reference>
-    <Reference Include="Xpand.Persistent.Base, Version=10.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Xpand.DLL\Xpand.Persistent.Base.dll</HintPath>
-    </Reference>
-    <Reference Include="Xpand.Utils, Version=0.0.0.7, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Xpand.Xpo, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=x86">
-      <SpecificVersion>False</SpecificVersion>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="System">
       <Name>System</Name>
       <Private>False</Private>
@@ -134,31 +114,30 @@
     <Compile Include="PopulateController.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Security\Improved\StateMachineTransitionRequestProcessor.cs" />
-    <Compile Include="Security\Improved\StateMachineTransitionOperationRequest.cs" />
-    <Compile Include="Security\IStateMachineTransitionPermission.cs" />
-    <Compile Include="Security\Improved\StateMachineTransitionOperationPermissionData.cs" />
-    <Compile Include="Security\Improved\StateMachineTransitionPermission.cs" />
-    <Compile Include="Security\StateMachinePopulateController.cs">
+    <Compile Include="StateMachineTransitionRequestProcessor.cs" />
+    <Compile Include="StateMachineTransitionOperationRequest.cs" />
+    <Compile Include="IStateMachineTransitionPermission.cs" />
+    <Compile Include="StateMachineTransitionOperationPermissionData.cs" />
+    <Compile Include="StateMachinePopulateController.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Security\StateMachineTransitionPermission.cs" />
-    <Compile Include="Security\StatePermissionController.cs">
+    <Compile Include="StateMachineTransitionPermission.cs" />
+    <Compile Include="StatePermissionController.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="XpandStateMachineModule.cs">
+    <Compile Include="XAFExtStateMachineModule.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="XpandStateMachineModule.Designer.cs">
-      <DependentUpon>XpandStateMachineModule.cs</DependentUpon>
+    <Compile Include="XAFExtStateMachineModule.Designer.cs">
+      <DependentUpon>XAFExtStateMachineModule.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Updater.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\licenses.licx" />
-    <EmbeddedResource Include="XpandStateMachineModule.resx">
-      <DependentUpon>XpandStateMachineModule.cs</DependentUpon>
+    <EmbeddedResource Include="XAFExtStateMachineModule.resx">
+      <DependentUpon>XAFExtStateMachineModule.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
@@ -198,6 +177,9 @@
       <ProductName>Windows Installer 3.1</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Security\Improved\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
