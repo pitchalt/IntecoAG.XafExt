@@ -1,7 +1,7 @@
 using System;
 using System.ComponentModel;
 
-namespace XAFExt.StateMachine {
+namespace IntecoAG.XAFExt.StateMachine {
     public interface IStringLookupPropertyEditor {
         event EventHandler<HandledEventArgs> ItemsCalculating;
     }

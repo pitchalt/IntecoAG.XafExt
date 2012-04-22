@@ -9,7 +9,7 @@ using DevExpress.ExpressApp.StateMachine.Xpo;
 //using Xpand.ExpressApp.Security.Core;
 //using Xpand.ExpressApp.StateMachine.Security.Improved;
 
-namespace XAFExt.StateMachine {
+namespace IntecoAG.XAFExt.StateMachine {
     public interface IModelOptionsStateMachine {
         bool PermissionsForActionState { get; set; }
     }

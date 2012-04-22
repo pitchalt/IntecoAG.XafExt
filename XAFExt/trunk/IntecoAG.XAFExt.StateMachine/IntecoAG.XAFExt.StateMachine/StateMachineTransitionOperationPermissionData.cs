@@ -10,9 +10,9 @@ using DevExpress.Xpo;
 //using Xpand.ExpressApp.PropertyEditors;
 //using Xpand.ExpressApp.Security.Permissions;
 //using Xpand.Persistent.Base.General.CustomAttributes;
-//using XAFExt.StateMachine;
+//using IntecoAG.XAFExt.StateMachine;
 
-namespace XAFExt.StateMachine {
+namespace IntecoAG.XAFExt.StateMachine {
 //    public class StateMachineTransitionOperationPermissionData : XpandPermissionData, IStateMachineTransitionPermission {
     public class StateMachineTransitionOperationPermissionData : PermissionData, IStateMachineTransitionPermission {
         public StateMachineTransitionOperationPermissionData(Session session)

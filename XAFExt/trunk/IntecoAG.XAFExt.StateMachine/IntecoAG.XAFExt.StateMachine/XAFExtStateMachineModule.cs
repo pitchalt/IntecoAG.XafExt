@@ -4,9 +4,9 @@ using System.Drawing;
 using DevExpress.ExpressApp;
 using DevExpress.ExpressApp.Security;
 //using Xpand.ExpressApp.StateMachine.Security.Improved;
-using XAFExt.StateMachine;
+using IntecoAG.XAFExt.StateMachine;
 
-namespace XAFExt.StateMachine {
+namespace IntecoAG.XAFExt.StateMachine {
 
     [ToolboxBitmap(typeof(XAFExtStateMachineModule))]
     [ToolboxItem(true)]
