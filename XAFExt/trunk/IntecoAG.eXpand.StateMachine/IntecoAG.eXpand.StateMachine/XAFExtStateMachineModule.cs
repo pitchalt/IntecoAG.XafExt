@@ -8,10 +8,10 @@ using IntecoAG.eXpand.ExpressApp.StateMachine.Security.Improved;
 
 namespace IntecoAG.eXpand.ExpressApp.StateMachine {
 
-    [ToolboxBitmap(typeof(IntecoAGeXpandStateMachineModule))]
+    [ToolboxBitmap(typeof(XAFExtStateMachineModule))]
     [ToolboxItem(true)]
-    public sealed partial class IntecoAGeXpandStateMachineModule : ModuleBase {
-        public IntecoAGeXpandStateMachineModule() {
+    public sealed partial class XAFExtStateMachineModule : ModuleBase {
+        public XAFExtStateMachineModule() {
             InitializeComponent();
         }
         public override void Setup(ApplicationModulesManager moduleManager) {
