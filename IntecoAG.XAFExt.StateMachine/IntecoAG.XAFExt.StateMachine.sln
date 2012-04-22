@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntecoAG.eXpand.StateMachine", "IntecoAG.eXpand.StateMachine\IntecoAG.eXpand.StateMachine.csproj", "{5F9E1E64-7384-475E-99A6-50407FAF329A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntecoAG.XAFExt.StateMachine", "IntecoAG.eXpand.StateMachine\IntecoAG.XAFExt.StateMachine.csproj", "{5F9E1E64-7384-475E-99A6-50407FAF329A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
