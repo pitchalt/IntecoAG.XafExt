@@ -1,9 +1,9 @@
 using DevExpress.ExpressApp.Security;
 
 namespace IntecoAG.XAFExt.StateMachine {
-    public class StateMachineTransitionRequestProcessor : PermissionRequestProcessorBase<StateMachineTransitionOperationRequest> {
+    public class StateMachinePermissionRequestProcessor : PermissionRequestProcessorBase<StateMachineTransitionPermissionRequest> {
 
-        protected override bool IsRequestFit(StateMachineTransitionOperationRequest permissionRequest, OperationPermissionBase permission, IRequestSecurityStrategy securityInstance) {
+        protected override bool IsRequestFit(StateMachineTransitionPermissionRequest permissionRequest, OperationPermissionBase permission, IRequestSecurityStrategy securityInstance) {
             if (permission is StateMachineTransitionPermission) {
                 return permissionRequest.Modifier == ((StateMachineTransitionPermission)permission).Modifier &&
                        permissionRequest.StateCaption == ((StateMachineTransitionPermission)permission).StateCaption &&
