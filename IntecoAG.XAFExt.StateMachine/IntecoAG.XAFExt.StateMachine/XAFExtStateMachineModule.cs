@@ -29,16 +29,22 @@ namespace IntecoAG.XAFExt.StateMachine {
             }
         }
 
-        //protected override IEnumerable<Type> GetDeclaredExportedTypes() {
-        //    IList<Type> result = new List<Type>(base.GetDeclaredExportedTypes());
-        //    result.Add(typeof(IStateMachine));
-        //    result.Add(typeof(IState));
-        //    result.Add(typeof(ITransition));
-        //    return result;
-        //}
+//        public override void Setup(XafApplication application) {
+//             if (!XafTypesInfo.IsInitialized) {
+//                 XafTypesInfo.Instance.RegisterSharedPart(typeof(IStateMachine));
+//             }
+//             base.Setup(application);
+//        }
 
-        void  Application_CreateCustomCollectionSource(object sender, CreateCustomCollectionSourceEventArgs e)
-        {
+        protected override IEnumerable<Type> GetDeclaredExportedTypes() {
+            IList<Type> result = new List<Type>(base.GetDeclaredExportedTypes());
+            result.Add(typeof(IStateMachine));
+            result.Add(typeof(IState));
+            result.Add(typeof(ITransition));
+            return result;
+        }
+
+        void  Application_CreateCustomCollectionSource(object sender, CreateCustomCollectionSourceEventArgs e) {
             if (e.ObjectType == typeof(IStateMachine)) {
                 e.CollectionSource = new StateMachineCollectionSource(e.ObjectSpace, _smModule.StateMachineRepository, _smModule.StateMachineStorageType);
             }
@@ -48,6 +54,11 @@ namespace IntecoAG.XAFExt.StateMachine {
             if (SecuritySystem.Instance is SecurityStrategy)
                 ((SecurityStrategy)SecuritySystem.Instance).RequestProcessors.Register(new StateMachinePermissionRequestProcessor());
             _smModule = Application.Modules.FindModule<StateMachineModule>();
+        }
+
+        public override void CustomizeTypesInfo(DevExpress.ExpressApp.DC.ITypesInfo typesInfo) {
+            base.CustomizeTypesInfo(typesInfo);
+            DevExpress.ExpressApp.DC.ITypeInfo type_info = typesInfo.FindTypeInfo(typeof(IState));
         }
     }
 }
