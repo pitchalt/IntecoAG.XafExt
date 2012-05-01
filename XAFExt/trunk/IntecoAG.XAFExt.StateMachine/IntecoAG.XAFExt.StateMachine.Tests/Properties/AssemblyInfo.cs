@@ -1,17 +1,16 @@
-using System.Reflection;
+﻿using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using System.Security;
 
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Xpand.ExpressApp.StateMachine")]
+[assembly: AssemblyTitle("IntecoAG.XAFExt.StateMachine.Tests.Module")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("-")]
-[assembly: AssemblyProduct("Xpand.ExpressApp.StateMachine")]
-[assembly: AssemblyCopyright("Copyright � - 2007")]
+[assembly: AssemblyProduct("IntecoAG.XAFExt.StateMachine.Tests.Module")]
+[assembly: AssemblyCopyright("Copyright © - 2007")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -29,7 +28,4 @@ using System.Security;
 //
 // You can specify all the values or you can default the Revision and Build Numbers 
 // by using the '*' as shown below:
-[assembly: AssemblyVersion("1.0.0.8")]
-//[assembly: AssemblyFileVersion("1.0.0.2")]
-
-[assembly: AllowPartiallyTrustedCallers]
+[assembly: AssemblyVersion("1.0.*")]

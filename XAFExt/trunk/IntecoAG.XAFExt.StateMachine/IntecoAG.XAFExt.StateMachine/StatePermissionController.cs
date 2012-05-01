@@ -21,7 +21,8 @@ namespace IntecoAG.XAFExt.StateMachine {
         protected override void OnActivated() {
             base.OnActivated();
             var stateMachineController = Frame.GetController<StateMachineController>();
-            stateMachineController.TransitionExecuting += OnTransitionExecuting;
+//            if (stateMachineController != null)
+                stateMachineController.TransitionExecuting += OnTransitionExecuting;
         }
 
         void OnTransitionExecuting(object sender, ExecuteTransitionEventArgs executeTransitionEventArgs) {
