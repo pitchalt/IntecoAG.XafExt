@@ -24,12 +24,11 @@ namespace IntecoAG.XAFExt.StateMachine {
         /// </summary>
         private void InitializeComponent() {
             // 
+            // XAFExtStateMachineModule
             // 
-            // 
-
-//            this.RequiredModuleTypes.Add(typeof(Xpand.ExpressApp.SystemModule.XpandSystemModule));
-            this.RequiredModuleTypes.Add(typeof(DevExpress.ExpressApp.StateMachine.StateMachineModule));
+            this.AdditionalExportedTypes.Add(typeof(DevExpress.ExpressApp.StateMachine.Dc.IDCState));
             this.RequiredModuleTypes.Add(typeof(DevExpress.ExpressApp.Security.SecurityModule));
+            this.RequiredModuleTypes.Add(typeof(DevExpress.ExpressApp.StateMachine.StateMachineModule));
 
         }
 

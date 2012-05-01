@@ -103,6 +103,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="StateMachineCollectionSource.cs" />
+    <Compile Include="StateMachineProxy.cs" />
     <Compile Include="StateMachineTransitionRequestProcessor.cs" />
     <Compile Include="StateMachineTransitionPermissionRequest.cs" />
     <Compile Include="IStateMachineTransitionPermission.cs" />
@@ -118,7 +119,6 @@
       <DependentUpon>XAFExtStateMachineModule.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Updater.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\licenses.licx" />
