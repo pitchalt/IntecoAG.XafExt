@@ -4,11 +4,12 @@ using System.Linq;
 using System.Text;
 //
 using DevExpress.ExpressApp;
-using DevExpress.ExpressApp.DC;
+using DC=DevExpress.ExpressApp.DC;
 using DevExpress.ExpressApp.StateMachine;
 //
 namespace IntecoAG.XAFExt.StateMachine {
-    [DomainComponent]
+    [DC.DomainComponent]
+    [DC.XafDefaultProperty("Name")]
     public class StateMachineProxy {
         public StateMachineProxy(IStateMachine sm) { 
         }

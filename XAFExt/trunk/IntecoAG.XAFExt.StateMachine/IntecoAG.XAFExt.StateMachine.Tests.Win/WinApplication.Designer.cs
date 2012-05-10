@@ -31,11 +31,11 @@ namespace IntecoAG.XAFExt.StateMachine.Tests.Win {
             this.securityModule1 = new DevExpress.ExpressApp.Security.SecurityModule();
             this.authenticationActiveDirectory1 = new DevExpress.ExpressApp.Security.AuthenticationActiveDirectory();
             this.sqlConnection1 = new System.Data.SqlClient.SqlConnection();
-            this.xafExtStateMachineModule1 = new IntecoAG.XAFExt.StateMachine.XAFExtStateMachineModule();
-            this.module3 = new IntecoAG.XAFExt.StateMachine.Tests.XAFExtStateMachineTestsModule();
             this.securityStrategyComplex1 = new DevExpress.ExpressApp.Security.SecurityStrategyComplex();
             this.conditionalAppearanceModule1 = new DevExpress.ExpressApp.ConditionalAppearance.ConditionalAppearanceModule();
+            this.xafExtStateMachineTestsModule1 = new IntecoAG.XAFExt.StateMachine.Tests.XAFExtStateMachineTestsModule();
             this.stateMachineModule1 = new DevExpress.ExpressApp.StateMachine.StateMachineModule();
+            this.xafExtStateMachineModule1 = new IntecoAG.XAFExt.StateMachine.XAFExtStateMachineModule();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // module5
@@ -50,7 +50,7 @@ namespace IntecoAG.XAFExt.StateMachine.Tests.Win {
             // sqlConnection1
             // 
             this.sqlConnection1.ConnectionString = "Data Source=(local);Initial Catalog=IntecoAG.XAFExt.StateMachine.Tests;Integrated" +
-    " Security=SSPI;Pooling=false";
+                " Security=SSPI;Pooling=false";
             this.sqlConnection1.FireInfoMessageEventOnUserErrors = false;
             // 
             // securityStrategyComplex1
@@ -73,10 +73,10 @@ namespace IntecoAG.XAFExt.StateMachine.Tests.Win {
             this.Modules.Add(this.securityModule1);
             this.Modules.Add(this.conditionalAppearanceModule1);
             this.Modules.Add(this.module5);
+            this.Modules.Add(this.module7);
             this.Modules.Add(this.stateMachineModule1);
             this.Modules.Add(this.xafExtStateMachineModule1);
-            this.Modules.Add(this.module3);
-            this.Modules.Add(this.module7);
+            this.Modules.Add(this.xafExtStateMachineTestsModule1);
             this.Security = this.securityStrategyComplex1;
             this.DatabaseVersionMismatch += new System.EventHandler<DevExpress.ExpressApp.DatabaseVersionMismatchEventArgs>(this.TestsWindowsFormsApplication_DatabaseVersionMismatch);
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
@@ -87,16 +87,16 @@ namespace IntecoAG.XAFExt.StateMachine.Tests.Win {
 
         private DevExpress.ExpressApp.SystemModule.SystemModule module1;
         private DevExpress.ExpressApp.Win.SystemModule.SystemWindowsFormsModule module2;
-        private IntecoAG.XAFExt.StateMachine.Tests.XAFExtStateMachineTestsModule module3;
         private DevExpress.ExpressApp.Validation.ValidationModule module5;
         private DevExpress.ExpressApp.Objects.BusinessClassLibraryCustomizationModule module6;
         private DevExpress.ExpressApp.Validation.Win.ValidationWindowsFormsModule module7;
         private DevExpress.ExpressApp.Security.SecurityModule securityModule1;
         private DevExpress.ExpressApp.Security.AuthenticationActiveDirectory authenticationActiveDirectory1;
         private System.Data.SqlClient.SqlConnection sqlConnection1;
-        private XAFExtStateMachineModule xafExtStateMachineModule1;
         private DevExpress.ExpressApp.Security.SecurityStrategyComplex securityStrategyComplex1;
         private DevExpress.ExpressApp.ConditionalAppearance.ConditionalAppearanceModule conditionalAppearanceModule1;
+        private XAFExtStateMachineTestsModule xafExtStateMachineTestsModule1;
         private DevExpress.ExpressApp.StateMachine.StateMachineModule stateMachineModule1;
+        private XAFExtStateMachineModule xafExtStateMachineModule1;
     }
 }

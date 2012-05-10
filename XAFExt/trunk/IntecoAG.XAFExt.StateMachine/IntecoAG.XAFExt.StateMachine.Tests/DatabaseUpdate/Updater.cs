@@ -4,7 +4,6 @@ using DevExpress.Data.Filtering;
 using DevExpress.ExpressApp;
 using DevExpress.ExpressApp.Updating;
 using DevExpress.Xpo;
-using DevExpress.Data.Filtering;
 using DevExpress.Persistent.BaseImpl;
 using DevExpress.ExpressApp.Security;
 

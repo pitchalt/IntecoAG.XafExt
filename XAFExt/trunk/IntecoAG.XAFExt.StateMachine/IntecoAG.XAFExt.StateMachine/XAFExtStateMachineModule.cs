@@ -29,20 +29,20 @@ namespace IntecoAG.XAFExt.StateMachine {
             }
         }
 
-//        public override void Setup(XafApplication application) {
-//             if (!XafTypesInfo.IsInitialized) {
-//                 XafTypesInfo.Instance.RegisterSharedPart(typeof(IStateMachine));
-//             }
-//             base.Setup(application);
-//        }
+        public override void Setup(XafApplication application) {
+             base.Setup(application);
+        }
 
         protected override IEnumerable<Type> GetDeclaredExportedTypes() {
-            IList<Type> result = new List<Type>(base.GetDeclaredExportedTypes());
-            result.Add(typeof(IStateMachine));
-            result.Add(typeof(IState));
-            result.Add(typeof(ITransition));
-            return result;
+            return base.GetDeclaredExportedTypes();
         }
+        //protected override IEnumerable<Type> GetDeclaredExportedTypes() {
+        //    IList<Type> result = new List<Type>(base.GetDeclaredExportedTypes());
+        //    result.Add(typeof(IStateMachine));
+        //    result.Add(typeof(IState));
+        //    result.Add(typeof(ITransition));
+        //    return result;
+        //}
 
         void  Application_CreateCustomCollectionSource(object sender, CreateCustomCollectionSourceEventArgs e) {
             if (e.ObjectType == typeof(IStateMachine)) {
@@ -58,7 +58,7 @@ namespace IntecoAG.XAFExt.StateMachine {
 
         public override void CustomizeTypesInfo(DevExpress.ExpressApp.DC.ITypesInfo typesInfo) {
             base.CustomizeTypesInfo(typesInfo);
-            DevExpress.ExpressApp.DC.ITypeInfo type_info = typesInfo.FindTypeInfo(typeof(IState));
+            //DevExpress.ExpressApp.DC.ITypeInfo type_info = typesInfo.FindTypeInfo(typeof(IState));
         }
     }
 }

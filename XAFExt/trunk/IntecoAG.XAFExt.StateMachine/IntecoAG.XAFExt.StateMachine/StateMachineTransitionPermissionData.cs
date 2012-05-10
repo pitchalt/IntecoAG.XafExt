@@ -140,4 +140,23 @@ namespace IntecoAG.XAFExt.StateMachine {
             _stateCaptions = stateCaptions;
         }
     }
+    //public class StateMachineTypeConverter : LocalizedClassInfoTypeConverter {
+    //    public override TypeConverter.StandardValuesCollection GetStandardValues(ITypeDescriptorContext context) {
+    //        StandardValuesCollection source = base.GetStandardValues(context);
+    //        List<Type> result = new List<Type>();
+    //        foreach (Type type in source) {
+    //            if (type != null) {
+    //                foreach (PropertyInfo propertyInfo in type.GetProperties()) {
+    //                    DevExpress.ExpressApp.DC.ITypeInfo typeInfo = XafTypesInfo.Instance.FindTypeInfo(propertyInfo.PropertyType);
+    //                    if (propertyInfo.PropertyType.IsEnum || (typeInfo != null && typeInfo.IsPersistent)) {
+    //                        result.Add(type);
+    //                        break;
+    //                    }
+    //                }
+    //            }
+    //        }
+    //        return new StandardValuesCollection(result);
+    //    }
+    //}
+
 }
