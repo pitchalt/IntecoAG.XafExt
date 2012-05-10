@@ -25,7 +25,11 @@ namespace IntecoAG.XAFExt.StateMachine.Tests.Xpo {
             State = TestStateEnumValue.VALUE_START;
         }
 
-        public TestStateEnumValue State;
+        private TestStateEnumValue _State;
+        public TestStateEnumValue State {
+            get { return _State; }
+            set { SetPropertyValue<TestStateEnumValue>("State", ref _State, value); }
+        }
 
     }
 }

@@ -29,6 +29,10 @@ namespace IntecoAG.XAFExt.StateMachine.Tests.Xpo {
             base.AfterConstruction();
         }
 
-        public TestStateRefValue TestStateRefValue;
+        private TestStateRefValue _TestStateRefValue;
+        public TestStateRefValue TestStateRefValue {
+            get { return _TestStateRefValue; }
+            set { SetPropertyValue<TestStateRefValue>("TestStateRefValue", ref _TestStateRefValue, value); }
+        }
     }
 }

@@ -30,7 +30,6 @@ namespace IntecoAG.XAFExt.StateMachine.Tests {
             this.RequiredModuleTypes.Add(typeof(DevExpress.ExpressApp.Objects.BusinessClassLibraryCustomizationModule));
             this.RequiredModuleTypes.Add(typeof(DevExpress.ExpressApp.Security.SecurityModule));
             this.RequiredModuleTypes.Add(typeof(IntecoAG.XAFExt.StateMachine.XAFExtStateMachineModule));
-            this.RequiredModuleTypes.Add(typeof(DevExpress.ExpressApp.StateMachine.StateMachineModule));
 
         }
 

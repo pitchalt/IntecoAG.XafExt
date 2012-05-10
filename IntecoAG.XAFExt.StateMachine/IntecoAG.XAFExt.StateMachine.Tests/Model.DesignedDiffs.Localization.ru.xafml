@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <BOModel>
+    <Class Name="IntecoAG.XAFExt.StateMachine.Tests.Xpo.TestStateEnum" Caption="Тест Enum" />
+  </BOModel>
+</Application>
