@@ -37,7 +37,6 @@ namespace IntecoAG.XAFExt.StateMachine {
             }
         }
 
-
         void IStateMachineTransitionPermission.SyncStateCaptions(IList<string> stateCaptions, string machineName) {
 
         }

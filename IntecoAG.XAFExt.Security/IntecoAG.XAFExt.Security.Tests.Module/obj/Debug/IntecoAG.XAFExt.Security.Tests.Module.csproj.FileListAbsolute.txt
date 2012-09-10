@@ -1,0 +1,9 @@
+B:\PROJECTS\XAFExt\IntecoAG.XAFExt\IntecoAG.XAFExt.Security\IntecoAG.XAFExt.Security.Tests.Module\bin\Debug\IntecoAG.XAFExt.Security.Tests.Module.dll
+B:\PROJECTS\XAFExt\IntecoAG.XAFExt\IntecoAG.XAFExt.Security\IntecoAG.XAFExt.Security.Tests.Module\bin\Debug\IntecoAG.XAFExt.Security.Tests.Module.pdb
+B:\PROJECTS\XAFExt\IntecoAG.XAFExt\IntecoAG.XAFExt.Security\IntecoAG.XAFExt.Security.Tests.Module\obj\Debug\ResolveAssemblyReference.cache
+B:\PROJECTS\XAFExt\IntecoAG.XAFExt\IntecoAG.XAFExt.Security\IntecoAG.XAFExt.Security.Tests.Module\obj\Debug\IntecoAG.XAFExt.Security.Tests.Module.TestsModule.resources
+B:\PROJECTS\XAFExt\IntecoAG.XAFExt\IntecoAG.XAFExt.Security\IntecoAG.XAFExt.Security.Tests.Module\obj\Debug\GenerateResource.read.1.tlog
+B:\PROJECTS\XAFExt\IntecoAG.XAFExt\IntecoAG.XAFExt.Security\IntecoAG.XAFExt.Security.Tests.Module\obj\Debug\GenerateResource.write.1.tlog
+B:\PROJECTS\XAFExt\IntecoAG.XAFExt\IntecoAG.XAFExt.Security\IntecoAG.XAFExt.Security.Tests.Module\obj\Debug\IntecoAG.XAFExt.Security.Tests.Module.dll.licenses
+B:\PROJECTS\XAFExt\IntecoAG.XAFExt\IntecoAG.XAFExt.Security\IntecoAG.XAFExt.Security.Tests.Module\obj\Debug\IntecoAG.XAFExt.Security.Tests.Module.dll
+B:\PROJECTS\XAFExt\IntecoAG.XAFExt\IntecoAG.XAFExt.Security\IntecoAG.XAFExt.Security.Tests.Module\obj\Debug\IntecoAG.XAFExt.Security.Tests.Module.pdb
