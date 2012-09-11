@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 using System.ComponentModel;
+using System.Text;
 //
 using DevExpress.ExpressApp;
 using DevExpress.ExpressApp.Editors;
@@ -14,24 +15,6 @@ using DevExpress.ExpressApp.Model;
 //
 
 namespace IntecoAG.XAFExt.Security {
-
-    /// <summary>
-    /// Тип доступа к permission
-    /// </summary>
-    public enum PermissionAccessTypes {
-        /// <summary>
-        /// Не обрабатывать (не учитывать) такой permission
-        /// </summary>
-        UNDEFINED = 0,
-        /// <summary>
-        /// Доступ разрешён
-        /// </summary>
-        ALLOW = 1,
-        /// <summary>
-        /// Доступ запрезён
-        /// </summary>
-        DENY = 2
-    }
 
     public interface IActionExecPermissionData : ITypePermissionData {
         StringObject TargetAction {
@@ -61,6 +44,9 @@ namespace IntecoAG.XAFExt.Security {
         private PermissionAccessTypes _PermissionAccessType;
         private StringObject _TargetAction;
         private String _Criteria;
+        /*
+        private String _ActionStrings;
+        */
 
         protected override String GetPermissionInfoCaption() {
             return String.Format(@"{0}, ""{1}"", ""{2}"", ""{3}""", CaptionHelper.GetClassCaption(TargetType.FullName), Criteria, TargetAction, PermissionAccessType);
@@ -139,5 +125,41 @@ namespace IntecoAG.XAFExt.Security {
             }
         }
 
+
+
+        /*
+        /// <summary>
+        ///  Cериализованнsq набор иденитификаторов Actions, взятых из модели, записанных через точку с запятой: "ActionId1=0;ActionId2=0;ActionId3=1;..."
+        ///  где =0 означает, что Action запрещена, а =1 разарешена.
+        /// </summary>
+        //[Browsable(false)]
+        [Size(SizeAttribute.Unlimited)]
+        public String ActionStrings {
+            get {
+                return _ActionStrings;
+            }
+            set {
+                _ActionStrings = value;
+            }
+        }
+
+        private String SerializeActionCollection(List<String> actionCols) {
+            StringBuilder sb = new StringBuilder();
+            foreach (String str in actionCols) {
+                if (sb.Length > 0)
+                    sb.Append(";");
+                sb.Append(str); 
+            }
+            return sb.ToString();
+        }
+
+        private List<String> DeserializeActionStrings(String actionStrings) {
+            List<String> res = new List<String>();
+            String[] delimiter = { ";" };
+            String[] mActionIds = actionStrings.Split(delimiter, StringSplitOptions.None);
+            res.AddRange(mActionIds);
+            return res;
+        }
+        */
     }
 }

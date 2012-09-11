@@ -105,9 +105,7 @@
     <Compile Include="BusinessObjects\ActionExecPermissionData.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="BusinessObjects\ActionExecPermissionHelper.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="BusinessObjects\ActionExecPermissionLogic.cs" />
     <Compile Include="BusinessObjects\ActionExecPermissionRequest.cs">
       <SubType>Code</SubType>
     </Compile>

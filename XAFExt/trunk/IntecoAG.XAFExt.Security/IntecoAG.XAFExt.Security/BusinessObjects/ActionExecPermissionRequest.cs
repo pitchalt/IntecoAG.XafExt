@@ -26,6 +26,10 @@ namespace IntecoAG.XAFExt.Security {
         String TargetAction {
             get;
         }
+
+        Object TargetObject {
+            get;
+        }
     }
 
     /// <summary>
@@ -64,12 +68,27 @@ namespace IntecoAG.XAFExt.Security {
             this.TargetAction = targetAction;
             this.Operation = operation;
         }
+               
+        // Восстановление после сериализации
         public ActionExecPermissionRequest(SerializationInfo info, StreamingContext context) {
             Operation = info.GetString("Operation");
             ObjectType = ReflectionHelper.FindType(info.GetString("ObjectType"));
             TargetAction.Name = info.GetString("TargetAction");
+            TargetObjectHandle = info.GetString("TargetObjectHandle");
         }
         */
+
+        /// <summary>
+        /// Сериализация
+        /// </summary>
+        /// <param name="info"></param>
+        /// <param name="context"></param>
+        public void GetObjectData(SerializationInfo info, StreamingContext context) {
+            info.AddValue("Operation", Operation);
+            info.AddValue("ObjectType", ObjectType.FullName);
+            info.AddValue("TargetAction", TargetAction);
+            info.AddValue("TargetObjectHandle", TargetObjectHandle);
+        }
 
         public Object TargetObject {
             get;
@@ -107,12 +126,6 @@ namespace IntecoAG.XAFExt.Security {
             get;
             set;
         }     
-
-        public void GetObjectData(SerializationInfo info, StreamingContext context) {
-            info.AddValue("Operation", Operation);
-            info.AddValue("ObjectType", ObjectType.FullName);
-            info.AddValue("TargetAction", TargetAction);
-        }
 
         public override String GetHashString() {
             String objectHandle = TargetObjectHandle ?? String.Empty;
