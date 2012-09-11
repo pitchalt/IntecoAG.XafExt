@@ -23,6 +23,24 @@ namespace IntecoAG.XAFExt.Security {
     }
 
     /// <summary>
+    /// Тип доступа к permission
+    /// </summary>
+    public enum PermissionAccessTypes {
+        /// <summary>
+        /// Не обрабатывать (не учитывать) такой permission
+        /// </summary>
+        UNDEFINED = 0,
+        /// <summary>
+        /// Доступ разрешён
+        /// </summary>
+        ALLOW = 1,
+        /// <summary>
+        /// Доступ запрезён
+        /// </summary>
+        DENY = 2
+    }
+
+    /// <summary>
     /// Объект, описывающий параметры доступа к Action
     /// </summary>
     public class ActionExecPermission : OperationPermissionBase {
@@ -31,6 +49,9 @@ namespace IntecoAG.XAFExt.Security {
         private Type _ObjectType;
         private String _Criteria;
         private String _TargetAction;
+        /*
+        private IList<String> _TargetActions;
+        */
 
         public ActionExecPermission(Type objectType, String targetAction, String criteria, String operation, PermissionAccessTypes permissionAccessType)
             : base(operation) {
@@ -44,10 +65,13 @@ namespace IntecoAG.XAFExt.Security {
 
         public override bool IsSame(IOperationPermission comparedPermission) {
             if(base.IsSame(comparedPermission)) {
-                ActionExecPermission comparedActiomOperationPermission = (ActionExecPermission)comparedPermission;
-                return _ObjectType == comparedActiomOperationPermission.ObjectType
-                    && _Criteria == comparedActiomOperationPermission.Criteria
-                    && _TargetAction == comparedActiomOperationPermission.TargetAction;
+                ActionExecPermission comparedActiomOperationPermission = comparedPermission as ActionExecPermission;
+                if (comparedActiomOperationPermission == null) {
+                    return _ObjectType == comparedActiomOperationPermission.ObjectType
+                        && _Criteria == comparedActiomOperationPermission.Criteria
+                        && _PermissionAccessType == comparedActiomOperationPermission.PermissionAccessType
+                        && _TargetAction == comparedActiomOperationPermission.TargetAction;
+                }
             }
             return false;
         }
@@ -82,5 +106,13 @@ namespace IntecoAG.XAFExt.Security {
                 return _TargetAction;
             }
         }
+
+        /*
+        public IList<String> TargetActions {
+            get {
+                return _TargetActions;
+            }
+        }
+        */
     }
 }

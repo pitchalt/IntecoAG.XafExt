@@ -18,7 +18,7 @@ namespace IntecoAG.XAFExt.Security {
     /// <summary>
     /// Класс, инкапсулирующий методы, применяемые в контроллере ActionExecPermissionViewController
     /// </summary>
-    public static class ActionExecPermissionHelper {
+    public static class ActionExecPermissionLogic {
 
         //public ActionExecPermissionHelper(Type objectType, String targetAction, String criteria, String operation, PermissionAccessTypes permissionAccessType) {
         //}
