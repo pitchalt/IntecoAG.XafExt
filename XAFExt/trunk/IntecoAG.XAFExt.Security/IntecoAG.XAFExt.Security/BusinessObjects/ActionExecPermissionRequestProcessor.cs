@@ -106,7 +106,7 @@ namespace IntecoAG.XAFExt.Security {
         }
 
         /// <summary>
-        /// Получение списка накрывающих типов.
+        /// Получение списка накрывающих типов. Получение интерфейсов закомментарено.
         /// Список интерфейсов пока не поддерживается
         /// (возможно потребуется ф-я PatchObjectType(T))
         /// </summary>
@@ -119,9 +119,22 @@ namespace IntecoAG.XAFExt.Security {
             if (resultTypeList == null) {
                 resultTypeList = new List<Type>();
             }
+
+            // Типы
             resultTypeList.Add(type);
             //resultTypeList = GetCoveringTypes(type.BaseType, resultTypeList);
             GetCoveringTypes(type.BaseType, resultTypeList);
+
+            /*
+            // Интерфейсы. - На будущее, но тогда и xxxPermission и xxxPermissionData 
+            // должны быть способны получать интерфейсы в выпадающем списке типов.
+            foreach (Type IF in type.GetInterfaces()) {
+                if (!resultTypeList.Contains(IF)) {
+                    resultTypeList.Add(IF);
+                }
+            }
+            */
+
             return resultTypeList;
         }
     }
