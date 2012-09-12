@@ -112,6 +112,12 @@
     <Compile Include="BusinessObjects\ActionExecPermissionRequestProcessor.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Controllers\ActionExecPermissionViewController.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controllers\ActionExecPermissionViewController.Designer.cs">
+      <DependentUpon>ActionExecPermissionViewController.cs</DependentUpon>
+    </Compile>
     <Compile Include="XafExtModule.cs">
       <SubType>Component</SubType>
     </Compile>

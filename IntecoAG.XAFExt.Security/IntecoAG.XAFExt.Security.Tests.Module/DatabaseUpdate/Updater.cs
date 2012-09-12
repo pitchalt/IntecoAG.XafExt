@@ -82,10 +82,11 @@ namespace IntecoAG.XAFExt.Security.Tests.Module.DatabaseUpdate {
                 administratorRole.EndUpdate();
                 administratorRole.Save();
             }
-            return administratorRole;
 
             SecurityUser user = SecuritySystem.CurrentUser as SecurityUser;
             administratorRole.Users.Add(user);
+
+            return administratorRole;
         }
 
         private SecurityRole CreateReaderRole() {
