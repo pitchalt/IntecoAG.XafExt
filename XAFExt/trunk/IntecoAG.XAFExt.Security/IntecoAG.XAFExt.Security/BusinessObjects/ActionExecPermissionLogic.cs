@@ -35,5 +35,28 @@ namespace IntecoAG.XAFExt.Security {
             }
             return false;
         }
+
+        public static List<String> GetActionIdList(IRequestSecurityStrategy securityInstance) {
+            List<String> actionIds = new List<string>();
+
+            if (securityInstance == null)
+                return actionIds;
+
+            foreach (IOperationPermission perm in securityInstance.Permissions) {
+
+                ActionExecPermission ap = perm as ActionExecPermission;
+                if (ap == null
+                    || ap.PermissionAccessType == PermissionAccessTypes.UNDEFINED
+                    //|| ap.Operation != SecurityActionExecOperations.Exec.ToString()
+                    )
+                    continue;
+
+                if (!actionIds.Contains(ap.TargetAction)) {
+                    actionIds.Add(ap.TargetAction);
+                }
+            }
+
+            return actionIds;
+        }
     }
 }

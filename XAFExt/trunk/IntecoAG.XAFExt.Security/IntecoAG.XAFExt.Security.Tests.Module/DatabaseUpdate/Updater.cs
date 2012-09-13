@@ -8,6 +8,7 @@ using DevExpress.Persistent.BaseImpl;
 using DevExpress.ExpressApp.Security;
 //
 using IntecoAG.XAFExt.Security.Tests.Module.BusinessObjects;
+using IntecoAG.XAFExt.Security;
 
 namespace IntecoAG.XAFExt.Security.Tests.Module.DatabaseUpdate {
     public class Updater : ModuleUpdater {
@@ -64,8 +65,18 @@ namespace IntecoAG.XAFExt.Security.Tests.Module.DatabaseUpdate {
             }
 
             // Добавление двух ролей
-            CreateAdministratorRole();
+            SecurityRole administratorRole = CreateAdministratorRole();
             CreateReaderRole();
+
+            // Создание ActionExecPermission (Запрещение кнопки для FictionBook, у к-й Number == 4)
+            ActionExecPermissionData aepd = ObjectSpace.CreateObject<ActionExecPermissionData>();
+            aepd.Criteria = "Number == 4";
+            aepd.PermissionAccessType = PermissionAccessTypes.DENY;
+            aepd.TargetAction = new DevExpress.ExpressApp.Utils.StringObject("FictionBookViewController_FictionAction2");
+            aepd.TargetType = typeof(FictionBook);
+            aepd.Save();
+
+            administratorRole.PersistentPermissions.Add(aepd);
 
             ObjectSpace.CommitChanges();
         }
