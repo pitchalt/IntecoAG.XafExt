@@ -19,6 +19,7 @@ namespace IntecoAG.XAFExt.Security {
     public interface IActionExecPermissionData : ITypePermissionData {
         StringObject TargetAction {
             get;
+            set;
         }
 
         PermissionAccessTypes PermissionAccessType {

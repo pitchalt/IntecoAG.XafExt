@@ -173,6 +173,12 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\IntecoAG.XAFExt.Security\IntecoAG.XAFExt.Security.csproj">
+      <Project>{C6DB7659-3EE9-4F09-B175-F4DB8E27A207}</Project>
+      <Name>IntecoAG.XAFExt.Security</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
