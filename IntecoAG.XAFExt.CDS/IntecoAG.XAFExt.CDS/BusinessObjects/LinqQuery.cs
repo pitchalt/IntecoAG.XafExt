@@ -29,7 +29,7 @@ namespace IntecoAG.XAFExt.CDS
 
         public abstract IQueryable<TResult> GetQuery();
 
-        public IEnumerator<TResult> GetEnumerator() {
+        public virtual IEnumerator<TResult> GetEnumerator() {
             return GetQuery().GetEnumerator();
         }
 
