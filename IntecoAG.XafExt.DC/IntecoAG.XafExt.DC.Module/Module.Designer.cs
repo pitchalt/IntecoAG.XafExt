@@ -1,5 +1,5 @@
-namespace IntecoAG.XafExt.Data.Filtering.Tests {
-    partial class TestsModule {
+namespace IntecoAG.XafExt.DC.Module {
+    partial class DCModule {
         /// <summary> 
         /// Required designer variable.
         /// </summary>
@@ -24,20 +24,11 @@ namespace IntecoAG.XafExt.Data.Filtering.Tests {
         /// </summary>
         private void InitializeComponent() {
             // 
-            // TestsModule
+            // DCModule
             // 
-            this.RequiredModuleTypes.Add(typeof(IntecoAG.XafExt.Data.Filtering.XafExtDataFilteringModule));
-
+            this.RequiredModuleTypes.Add(typeof(DevExpress.ExpressApp.SystemModule.SystemModule));
         }
 
         #endregion
-
-        private void NotifyPropertyChanged(string propertyName) {
-            var handler = this.PropertyChanged;
-            if (handler != null)
-                handler(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-        }
-
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
     }
 }
