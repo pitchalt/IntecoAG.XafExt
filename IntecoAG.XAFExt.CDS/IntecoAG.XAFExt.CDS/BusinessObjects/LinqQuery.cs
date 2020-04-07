@@ -10,21 +10,23 @@ using DevExpress.ExpressApp;
 using DevExpress.ExpressApp.DC;
 using DevExpress.Data.Filtering;
 
-namespace IntecoAG.XAFExt.CDS 
+namespace IntecoAG.XafExt.CDS 
 {
 
     public abstract class LinqQuery<TResult, TSource> : IQueryDataSource, IQueryable<TResult>, IQueryable
     {
         //private IObjectSpace objectSpace = null;
-        protected Session session = null;
-        protected XPQuery<TSource> _Provider;
+        protected IObjectSpace _ObjectSpace;
+        protected IQueryable<TSource> _Provider;
 
-        public LinqQuery(Session ses) {
+        public LinqQuery(IObjectSpace os) {
             //objectSpace = os;
             //session = ((ObjectSpace)os).Session;
-            session = ses;
-            if (session != null)
-                _Provider = new XPQuery<TSource>(session);
+            _ObjectSpace = os;
+            if (os != null)
+                _Provider = os.GetObjectsQuery<TSource>();
+//            if (session != null)
+//                _Provider = new XPQuery<TSource>(session);
         }
 
         public abstract IQueryable<TResult> GetQuery();
@@ -37,28 +39,30 @@ namespace IntecoAG.XAFExt.CDS
             return GetEnumerator();
         }
 
-        [Browsable(false)]
+        //[Browsable(false)]
         public Type ElementType {
             get { return typeof(TResult); }
         }
 
-        [Browsable(false)]
+        public Type SourceType {
+            get { return typeof(TSource); }
+        }
+
+        //[Browsable(false)]
         public Expression Expression {
             get { 
-                if (session != null)
-                    return GetQuery().Expression;
-                else
-                    return null;
+                return GetQuery().Expression;
             }
         }
 
-        [Browsable(false)]
-        public XPQuery<TSource> Provider {
+        //[Browsable(false)]
+        public IQueryable<TSource> Provider {
             get { return _Provider; }
         }
-        [Browsable(false)]
+
+        //[Browsable(false)]
         IQueryProvider IQueryable.Provider {
-            get { return _Provider; }
+            get { return _Provider.Provider; }
         }
 
         IQueryable IQueryDataSource.GetQuery() { 

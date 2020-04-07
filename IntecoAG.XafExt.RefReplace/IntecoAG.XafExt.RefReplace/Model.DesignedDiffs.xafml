@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <BOModel>
+    <Class Name="IntecoAG.XafExt.RefReplace.BusinessObjects.ObjItem" Caption="Объекты">
+      <OwnMembers>
+        <Member Name="ID" Caption="ID класса" />
+        <Member Name="NameProp" Caption="Имя поля" />
+        <Member Name="NamePropLocal" Caption="Локализованное имя поля" />
+        <Member Name="NamePropOnDB" Caption="Имя поля в БД" />
+        <Member Name="NameTableLocal" Caption="Локализованное имя класса" />
+        <Member Name="NameTableOnDB" Caption="Имя класса в БД" />
+        <Member Name="NameType" Caption="Имя класса" />
+      </OwnMembers>
+    </Class>
+    <Class Name="IntecoAG.XafExt.RefReplace.BusinessObjects.ReferenceItem" Caption="Метаданные">
+      <OwnMembers>
+        <Member Name="NameModule" Caption="Название модуля" />
+        <Member Name="NameProp" Caption="Имя поля" />
+        <Member Name="Type" Caption="Тип" />
+      </OwnMembers>
+    </Class>
+    <Class Name="IntecoAG.XafExt.RefReplace.BusinessObjects.ReferenceTable" Caption="Таблица ссылок">
+      <OwnMembers>
+        <Member Name="DateApply" Caption="Дата утверждения" />
+        <Member Name="DateCreate" Caption="Дата создания" />
+        <Member Name="DatePassed" Caption="Дата передачи" />
+        <Member Name="DateRejected" Caption="Дата отклонения" />
+        <Member Name="Items" Caption="Метаданные" AllowEdit="False" />
+        <Member Name="Objects" Caption="Объекты" AllowEdit="False" />
+        <Member Name="Status" Caption="Статус" AllowEdit="False" />
+      </OwnMembers>
+    </Class>
+    <Class Name="IntecoAG.XafExt.RefReplace.BusinessObjects.ReplaceTable" Caption="Задание замены ссылок">
+      <OwnMembers>
+        <Member Name="Attributes" Caption="Атрибуты" AllowEdit="False" />
+        <Member Name="CurrentType" Caption="Текущий тип" />
+        <Member Name="DeferredDel" Caption="Отложеное удаление" />
+        <Member Name="IsCanClose" Caption="Можно закрыть" />
+        <Member Name="IsCanDeleted" Caption="Можно удалить" />
+        <Member Name="IsPassed" Caption="Передано" />
+        <Member Name="KeyPropCurrentType" Caption="ключевое поля текущего типа" />
+        <Member Name="NameTable" Caption="имя типа в БД" />
+        <Member Name="NewId" Caption="Новый Id" />
+        <Member Name="NewName" Caption="Новый объект" AllowEdit="False" />
+        <Member Name="OldId" Caption="Текущий Id" />
+        <Member Name="OldName" Caption="Текущий объект" AllowEdit="False" />
+        <Member Name="Replace" ImmediatePostData="True" Caption="Заменить на эталон" />
+        <Member Name="SupportEtalon" Caption="Поддержка эталона" />
+        <Member Name="SupportRef" Caption="поддержка переноса ссылок" />
+        <Member Name="ToClose" ImmediatePostData="True" Caption="Закрыть" />
+        <Member Name="ToDelete" ImmediatePostData="True" Caption="Удалить" />
+      </OwnMembers>
+    </Class>
+    <Class Name="IntecoAG.XafExt.RefReplace.BusinessObjects.SimpleAttribute" Caption="Атрибут">
+      <OwnMembers>
+        <Member Name="LocalName" Caption="Локализованное имя" />
+        <Member Name="NameAtt" Caption="Имя свойства" />
+        <Member Name="NameType" Caption="Тип" />
+        <Member Name="NewValue" Caption="Новое значение" />
+        <Member Name="OldValue" Caption="Старое значение" />
+        <Member Name="Table" Caption="Таблица" />
+      </OwnMembers>
+    </Class>
+  </BOModel>
+  <Localization>
+    <LocalizationGroup Name="Enums">
+      <LocalizationGroup Name="IntecoAG.XafExt.RefReplace.BusinessObjects.Status">
+        <LocalizationItem Name="APPLIED" Value="Утверждено" />
+        <LocalizationItem Name="CANCELED" Value="Отменено" />
+        <LocalizationItem Name="CREATED" Value="Создано" />
+        <LocalizationItem Name="PASSED" Value="Передано" />
+        <LocalizationItem Name="REJECTED" Value="Отклонено" />
+      </LocalizationGroup>
+    </LocalizationGroup>
+  </Localization>
+  <SchemaModules>
+    <SchemaModule Name="SystemModule" Version="17.2.4.0" IsNewNode="True" />
+  </SchemaModules>
+  <Views>
+    <ListView Id="ReferenceItem_ListView">
+      <Columns>
+        <ColumnInfo Id="Type" Removed="True" />
+      </Columns>
+    </ListView>
+    <ListView Id="ReferenceTable_Items_ListView">
+      <Columns>
+        <ColumnInfo Id="NameModule" SortOrder="Descending" />
+      </Columns>
+    </ListView>
+    <ListView Id="ReferenceTable_Objects_ListView">
+      <Columns>
+        <ColumnInfo Id="NamePropOnDB" Width="176" SortIndex="-1" SortOrder="None" Index="-1" />
+        <ColumnInfo Id="NameTableOnDB" Width="98" Index="-1" SortIndex="-1" SortOrder="None" />
+        <ColumnInfo Id="NameProp" Index="0" />
+        <ColumnInfo Id="NamePropLocal" Width="94" Index="1" />
+        <ColumnInfo Id="NameType" Index="2" />
+        <ColumnInfo Id="NameTableLocal" Index="3" />
+        <ColumnInfo Id="ID" Index="4" SortIndex="0" SortOrder="Ascending" />
+      </Columns>
+    </ListView>
+    <DetailView Id="ReplaceTable_DetailView">
+      <Items>
+        <ActionContainerViewItem Id="ApplyContainer" ActionContainer="newCategory" Caption="ApplyContainer(23)" IsNewNode="True" />
+        <ActionContainerViewItem Id="lookUpContainer" ActionContainer="lookUpCategory" Caption="lookUpContainer(25)" IsNewNode="True" />
+        <ActionContainerViewItem Id="myContainer" ActionContainer="myCategory" Caption="myContainer(20)" IsNewNode="True" />
+        <ActionContainerViewItem Id="showNewContainer" ActionContainer="showNewCategory" Caption="showNewContainer(29)" IsNewNode="True" />
+        <ActionContainerViewItem Id="showOldContainer" ActionContainer="showOldCategory" Caption="showOldContainer(30)" IsNewNode="True" />
+        <ActionContainerViewItem Id="statusContainer" ActionContainer="statusCategory" Caption="statusContainer(25)" IsNewNode="True" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="Header" Index="0" IsNewNode="True">
+            <LayoutGroup Id="ReferenceTable" Index="0" Direction="Horizontal" RelativeSize="48.717948717948715" Caption="Reference Table" ShowCaption="False" IsNewNode="True">
+              <LayoutGroup Id="ReferenceTable_col1" Direction="Horizontal" RelativeSize="40" ShowCaption="False" Index="0" IsNewNode="True">
+                <LayoutItem Id="Status" ViewItem="Status" Index="0" RelativeSize="50.280898876404493" IsNewNode="True" />
+                <LayoutItem Id="CurrentType" ViewItem="CurrentType" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="ReferenceTable_col2" Direction="Horizontal" RelativeSize="60" ShowCaption="False" Index="1" IsNewNode="True">
+                <LayoutItem Id="DateCreate" ViewItem="DateCreate" ShowCaption="" Index="0" RelativeSize="49.719101123595507" IsNewNode="True" />
+                <LayoutItem Id="DatePassed" ViewItem="DatePassed" Index="1" RelativeSize="32.958801498127343" IsNewNode="True" />
+                <LayoutItem Id="DateApply" ViewItem="DateApply" Index="2" RelativeSize="32.397003745318351" IsNewNode="True" />
+                <LayoutItem Id="DateRejected" ViewItem="DateRejected" Index="3" RelativeSize="34.644194756554306" IsNewNode="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutItem Id="OldName" ViewItem="OldName" Index="1" RelativeSize="75" IsNewNode="True" />
+          <LayoutItem Id="NewName" ViewItem="NewName" Index="2" RelativeSize="100" IsNewNode="True" />
+          <LayoutGroup Id="SimpleEditors" RelativeSize="16.049382716049383" Index="3" Removed="True">
+            <LayoutGroup Id="Auto7c9e2f0d-f7ce-4321-96f3-29990b82aa37" ShowCaption="False" Caption="" Index="0" RelativeSize="99.887640449438209" IsNewNode="True">
+              <LayoutGroup Id="ReplaceTable_col1" ShowCaption="False" Direction="Horizontal" Index="0" RelativeSize="25" IsNewNode="True" />
+            </LayoutGroup>
+            <LayoutGroup Id="ReferenceTable" RelativeSize="48.717948717948715" Index="0" ShowCaption="False" Removed="True">
+              <LayoutGroup Id="ReferenceTable_col1" RelativeSize="40" Caption="ReferenceTable_col1" Direction="Horizontal" Removed="True">
+                <LayoutItem Id="Status" ViewItem="Status" Index="0" RelativeSize="50.280898876404493" IsNewNode="True" />
+                <LayoutItem Id="DateCreate" RelativeSize="49.719101123595507" Index="1" />
+                <LayoutItem Id="DateRejected" RelativeSize="50" Index="1" Removed="True" />
+                <LayoutItem Id="DateApply" RelativeSize="27.272727272727273" Removed="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="ReferenceTable_col2" RelativeSize="60" Caption="ReferenceTable_col2" Direction="Horizontal" Removed="True">
+                <LayoutItem Id="DatePassed" ViewItem="DatePassed" Index="0" RelativeSize="32.958801498127343" IsNewNode="True" Removed="True" />
+                <LayoutItem Id="DateApply" ViewItem="DateApply" Index="1" RelativeSize="32.397003745318351" IsNewNode="True" />
+                <LayoutItem Id="DateRejected" ViewItem="DateRejected" Index="2" RelativeSize="34.644194756554306" IsNewNode="True" />
+                <LayoutItem Id="Status" RelativeSize="50" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+            <LayoutGroup Id="ReplaceTable" Direction="Horizontal" RelativeSize="51.282051282051285" Caption="Replace Table" ShowCaption="False" Index="1" IsNewNode="True" Removed="True">
+              <LayoutGroup Id="ReplaceTable_col2" Index="1" Direction="Horizontal" ShowCaption="False" RelativeSize="0.11235955056179775" IsNewNode="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="SelectObjectView" ShowCaption="False" Caption="" Direction="Horizontal" Index="5" RelativeSize="5.761316872427984" IsNewNode="True">
+            <LayoutItem Id="lookUpContainer" ViewItem="lookUpContainer" Index="0" RelativeSize="12.47191011235955" IsNewNode="True" />
+            <LayoutItem Id="showOldContainer" ViewItem="showOldContainer" Index="1" RelativeSize="12.921348314606741" IsNewNode="True" />
+            <LayoutItem Id="showNewContainer" ViewItem="showNewContainer" Index="2" RelativeSize="74.6067415730337" IsNewNode="True" />
+          </LayoutGroup>
+          <TabbedGroup Id="Tabs" Index="6" RelativeSize="53.086419753086417" IsNewNode="True" Removed="True">
+            <LayoutGroup Id="Attributes" ShowCaption="True" Caption="Атрибуты" Index="0" RelativeSize="100" IsNewNode="True">
+              <LayoutItem Id="Attributes" ViewItem="Attributes" Index="0" RelativeSize="100" IsNewNode="True" />
+            </LayoutGroup>
+            <LayoutGroup Id="Objects" ShowCaption="True" Caption="Объекты" Index="1" RelativeSize="100" IsNewNode="True">
+              <LayoutItem Id="Objects" ViewItem="Objects" Index="0" RelativeSize="100" IsNewNode="True" />
+            </LayoutGroup>
+            <LayoutGroup Id="Items" ShowCaption="True" Caption="Метаданные" Index="2" RelativeSize="100" IsNewNode="True">
+              <LayoutItem Id="Items" ViewItem="Items" Index="0" RelativeSize="100" IsNewNode="True" />
+            </LayoutGroup>
+          </TabbedGroup>
+          <LayoutGroup Id="Footer" ShowCaption="False" Caption="Auto5d85608b-23b7-4b28-be20-76d1c3656564(33)" Direction="Horizontal" Index="7" RelativeSize="17.695473251028808" IsNewNode="True">
+            <LayoutGroup Id="ActionButton" ShowCaption="False" Caption="ActionButton" Index="0" RelativeSize="88.089887640449433" IsNewNode="True">
+              <LayoutItem Id="ToDelete" ViewItem="ToDelete" Index="0" RelativeSize="34.883720930232556" IsNewNode="True" />
+              <LayoutItem Id="ToClose" ViewItem="ToClose" Index="1" RelativeSize="27.906976744186046" IsNewNode="True" />
+              <LayoutItem Id="Replace" ViewItem="Replace" Index="2" RelativeSize="37.2093023255814" IsNewNode="True" />
+            </LayoutGroup>
+            <LayoutItem Id="ApplyContainer" ViewItem="ApplyContainer" Index="1" RelativeSize="11.910112359550562" IsNewNode="True" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+  </Views>
+</Application>

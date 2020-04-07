@@ -40,5 +40,9 @@ namespace IntecoAG.XAFExt.StateMachine {
         void IStateMachineTransitionPermission.SyncStateCaptions(IList<string> stateCaptions, string machineName) {
 
         }
+
+        public override object GetHashObject() {
+            throw new NotImplementedException();
+        }
     }
 }

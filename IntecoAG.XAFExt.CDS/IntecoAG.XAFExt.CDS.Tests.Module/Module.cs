@@ -16,7 +16,7 @@ namespace IntecoAG.XAFExt.CDS.Tests.Module {
             CustomCollectionSourceManager.Register(typeof(LinqQueryCountry1));
             CustomCollectionSourceManager.Register(typeof(LinqQueryCountry2));
             CustomCollectionSourceManager.Register(typeof(LinqQueryCountry3));
-            CustomCollectionSourceManager.Register(typeof(testCountry4));
+            CustomCollectionSourceManager.Register(typeof(TestCountry4));
         }
         
     }

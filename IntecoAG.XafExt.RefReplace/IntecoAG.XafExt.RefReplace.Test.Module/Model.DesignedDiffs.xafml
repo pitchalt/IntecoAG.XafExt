@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application Title="IntecoAG.XafExt.RefReplace.Test">
+  <BOModel>
+    <Class Name="IntecoAG.XafExt.RefReplace.Test.Module.BusinessObjects.Contract" IsCloneable="True" />
+    <Class Name="IntecoAG.XafExt.RefReplace.Test.Module.BusinessObjects.Party" IsCloneable="True" />
+  </BOModel>
+  <Localization>
+    <LocalizationGroup Name="Enums">
+      <LocalizationGroup Name="IntecoAG.XafExt.RefReplace.Module.Win.Logic.Status">
+        <LocalizationItem Name="APPLIED" Value="Применено" />
+        <LocalizationItem Name="CANCELED" Value="Отменено" />
+        <LocalizationItem Name="CREATED" Value="Создано" />
+        <LocalizationItem Name="PASSED" Value="Передано" />
+        <LocalizationItem Name="REJECTED" Value="Отклонено" />
+      </LocalizationGroup>
+    </LocalizationGroup>
+  </Localization>
+  <NavigationItems>
+    <Items>
+      <Item Id="Default">
+        <Items>
+          <Item Id="ReferenceTable_ListView" ObjectKey="138" ViewId="ReferenceTable_DetailView" />
+        </Items>
+      </Item>
+    </Items>
+  </NavigationItems>
+  <Options>
+    <LayoutManagerOptions RequiredFieldMark="*" />
+  </Options>
+  <SchemaModules>
+    <SchemaModule Name="CloneObjectModule" Version="17.2.4.0" IsNewNode="True" />
+    <SchemaModule Name="SystemModule" Version="17.2.4.0" IsNewNode="True" />
+  </SchemaModules>
+  <Views>
+    <ListView Id="ReferenceTable_Items_ListView">
+      <Columns>
+        <ColumnInfo Id="Type" Index="-1" />
+        <ColumnInfo Id="NameModule" Width="263" />
+        <ColumnInfo Id="FullNameType" Index="1" Width="238" />
+        <ColumnInfo Id="NameField" Index="2" Width="228" />
+      </Columns>
+    </ListView>
+    <ListView Id="ReferenceTable_Objects_ListView">
+      <Columns>
+        <ColumnInfo Id="Type" Index="-1" />
+        <ColumnInfo Id="NameProp" Width="137" />
+        <ColumnInfo Id="Obj" Width="136" />
+        <ColumnInfo Id="FullNameType" Index="2" Width="470" />
+      </Columns>
+    </ListView>
+    <DetailView Id="ReplaceTable_DetailView" AllowEdit="True">
+      <Items>
+        <ActionContainerViewItem Id="myContainer" Caption="myContainer" ActionContainer="myCategory" IsNewNode="True" />
+        <ActionContainerViewItem Id="newContainer" ActionContainer="newCategory" Caption="newContainer(24)" IsNewNode="True" />
+        <PropertyEditor Id="Status" AllowEdit="False" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="44.606946983546621">
+            <LayoutGroup Id="ReplaceTable" RelativeSize="65.573770491803273" Caption="ReplaceTable" Direction="Vertical">
+              <LayoutGroup Id="Auto733351c2-c716-4d46-9625-f6eac39fba8f" ShowCaption="False" Caption="Auto733351c2-c716-4d46-9625-f6eac39fba8f(4)" Direction="Horizontal" Index="0" RelativeSize="27.777777777777779" IsNewNode="True">
+                <LayoutItem Id="OldId" ViewItem="OldId" Index="0" RelativeSize="34.40514469453376" IsNewNode="True" />
+                <LayoutItem Id="MyActionContainer" Index="1" RelativeSize="27.009646302250804" IsNewNode="True" />
+                <LayoutItem Id="NewId" ViewItem="NewId" Index="2" RelativeSize="38.585209003215432" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="ReplaceTable_col1" ShowCaption="False" Direction="Horizontal" Index="1" RelativeSize="26.19047619047619" IsNewNode="True" Removed="True">
+                <LayoutItem Id="OldName" ViewItem="OldName" Index="0" RelativeSize="50" IsNewNode="True" />
+                <LayoutItem Id="NewName" ViewItem="NewName" Index="1" RelativeSize="50" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="Auto31ec5f91-4da6-4459-8af0-517d92f86553" ShowCaption="False" Caption="Auto31ec5f91-4da6-4459-8af0-517d92f86553(7)" Direction="Horizontal" Index="2" RelativeSize="0.79365079365079361" IsNewNode="True" />
+              <LayoutGroup Id="Auto437d4ea6-45bf-48ac-9648-b93cedffaee1" ShowCaption="False" Caption="" Direction="Horizontal" Index="3" RelativeSize="22.222222222222221" IsNewNode="True">
+                <LayoutItem Id="myContainer" ViewItem="myContainer" Index="0" RelativeSize="15.434083601286174" IsNewNode="True" />
+                <LayoutItem Id="newContainer" ViewItem="newContainer" Index="1" RelativeSize="84.565916398713824" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="ReplaceTable_col2" ShowCaption="False" Direction="Horizontal" Index="4" RelativeSize="23.015873015873016" IsNewNode="True" Removed="True" />
+            </LayoutGroup>
+            <LayoutGroup Id="ReferenceTable" RelativeSize="34.42622950819672">
+              <LayoutItem Id="DateCreate" RelativeSize="35.714285714285715" Index="0" />
+              <LayoutItem Id="DateApply" RelativeSize="28.571428571428573" Index="1" />
+              <LayoutItem Id="Status" RelativeSize="35.714285714285715" Index="2" />
+            </LayoutGroup>
+          </LayoutGroup>
+          <TabbedGroup Id="Tabs" RelativeSize="55.393053016453379" Index="1">
+            <LayoutGroup Id="Items" RelativeSize="100" Direction="Vertical">
+              <LayoutItem Id="Items" RelativeSize="100" Index="0" />
+            </LayoutGroup>
+            <LayoutGroup Id="Objects" RelativeSize="100">
+              <LayoutItem Id="Objects" RelativeSize="100" />
+            </LayoutGroup>
+          </TabbedGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="ReplaceTable_ListView">
+      <Columns>
+        <ColumnInfo Id="CurrentType" SortIndex="-1" SortOrder="None" Index="-1" />
+        <ColumnInfo Id="NewId" Index="-1" />
+        <ColumnInfo Id="OldId" Index="-1" SortIndex="0" SortOrder="Ascending" />
+        <ColumnInfo Id="DateCreate" Index="0" Width="154" />
+        <ColumnInfo Id="DateApply" Index="1" Width="248" />
+        <ColumnInfo Id="Status" Index="2" Width="302" />
+        <ColumnInfo Id="OldName" SortIndex="-1" SortOrder="None" Index="3" />
+        <ColumnInfo Id="NewName" Index="4" />
+      </Columns>
+    </ListView>
+  </Views>
+</Application>

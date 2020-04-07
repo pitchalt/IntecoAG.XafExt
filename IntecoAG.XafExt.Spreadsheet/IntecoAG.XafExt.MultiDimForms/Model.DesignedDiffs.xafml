@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <BOModel>
+    <Class Name="IntecoAG.XafExt.Spreadsheet.MultiDimForms.MdfContainer" Caption="Контейнер">
+      <OwnMembers>
+        <Member Name="Code" Caption="Код" />
+      </OwnMembers>
+    </Class>
+    <Class Name="IntecoAG.XafExt.Spreadsheet.MultiDimForms.MdfContainerObject">
+      <OwnMembers>
+        <Member Name="Container" Caption="Контейнер" />
+      </OwnMembers>
+    </Class>
+    <Class Name="IntecoAG.XafExt.Spreadsheet.MultiDimForms.MdfReport" Caption="Формы">
+      <OwnMembers>
+        <Member Name="DateCreated" Caption="Дата создания" />
+        <Member Name="Template" Caption="Шаблон" />
+      </OwnMembers>
+    </Class>
+    <Class Name="IntecoAG.XafExt.Spreadsheet.MultiDimForms.MdfReportFormExcel" Caption="Форма Excel" />
+    <Class Name="IntecoAG.XafExt.Spreadsheet.MultiDimForms.MdfTemplate" Caption="Шаблоны" />
+  </BOModel>
+  <Options>
+    <LayoutManagerOptions RequiredFieldMark="*" />
+  </Options>
+  <SchemaModules>
+    <SchemaModule Name="CloneObjectModule" Version="17.2.4.0" IsNewNode="True" />
+    <SchemaModule Name="SystemModule" Version="17.2.4.0" IsNewNode="True" />
+  </SchemaModules>
+</Application>

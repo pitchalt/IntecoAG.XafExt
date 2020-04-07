@@ -1,0 +1,9 @@
+﻿@startuml
+
+class TestDocument
+
+class TestDocumentLine
+
+TestDocument *-- TestDocumentLine
+
+@enduml

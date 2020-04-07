@@ -4,7 +4,7 @@ using System.ComponentModel;
 using DevExpress.ExpressApp.Model;
 using DevExpress.Persistent.Base;
 
-namespace IntecoAG.XAFExt.CDS.Model
+namespace IntecoAG.XafExt.CDS.Model
 {
     [ModelNodesGenerator(typeof(CustomDataSourceNodesGenerator))]
     public interface IModelCustomDataSources : IModelNode, IModelList<IModelCustomDataSource> {

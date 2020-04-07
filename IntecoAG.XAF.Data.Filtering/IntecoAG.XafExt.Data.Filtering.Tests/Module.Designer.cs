@@ -31,13 +31,5 @@ namespace IntecoAG.XafExt.Data.Filtering.Tests {
         }
 
         #endregion
-
-        private void NotifyPropertyChanged(string propertyName) {
-            var handler = this.PropertyChanged;
-            if (handler != null)
-                handler(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-        }
-
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
     }
 }

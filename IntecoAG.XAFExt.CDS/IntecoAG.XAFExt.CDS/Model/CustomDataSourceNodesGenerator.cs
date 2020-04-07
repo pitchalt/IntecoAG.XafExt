@@ -7,7 +7,7 @@ using System.Collections;
 using DevExpress.ExpressApp.Model;
 using DevExpress.ExpressApp.Model.Core;
 
-namespace IntecoAG.XAFExt.CDS.Model
+namespace IntecoAG.XafExt.CDS.Model
 {
     public class CustomDataSourceNodesGenerator : ModelNodesGeneratorBase {
 
@@ -18,23 +18,30 @@ namespace IntecoAG.XAFExt.CDS.Model
         }
 
         public static void GenerateNodesCoreSub(ModelNode node) {
-            IList<Type> typelist = CustomCollectionSourceManager.CollectionTypes;
-            //IList<Type> typelist = AutoGetTypes();
-            
-            foreach (Type type in typelist) {
-                string childNodeName = type.Name;
-                node.AddNode<IModelCustomDataSource>(childNodeName);
-                ((IModelCustomDataSource)node.GetNode(childNodeName)).Description = type.Name;
-                ((IModelCustomDataSource)node.GetNode(childNodeName)).CustomDataSourceType = type;
+            if (CustomCollectionSourceManager.CollectionTypes.Count == 0)
+                throw new FieldAccessException("Invalid collection state, typelist.count == 0");
+            foreach (Type type in CustomCollectionSourceManager.CollectionTypes.Keys) {
+
+                IQueryDataSource qds = CustomCollectionSourceManager.CollectionTypes[type];
+
+                IModelCustomDataSource child_node = node.AddNode<IModelCustomDataSource>(type.FullName);
+
+                child_node.Description = type.FullName;
+                child_node.CustomDataSourceType = type;
+                child_node.ObjectType = qds.ElementType;
+                child_node.SourceType = qds.SourceType;
+
+                //((IModelCustomDataSource)node.GetNode(childNodeName)).Description = type.Name;
+                //((IModelCustomDataSource)node.GetNode(childNodeName)).CustomDataSourceType = type;
                 // Паша!!! Переписать правильно для определения типа результата
-                Type baseType = type.BaseType;
-                if (baseType != null) {
-                    Type[] paramTypes = baseType.GetGenericArguments();
-                    foreach (Type typepar in paramTypes) {
-                        ((IModelCustomDataSource)node.GetNode(childNodeName)).ObjectType = typepar;
-                        break;
-                    }
-                }
+                //Type baseType = type.BaseType;
+                //if (baseType != null) {
+                //    Type[] paramTypes = baseType.GetGenericArguments();
+                //    foreach (Type typepar in paramTypes) {
+                //        ((IModelCustomDataSource)node.GetNode(childNodeName)).ObjectType = typepar;
+                //        break;
+                //    }
+                //}
             }
         }
 

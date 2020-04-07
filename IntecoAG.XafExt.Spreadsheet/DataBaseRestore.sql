@@ -1,0 +1,1 @@
+﻿USE master; RESTORE DATABASE "NpoMash.Erm.Mdf.Metadata.Debug" FROM DISK='C:\Projects\NpoMash\NpoMash.ERM\NpoMash.Erm.Mdf.Metadata.Debug-2019-03-21T10-57-21.bak'

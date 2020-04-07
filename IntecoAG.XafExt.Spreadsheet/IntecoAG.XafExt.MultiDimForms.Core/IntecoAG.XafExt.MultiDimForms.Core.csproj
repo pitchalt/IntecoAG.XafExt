@@ -1,0 +1,200 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1FA0C447-5F09-4FD8-B2F5-35B828254261}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IntecoAG.XafExt.MultiDimForms.Core</RootNamespace>
+    <AssemblyName>IntecoAG.XafExt.MultiDimForms.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'EasyTest|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\EasyTest\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;EASYTEST</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.ExpressApp.CloneObject.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.ConditionalAppearance.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.TreeListEditors.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.Validation.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.ViewVariantsModule.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.Xpo.v19.2">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.Office.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v19.2.Core">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Data.v19.2">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.v19.2">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Persistent.Base.v19.2">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Persistent.BaseImpl.v19.2">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Charts.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Spreadsheet.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpo.v19.2">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\Formulas\MdfCoreFormulasFromExcelConverter.cs" />
+    <Compile Include="Core\MdfCoreDataPointCalcLinkField.cs" />
+    <Compile Include="Core\MdfCoreDataPointCalc.cs" />
+    <Compile Include="Core\MdfCoreDataPointCalcLink.cs" />
+    <Compile Include="Core\ICategory.cs" />
+    <Compile Include="Core\ICategoryLogic.cs" />
+    <Compile Include="Core\ICategoryMember.cs" />
+    <Compile Include="Core\IContainer.cs" />
+    <Compile Include="Core\IContainerized.cs" />
+    <Compile Include="Core\IDataPoint.cs" />
+    <Compile Include="Core\IDimension.cs" />
+    <Compile Include="Core\IDomain.cs" />
+    <Compile Include="Core\IDomainMember.cs" />
+    <Compile Include="Core\IElement.cs" />
+    <Compile Include="Core\MdfCoreAxis.cs" />
+    <Compile Include="Core\MdfCoreAxisLevel.cs" />
+    <Compile Include="Core\MdfCoreAxisLogic.cs" />
+    <Compile Include="Core\MdfCoreAxisOrdinate.cs" />
+    <Compile Include="Core\MdfCoreAxisOrdinateLogic.cs" />
+    <Compile Include="Core\MdfCoreCategory.cs" />
+    <Compile Include="Core\MdfCoreCategoryField.cs" />
+    <Compile Include="Core\MdfCoreCategoryLogic.cs" />
+    <Compile Include="Core\MdfCoreCategoryMember.cs" />
+    <Compile Include="Core\MdfCoreCategoryMemberField.cs" />
+    <Compile Include="Core\MdfCoreCategoryMemberLogic.cs" />
+    <Compile Include="Core\MdfCoreContainer.cs" />
+    <Compile Include="Core\MdfCoreDataPoint.cs" />
+    <Compile Include="Core\MdfCoreDataType.cs" />
+    <Compile Include="Core\MdfCoreDimensionDependent.cs" />
+    <Compile Include="Core\MdfCoreDimension.cs" />
+    <Compile Include="Core\MdfCoreDimensionMember.cs" />
+    <Compile Include="Core\MdfCoreDomain.cs" />
+    <Compile Include="Core\MdfCoreDomainContainer.cs" />
+    <Compile Include="Core\MdfCoreDomainMember.cs" />
+    <Compile Include="Core\MdfCoreDomainProperty.cs" />
+    <Compile Include="Core\MdfCoreElement.cs" />
+    <Compile Include="Core\MdfCoreHierarchy.cs" />
+    <Compile Include="Core\MdfCoreHierarchyNode.cs" />
+    <Compile Include="Core\MdfCoreCalcVariant.cs" />
+    <Compile Include="Core\MdfCoreTable.cs" />
+    <Compile Include="Core\MdfCoreTableAxis.cs" />
+    <Compile Include="Core\MdfCoreTableCell.cs" />
+    <Compile Include="Core\MdfCoreTableLogic.cs" />
+    <Compile Include="Core\MdfCoreType.cs" />
+    <Compile Include="Core\MdfCoreValue.cs" />
+    <Compile Include="Framework\MdfFramework.cs" />
+    <Compile Include="Framework\MdfFrameworkTable.cs" />
+    <Compile Include="Module.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Module.Designer.cs">
+      <DependentUpon>Module.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Template\MdfCoreTemplate.cs" />
+    <Compile Include="Template\MdfTemplateForm.cs" />
+    <Compile Include="Template\MdfTemplateFormExcel.cs" />
+    <Compile Include="Template\MdfTemplateFormExcelSheet.cs" />
+    <Compile Include="Template\MdfTemplateFormExcelSheetCell.cs" />
+    <Compile Include="Template\MdfTemplateFormExcelSheetColumn.cs" />
+    <Compile Include="Template\MdfTemplateFormExcelSheetRow.cs" />
+    <Compile Include="Template\MdfTemplateLogic.cs" />
+    <Compile Include="Template\MdfTemplateTable.cs" />
+    <Compile Include="Template\MdfTemplateTableLogic.cs" />
+    <Compile Include="Template\MdfTemplateViewController.cs">
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Model.DesignedDiffs.xafml" />
+    <EmbeddedResource Include="Module.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Module.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\IntecoAG.XafExt.Spreadsheet\IntecoAG.XafExt.Spreadsheet.csproj">
+      <Project>{5f15837d-d1e5-44dc-92f0-4f2ebe9c3f8d}</Project>
+      <Name>IntecoAG.XafExt.Spreadsheet</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

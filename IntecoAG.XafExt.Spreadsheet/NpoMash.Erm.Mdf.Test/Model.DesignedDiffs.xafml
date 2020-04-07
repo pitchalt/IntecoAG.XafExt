@@ -1,0 +1,441 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <BOModel>
+    <Class Name="NpoMash.Erm.Mdf.Test.Templates.ReportOrderPlan.ReportOrderPlanAccKind" Caption="Бух.Оборот">
+      <OwnMembers>
+        <Member Name="Code" Caption="Код" />
+        <Member Name="NameShort" Caption="Наименование" />
+        <Member Name="ValueType" Caption="Константа" />
+      </OwnMembers>
+    </Class>
+    <Class Name="NpoMash.Erm.Mdf.Test.Templates.ReportOrderPlan.ReportOrderPlanArticle" Caption="Статья">
+      <OwnMembers>
+        <Member Name="Code" Caption="Код" />
+        <Member Name="NameShort" Caption="Наименование" />
+        <Member Name="PrimaryValue" Caption="Первичный Показатель" />
+        <Member Name="ValueType" Caption="Константа" />
+      </OwnMembers>
+    </Class>
+    <Class Name="NpoMash.Erm.Mdf.Test.Templates.ReportOrderPlan.ReportOrderPlanCategoryValue" Caption="Категория">
+      <OwnMembers>
+        <Member Name="DimAccTurnKind" Caption="Бух.Оборот" />
+        <Member Name="DimArticle" Caption="Статья" />
+        <Member Name="DimArticleObligation" Caption="Статья Сделки" />
+        <Member Name="DimComponent" Caption="Компонент" />
+        <Member Name="DimDeal" Caption="Договор" />
+        <Member Name="DimDealKind" Caption="Тип.Договора" />
+        <Member Name="DimEntity" Caption="Организация" />
+        <Member Name="DimFindeal" Caption="Сделка" />
+        <Member Name="DimFindealKind" Caption="Тип.Сделки" />
+        <Member Name="DimFinrep" Caption="Фин.Отчет" />
+        <Member Name="DimOrder" Caption="Заказ" />
+        <Member Name="DimParty" Caption="Партнер" />
+        <Member Name="DimPartyKind" Caption="Тип.Партнера" />
+        <Member Name="DimPayType" Caption="Тип.Оплаты" />
+        <Member Name="DimPeriod" Caption="Период" />
+        <Member Name="DimPrimaryValue" Caption="Первичный Показатель" />
+        <Member Name="DimReport" Caption="Отчет" />
+        <Member Name="DimScenario" Caption="Сценарий" />
+        <Member Name="DimStandart" Caption="Норматив" />
+        <Member Name="DimTemplate" Caption="Шаблон" />
+        <Member Name="DimValueType" Caption="Тип.Знчения" />
+        <Member Name="DimValuta" Caption="Валюта" />
+        <Member Name="DimValutaObligation" Caption="Валюта Сделки" />
+        <Member Name="DimVatMode" Caption="Режим НДС" />
+        <Member Name="DimVatModeObligation" Caption="Реж. НДС Сделки" />
+      </OwnMembers>
+    </Class>
+    <Class Name="NpoMash.Erm.Mdf.Test.Templates.ReportOrderPlan.ReportOrderPlanComponent" Caption="Компонент">
+      <OwnMembers>
+        <Member Name="Code" Caption="Код" />
+        <Member Name="NameShort" Caption="Наименование" />
+        <Member Name="ValueType" Caption="Константа" />
+      </OwnMembers>
+    </Class>
+    <Class Name="NpoMash.Erm.Mdf.Test.Templates.ReportOrderPlan.ReportOrderPlanCorporator" Caption="Организация">
+      <OwnMembers>
+        <Member Name="Code" Caption="Код" />
+        <Member Name="Entity" Caption="Контрагент" />
+        <Member Name="NameShort" Caption="Наименование" />
+        <Member Name="ValueType" Caption="Константа" />
+      </OwnMembers>
+    </Class>
+    <Class Name="NpoMash.Erm.Mdf.Test.Templates.ReportOrderPlan.ReportOrderPlanDataPersCfBalance">
+      <OwnMembers>
+        <Member Name="CfForecastPayment" Caption="Всего Оплата" />
+        <Member Name="CfForecastPostpayment" Caption="Расчет" />
+        <Member Name="CfForecastPrepayment" Caption="Аванс" />
+        <Member Name="DimFindeal" Caption="Сделка" />
+        <Member Name="DimPeriod" Caption="Период" />
+        <Member Name="DimReport" Caption="Отчет" />
+        <Member Name="DimValuta" Caption="Валюта" />
+      </OwnMembers>
+    </Class>
+    <Class Name="NpoMash.Erm.Mdf.Test.Templates.ReportOrderPlan.ReportOrderPlanDataPersIeBalance">
+      <OwnMembers>
+        <Member Name="DimFindeal" Caption="Сделка" />
+        <Member Name="DimPeriod" Caption="Период" />
+        <Member Name="DimReport" Caption="Отчет" />
+        <Member Name="DimValuta" Caption="Валюта" />
+        <Member Name="IeForecastAdvance" Caption="Зачет аванса" />
+        <Member Name="IeForecastBalance" Caption="Затраты" />
+        <Member Name="IeForecastCost" Caption="Стоимость" />
+        <Member Name="IeForecastCount" Caption="Кол-во" />
+        <Member Name="IeForecastInsurance" Caption="Соц.Страх" />
+        <Member Name="IeForecastOverhead" Caption="Накладные" />
+        <Member Name="IeForecastSummall" Caption="Всего Расчет" />
+        <Member Name="IeForecastVat" Caption="НДС" />
+        <Member Name="IeForecastVatincost" Caption="НДС Стоимость" DisplayFormat="{0:C}" />
+      </OwnMembers>
+    </Class>
+    <Class Name="NpoMash.Erm.Mdf.Test.Templates.ReportOrderPlan.ReportOrderPlanDataPoint" Caption="DataPoint">
+      <OwnMembers>
+        <Member Name="DCCategoryValue" Caption="Категория" />
+        <Member Name="DCDataType" Caption="Тип.Значения" />
+        <Member Name="DCValue" Caption="Значение" />
+        <Member Name="Formula" Caption="Формула" />
+      </OwnMembers>
+    </Class>
+    <Class Name="NpoMash.Erm.Mdf.Test.Templates.ReportOrderPlan.ReportOrderPlanDeal" Caption="Договор">
+      <OwnMembers>
+        <Member Name="Code" Caption="Код" />
+        <Member Name="Date" Caption="Дата" />
+        <Member Name="Entity" Caption="Организация" />
+        <Member Name="IsOther" Caption="Прочие" />
+        <Member Name="Kind" Caption="Тип" />
+        <Member Name="NameShort" Caption="Наименование" />
+        <Member Name="Number" Caption="Номер" />
+        <Member Name="NumberDate" Caption="Дата" />
+        <Member Name="Party" Caption="Контагент" />
+        <Member Name="ValueType" Caption="Константа" />
+      </OwnMembers>
+    </Class>
+    <Class Name="NpoMash.Erm.Mdf.Test.Templates.ReportOrderPlan.ReportOrderPlanDealKind" Caption="Тип.Договора">
+      <OwnMembers>
+        <Member Name="Code" Caption="Код" />
+        <Member Name="NameShort" Caption="Наименование" />
+        <Member Name="ValueType" Caption="Константа" />
+      </OwnMembers>
+    </Class>
+    <Class Name="NpoMash.Erm.Mdf.Test.Templates.ReportOrderPlan.ReportOrderPlanEntity" Caption="Контрагент">
+      <OwnMembers>
+        <Member Name="Code" Caption="Код" />
+        <Member Name="Deals" Caption="Сделки" />
+        <Member Name="IsOther" Caption="Прочие" />
+        <Member Name="Kind" Caption="Тип" />
+        <Member Name="NameShort" Caption="Наименование" />
+        <Member Name="ValueType" Caption="Константа" />
+      </OwnMembers>
+    </Class>
+    <Class Name="NpoMash.Erm.Mdf.Test.Templates.ReportOrderPlan.ReportOrderPlanEntityKind" Caption="Тип.Контрагента">
+      <OwnMembers>
+        <Member Name="Code" Caption="Код" />
+        <Member Name="NameShort" Caption="Наименование" />
+        <Member Name="ValueType" Caption="Константа" />
+      </OwnMembers>
+    </Class>
+    <Class Name="NpoMash.Erm.Mdf.Test.Templates.ReportOrderPlan.ReportOrderPlanFindeal" Caption="Сделка">
+      <OwnMembers>
+        <Member Name="Article" Caption="Статья" />
+        <Member Name="Code" Caption="Код" />
+        <Member Name="Deal" Caption="Договор" />
+        <Member Name="DealDate" Caption="Дог.Дата" />
+        <Member Name="DealIndex" Caption="Индекс" />
+        <Member Name="DealKind" Caption="Дог.Тип" />
+        <Member Name="DealNumber" Caption="Дог.Номер" />
+        <Member Name="Entity" Caption="Оганизация" />
+        <Member Name="Kind" Caption="Тип" />
+        <Member Name="NameShort" Caption="Наименование" />
+        <Member Name="Party" Caption="Партнер" />
+        <Member Name="PartyKind" Caption="Партнер Тип" />
+        <Member Name="PartyName" Caption="Партнер Наименование" />
+        <Member Name="ValueType" Caption="Константа" />
+        <Member Name="Valuta" Caption="Валюта" />
+        <Member Name="ValutaCode" Caption="Валюта Код" />
+        <Member Name="VatMode" Caption="Реж. НДС" />
+        <Member Name="VatModeCode" Caption="Реж. НДС Код" />
+      </OwnMembers>
+    </Class>
+    <Class Name="NpoMash.Erm.Mdf.Test.Templates.ReportOrderPlan.ReportOrderPlanFindealKind" Caption="Тип.Сделки">
+      <OwnMembers>
+        <Member Name="Code" Caption="Код" />
+        <Member Name="NameShort" Caption="Наименование" />
+        <Member Name="ValueType" Caption="Константа" />
+      </OwnMembers>
+    </Class>
+    <Class Name="NpoMash.Erm.Mdf.Test.Templates.ReportOrderPlan.ReportOrderPlanFinrep" Caption="Фин.Отчет">
+      <OwnMembers>
+        <Member Name="Code" Caption="Код" />
+        <Member Name="NameShort" Caption="Наименование" />
+        <Member Name="ValueType" Caption="Константа" />
+      </OwnMembers>
+    </Class>
+    <Class Name="NpoMash.Erm.Mdf.Test.Templates.ReportOrderPlan.ReportOrderPlanForm" Caption="Форма">
+      <OwnMembers>
+        <Member Name="Report" Caption="Отчет" />
+      </OwnMembers>
+    </Class>
+    <Class Name="NpoMash.Erm.Mdf.Test.Templates.ReportOrderPlan.ReportOrderPlanFormImport" Caption="Форма Импорта" />
+    <Class Name="NpoMash.Erm.Mdf.Test.Templates.ReportOrderPlan.ReportOrderPlanFormWork" Caption="Форма Рабочая" />
+    <Class Name="NpoMash.Erm.Mdf.Test.Templates.ReportOrderPlan.ReportOrderPlanOrder" Caption="Заказ">
+      <OwnMembers>
+        <Member Name="Code" Caption="Код" />
+        <Member Name="Deal" Caption="Договор" />
+        <Member Name="NameShort" Caption="Наименование" />
+        <Member Name="Party" Caption="Партнер" />
+        <Member Name="ValueType" Caption="Константа" />
+        <Member Name="VatMode" Caption="Реж.НДС" />
+      </OwnMembers>
+    </Class>
+    <Class Name="NpoMash.Erm.Mdf.Test.Templates.ReportOrderPlan.ReportOrderPlanPayType" Caption="Тип.Платежа">
+      <OwnMembers>
+        <Member Name="Code" Caption="Код" />
+        <Member Name="NameShort" Caption="Наименование" />
+        <Member Name="ValueType" Caption="Константа" />
+      </OwnMembers>
+    </Class>
+    <Class Name="NpoMash.Erm.Mdf.Test.Templates.ReportOrderPlan.ReportOrderPlanPeriod" Caption="Период">
+      <OwnMembers>
+        <Member Name="Code" Caption="Код" />
+        <Member Name="DateBegin" Caption="Дата С:" />
+        <Member Name="DateEnd" Caption="Дата До:" />
+        <Member Name="NameCalc" Caption="Наименование Расч" />
+        <Member Name="NameShort" Caption="Наименование" />
+        <Member Name="ValueType" Caption="Константа" />
+      </OwnMembers>
+    </Class>
+    <Class Name="NpoMash.Erm.Mdf.Test.Templates.ReportOrderPlan.ReportOrderPlanPrimaryValue" Caption="Первичный Показатель">
+      <OwnMembers>
+        <Member Name="Code" Caption="Код" />
+        <Member Name="NameShort" Caption="Наименование" />
+        <Member Name="ValueType" Caption="Константа" />
+      </OwnMembers>
+    </Class>
+    <Class Name="NpoMash.Erm.Mdf.Test.Templates.ReportOrderPlan.ReportOrderPlanReport" Caption="Исходные данные">
+      <OwnMembers>
+        <Member Name="Corporator" Caption="Организация" />
+        <Member Name="DateBegin" Caption="Дата С:" />
+        <Member Name="DateEnd" Caption="Дата По:" />
+        <Member Name="DateFact" Caption="Дата Факта" />
+        <Member Name="Entity" Caption="Продажи Контрагент" />
+        <Member Name="FinDealCount" Caption="Число Сделок Смежники" />
+        <Member Name="Forms" Caption="Формы" />
+        <Member Name="Order" Caption="Заказ" />
+        <Member Name="ReportOrderPlanDeals" Caption="Договора" />
+        <Member Name="ReportOrderPlanEntitys" Caption="Контрагенты" />
+        <Member Name="ReportOrderPlanFindeals" Caption="Сделки" />
+        <Member Name="ReportOrderPlanPeriods" Caption="Периоды" />
+        <Member Name="ReportOrderPlanTemplate" Caption="Шаблон" />
+        <Member Name="StaffPrimaryValue" Caption="Первичной показатель зарплаты" />
+        <Member Name="ValueType" Caption="Константа" />
+        <Member Name="Valuta" Caption="Валюта" />
+        <Member Name="ValutaSale" Caption="Продажи  Валюта" />
+        <Member Name="VatMode" Caption="Продажи Реж. НДС" />
+      </OwnMembers>
+    </Class>
+    <Class Name="NpoMash.Erm.Mdf.Test.Templates.ReportOrderPlan.ReportOrderPlanScenario" Caption="Сценарий">
+      <OwnMembers>
+        <Member Name="Code" Caption="Код" />
+        <Member Name="NameShort" Caption="Наименование" />
+        <Member Name="ValueType" Caption="Константа" />
+      </OwnMembers>
+    </Class>
+    <Class Name="NpoMash.Erm.Mdf.Test.Templates.ReportOrderPlan.ReportOrderPlanStandart" Caption="Норматив">
+      <OwnMembers>
+        <Member Name="Code" Caption="Код" />
+        <Member Name="NameShort" Caption="Наименование" />
+        <Member Name="StandartType" Caption="Вид Норматива" />
+        <Member Name="ValueType" Caption="Константа" />
+      </OwnMembers>
+    </Class>
+    <Class Name="NpoMash.Erm.Mdf.Test.Templates.ReportOrderPlan.ReportOrderPlanTemplate" Caption="Шаблон">
+      <OwnMembers>
+        <Member Name="ReportOrderPlanArticles" Caption="Стаитьи" />
+        <Member Name="ReportOrderPlanCorporators" Caption="Организации" />
+        <Member Name="ReportOrderPlanDealKinds" Caption="Типы. Договоров" />
+        <Member Name="ReportOrderPlanDeals" Caption="Договора" />
+        <Member Name="ReportOrderPlanEntityKinds" Caption="Типы Партнеров" />
+        <Member Name="ReportOrderPlanEntitys" Caption="Партнеры" />
+        <Member Name="ReportOrderPlanFindealKinds" Caption="Типы Сделок" />
+        <Member Name="ReportOrderPlanFindeals" Caption="Сделки" />
+        <Member Name="ReportOrderPlanFinreps" Caption="Фин.Отчеты" />
+        <Member Name="ReportOrderPlanOrders" Caption="Заказы" />
+        <Member Name="ReportOrderPlanPayTypes" Caption="Типы Оплаты" />
+        <Member Name="ReportOrderPlanPrimaryValues" Caption="Первичные показатели" />
+        <Member Name="ReportOrderPlanScenarios" Caption="Сценарии" />
+        <Member Name="ReportOrderPlanStandarts" Caption="Нормативы" />
+        <Member Name="ReportOrderPlanValueTypes" Caption="Типы Значений" />
+        <Member Name="ReportOrderPlanValutas" Caption="Валюты" />
+        <Member Name="ReportOrderPlanVatModes" Caption="Режимы НДС" />
+        <Member Name="ValueType" Caption="Константа" />
+      </OwnMembers>
+    </Class>
+    <Class Name="NpoMash.Erm.Mdf.Test.Templates.ReportOrderPlan.ReportOrderPlanTransKind" Caption="Тип.Транзакции">
+      <OwnMembers>
+        <Member Name="Code" Caption="Код" />
+        <Member Name="NameShort" Caption="Наименование" />
+        <Member Name="ValueType" Caption="Константа" />
+      </OwnMembers>
+    </Class>
+    <Class Name="NpoMash.Erm.Mdf.Test.Templates.ReportOrderPlan.ReportOrderPlanValueType" Caption="Тип.Значения">
+      <OwnMembers>
+        <Member Name="Code" Caption="Код" />
+        <Member Name="NameShort" Caption="Наименование" />
+        <Member Name="ValueType" Caption="Константа" />
+      </OwnMembers>
+    </Class>
+    <Class Name="NpoMash.Erm.Mdf.Test.Templates.ReportOrderPlan.ReportOrderPlanValuta" Caption="Валюта">
+      <OwnMembers>
+        <Member Name="Code" Caption="Код" />
+        <Member Name="NameShort" Caption="Наименование" />
+        <Member Name="ValueType" Caption="Константа" />
+        <Member Name="Valuta" Caption="Валюта Спр." />
+      </OwnMembers>
+    </Class>
+    <Class Name="NpoMash.Erm.Mdf.Test.Templates.ReportOrderPlan.ReportOrderPlanVatMode" Caption="Режим НДС">
+      <OwnMembers>
+        <Member Name="Code" Caption="Код" />
+        <Member Name="NameShort" Caption="Наименование" />
+        <Member Name="ValueType" Caption="Константа" />
+      </OwnMembers>
+    </Class>
+  </BOModel>
+  <Options>
+    <LayoutManagerOptions RequiredFieldMark="*" />
+  </Options>
+  <SchemaModules>
+    <SchemaModule Name="CloneObjectModule" Version="17.2.4.0" IsNewNode="True" />
+    <SchemaModule Name="SystemModule" Version="17.2.4.0" IsNewNode="True" />
+  </SchemaModules>
+  <Views>
+    <ListView Id="ReportOrderPlanReport_DataPersCfBalances_PivotView" ClassName="NpoMash.Erm.Mdf.Test.Templates.ReportOrderPlan.ReportOrderPlanDataPersCfBalance" IsNewNode="True">
+      <Columns IsNewNode="True">
+        <ColumnInfo Id="Container" PropertyName="Container" Width="70" Index="-1" IsNewNode="True" />
+        <ColumnInfo Id="Name" PropertyName="Name" Width="400" Index="-1" IsNewNode="True" />
+        <ColumnInfo Id="DimReport" PropertyName="DimReport" Width="70" Index="0" IsNewNode="True" />
+        <ColumnInfo Id="DimPeriod" PropertyName="DimPeriod" Width="70" Index="1" IsNewNode="True" />
+        <ColumnInfo Id="DimFindeal" PropertyName="DimFindeal" Width="70" Index="2" IsNewNode="True" />
+        <ColumnInfo Id="DimValuta" PropertyName="DimValuta" Width="70" Index="3" IsNewNode="True" />
+        <ColumnInfo Id="CfForecastPayment" PropertyName="CfForecastPayment" Width="50" Index="4" IsNewNode="True" />
+        <ColumnInfo Id="CfForecastPrepayment" PropertyName="CfForecastPrepayment" Width="50" Index="5" IsNewNode="True" />
+        <ColumnInfo Id="CfForecastPostpayment" PropertyName="CfForecastPostpayment" Width="50" Index="6" IsNewNode="True" />
+      </Columns>
+    </ListView>
+    <ListView Id="ReportOrderPlanReport_DataPersCfBalances_VariantListView" ClassName="NpoMash.Erm.Mdf.Test.Templates.ReportOrderPlan.ReportOrderPlanDataPersCfBalance" IsNewNode="True">
+      <Variants Current="ReportOrderPlanReport_DataPersCfBalances_ListView" IsNewNode="True">
+        <Variant Id="ReportOrderPlanReport_DataPersCfBalances_ListView" ViewID="ReportOrderPlanReport_DataPersCfBalances_ListView" Caption="Pers Cf Balance" Index="0" IsNewNode="True" />
+        <Variant Id="ReportOrderPlanReport_DataPersCfBalances_PivotView" ViewID="ReportOrderPlanReport_DataPersCfBalances_PivotView" Index="2" IsNewNode="True" />
+      </Variants>
+    </ListView>
+    <ListView Id="ReportOrderPlanReport_DataPersChecks_ListView">
+      <Columns>
+        <ColumnInfo Id="DimFindeal.DealKind" PropertyName="DimFindeal.DealKind" Index="0" IsNewNode="True" />
+        <ColumnInfo Id="DimFindeal.Article.HieArticleIeUp" PropertyName="DimFindeal.Article.HieArticleIeUp" Index="1" IsNewNode="True" />
+        <ColumnInfo Id="DimFindeal.PartyKind" PropertyName="DimFindeal.PartyKind" Index="2" IsNewNode="True" />
+        <ColumnInfo Id="DimFindeal.Party" PropertyName="DimFindeal.Party" Index="3" IsNewNode="True" />
+        <ColumnInfo Id="DimFindeal.Deal" PropertyName="DimFindeal.Deal" Index="4" IsNewNode="True" />
+        <ColumnInfo Id="DimFindeal" Index="5" />
+        <ColumnInfo Id="DimFindeal.Article" PropertyName="DimFindeal.Article" Index="6" IsNewNode="True" />
+        <ColumnInfo Id="DimValuta" Index="7" />
+        <ColumnInfo Id="IeForecastBalance" Index="8" />
+        <ColumnInfo Id="IeForecastCost" Index="9" />
+        <ColumnInfo Id="IeForecastSummall" Index="10" />
+        <ColumnInfo Id="CfForecastBalanceAll" Index="11" />
+        <ColumnInfo Id="CfForecastBalancePrepay" Index="12" />
+        <ColumnInfo Id="CfForecastBalancePostpay" Index="13" />
+        <ColumnInfo Id="IeImportBalance" Index="14" />
+        <ColumnInfo Id="IeImportCost" Index="15" />
+        <ColumnInfo Id="IeImportSummall" Index="16" />
+        <ColumnInfo Id="CfImportBalanceAll" Index="17" />
+        <ColumnInfo Id="CfImportBalancePrepay" Index="18" />
+        <ColumnInfo Id="CfImportBalancePostpay" Index="19" />
+        <ColumnInfo Id="Container" Removed="True" />
+        <ColumnInfo Id="DimPeriod" Removed="True" />
+        <ColumnInfo Id="DimReport" Removed="True" />
+        <ColumnInfo Id="Name" Removed="True" />
+      </Columns>
+    </ListView>
+    <ListView Id="ReportOrderPlanReport_DataPersIeBalances_PivotView" ClassName="NpoMash.Erm.Mdf.Test.Templates.ReportOrderPlan.ReportOrderPlanDataPersIeBalance" IsNewNode="True">
+      <Columns IsNewNode="True">
+        <ColumnInfo Id="Container" PropertyName="Container" Width="70" Index="-1" IsNewNode="True" />
+        <ColumnInfo Id="Name" PropertyName="Name" Width="400" Index="-1" IsNewNode="True" />
+        <ColumnInfo Id="DimReport" PropertyName="DimReport" Width="70" Index="0" IsNewNode="True" />
+        <ColumnInfo Id="DimPeriod" PropertyName="DimPeriod" Width="70" Index="1" IsNewNode="True" />
+        <ColumnInfo Id="DimFindeal" PropertyName="DimFindeal" Width="70" Index="2" IsNewNode="True" />
+        <ColumnInfo Id="DimValuta" PropertyName="DimValuta" Width="70" Index="3" IsNewNode="True" />
+        <ColumnInfo Id="IeForecastVat" PropertyName="IeForecastVat" Width="50" Index="4" IsNewNode="True" />
+        <ColumnInfo Id="IeForecastCount" PropertyName="IeForecastCount" Width="50" Index="5" IsNewNode="True" />
+        <ColumnInfo Id="IeForecastSummall" PropertyName="IeForecastSummall" Width="50" Index="6" IsNewNode="True" />
+        <ColumnInfo Id="IeForecastCost" PropertyName="IeForecastCost" Width="50" Index="7" IsNewNode="True" />
+        <ColumnInfo Id="IeForecastBalance" PropertyName="IeForecastBalance" Width="50" Index="8" IsNewNode="True" />
+        <ColumnInfo Id="IeForecastVatincost" PropertyName="IeForecastVatincost" Width="50" Index="9" IsNewNode="True" />
+        <ColumnInfo Id="IeForecastInsurance" PropertyName="IeForecastInsurance" Width="50" Index="10" IsNewNode="True" />
+        <ColumnInfo Id="IeForecastOverhead" PropertyName="IeForecastOverhead" Width="50" Index="11" IsNewNode="True" />
+        <ColumnInfo Id="IeForecastAdvance" PropertyName="IeForecastAdvance" Width="50" Index="12" IsNewNode="True" />
+      </Columns>
+      <ChartSettings Settings="﻿&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&#xD;&#xA;&lt;ChartXmlSerializer version=&quot;17.2.4.0&quot;&gt;&#xD;&#xA;  &lt;Chart AppearanceNameSerializable=&quot;Default&quot; SelectionMode=&quot;None&quot; SeriesSelectionMode=&quot;Series&quot;&gt;&#xD;&#xA;    &lt;DataContainer BoundSeriesSorting=&quot;None&quot;&gt;&#xD;&#xA;      &lt;SeriesTemplate /&gt;&#xD;&#xA;    &lt;/DataContainer&gt;&#xD;&#xA;  &lt;/Chart&gt;&#xD;&#xA;&lt;/ChartXmlSerializer&gt;" IsNewNode="True" />
+      <PivotSettings Settings="﻿&lt;XtraSerializer version=&quot;1.0&quot; application=&quot;PivotGrid&quot;&gt;&#xD;&#xA;  &lt;property name=&quot;#LayoutVersion&quot; /&gt;&#xD;&#xA;  &lt;property name=&quot;Fields&quot; iskey=&quot;true&quot; value=&quot;9&quot;&gt;&#xD;&#xA;    &lt;property name=&quot;Item1&quot; isnull=&quot;true&quot; iskey=&quot;true&quot;&gt;&#xD;&#xA;      &lt;property name=&quot;CustomTotals&quot; iskey=&quot;true&quot; value=&quot;0&quot; /&gt;&#xD;&#xA;      &lt;property name=&quot;Options&quot; isnull=&quot;true&quot; iskey=&quot;true&quot;&gt;&#xD;&#xA;        &lt;property name=&quot;AllowRunTimeSummaryChange&quot;&gt;true&lt;/property&gt;&#xD;&#xA;      &lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;ImageIndex&quot;&gt;-1&lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;ToolTips&quot; isnull=&quot;true&quot; iskey=&quot;true&quot;&gt;&#xD;&#xA;        &lt;property name=&quot;HeaderText&quot; /&gt;&#xD;&#xA;        &lt;property name=&quot;ValueText&quot; /&gt;&#xD;&#xA;      &lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;FieldEditName&quot; /&gt;&#xD;&#xA;      &lt;property name=&quot;Name&quot;&gt;Field_DimValuta.Code&lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;FieldName&quot;&gt;DimValuta.Code&lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;Caption&quot;&gt;Валюта&lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;Index&quot;&gt;0&lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;SummaryType&quot;&gt;Count&lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;SortBySummaryInfo&quot; isnull=&quot;true&quot; iskey=&quot;true&quot;&gt;&#xD;&#xA;        &lt;property name=&quot;Conditions&quot; iskey=&quot;true&quot; value=&quot;0&quot; /&gt;&#xD;&#xA;        &lt;property name=&quot;FieldComponentName&quot; /&gt;&#xD;&#xA;      &lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;FilterValues&quot; isnull=&quot;true&quot; iskey=&quot;true&quot;&gt;&#xD;&#xA;        &lt;property name=&quot;Values&quot;&gt;~Xtra#Array0, &lt;/property&gt;&#xD;&#xA;        &lt;property name=&quot;ValuesCore&quot; iskey=&quot;true&quot; value=&quot;0&quot; /&gt;&#xD;&#xA;        &lt;property name=&quot;DeferFilterString&quot; /&gt;&#xD;&#xA;        &lt;property name=&quot;ShowBlanks&quot;&gt;true&lt;/property&gt;&#xD;&#xA;        &lt;property name=&quot;FilterType&quot;&gt;Excluded&lt;/property&gt;&#xD;&#xA;      &lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;AreaIndex&quot;&gt;0&lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;ActualSortMode&quot;&gt;Default&lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;SummaryFilter&quot; isnull=&quot;true&quot; iskey=&quot;true&quot;&gt;&#xD;&#xA;        &lt;property name=&quot;StartValue&quot; isnull=&quot;true&quot; /&gt;&#xD;&#xA;        &lt;property name=&quot;EndValue&quot; isnull=&quot;true&quot; /&gt;&#xD;&#xA;        &lt;property name=&quot;Mode&quot;&gt;LastLevel&lt;/property&gt;&#xD;&#xA;        &lt;property name=&quot;RowFieldComponentName&quot; /&gt;&#xD;&#xA;        &lt;property name=&quot;ColumnFieldComponentName&quot; /&gt;&#xD;&#xA;      &lt;/property&gt;&#xD;&#xA;    &lt;/property&gt;&#xD;&#xA;    &lt;property name=&quot;Item2&quot; isnull=&quot;true&quot; iskey=&quot;true&quot;&gt;&#xD;&#xA;      &lt;property name=&quot;CustomTotals&quot; iskey=&quot;true&quot; value=&quot;0&quot; /&gt;&#xD;&#xA;      &lt;property name=&quot;Options&quot; isnull=&quot;true&quot; iskey=&quot;true&quot;&gt;&#xD;&#xA;        &lt;property name=&quot;AllowRunTimeSummaryChange&quot;&gt;true&lt;/property&gt;&#xD;&#xA;      &lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;ImageIndex&quot;&gt;-1&lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;ToolTips&quot; isnull=&quot;true&quot; iskey=&quot;true&quot;&gt;&#xD;&#xA;        &lt;property name=&quot;HeaderText&quot; /&gt;&#xD;&#xA;        &lt;property name=&quot;ValueText&quot; /&gt;&#xD;&#xA;      &lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;FieldEditName&quot; /&gt;&#xD;&#xA;      &lt;property name=&quot;Name&quot;&gt;Field_DimFindeal.Article.Code&lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;Area&quot;&gt;RowArea&lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;FieldName&quot;&gt;DimFindeal.Article.Code&lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;Caption&quot;&gt;Статья&lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;Index&quot;&gt;1&lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;SummaryType&quot;&gt;Count&lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;SortBySummaryInfo&quot; isnull=&quot;true&quot; iskey=&quot;true&quot;&gt;&#xD;&#xA;        &lt;property name=&quot;Conditions&quot; iskey=&quot;true&quot; value=&quot;0&quot; /&gt;&#xD;&#xA;        &lt;property name=&quot;FieldComponentName&quot; /&gt;&#xD;&#xA;      &lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;FilterValues&quot; isnull=&quot;true&quot; iskey=&quot;true&quot;&gt;&#xD;&#xA;        &lt;property name=&quot;Values&quot;&gt;~Xtra#Array0, &lt;/property&gt;&#xD;&#xA;        &lt;property name=&quot;ValuesCore&quot; iskey=&quot;true&quot; value=&quot;0&quot; /&gt;&#xD;&#xA;        &lt;property name=&quot;DeferFilterString&quot; /&gt;&#xD;&#xA;        &lt;property name=&quot;ShowBlanks&quot;&gt;true&lt;/property&gt;&#xD;&#xA;        &lt;property name=&quot;FilterType&quot;&gt;Excluded&lt;/property&gt;&#xD;&#xA;      &lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;AreaIndex&quot;&gt;3&lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;ActualSortMode&quot;&gt;Default&lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;SummaryFilter&quot; isnull=&quot;true&quot; iskey=&quot;true&quot;&gt;&#xD;&#xA;        &lt;property name=&quot;StartValue&quot; isnull=&quot;true&quot; /&gt;&#xD;&#xA;        &lt;property name=&quot;EndValue&quot; isnull=&quot;true&quot; /&gt;&#xD;&#xA;        &lt;property name=&quot;Mode&quot;&gt;LastLevel&lt;/property&gt;&#xD;&#xA;        &lt;property name=&quot;RowFieldComponentName&quot; /&gt;&#xD;&#xA;        &lt;property name=&quot;ColumnFieldComponentName&quot; /&gt;&#xD;&#xA;      &lt;/property&gt;&#xD;&#xA;    &lt;/property&gt;&#xD;&#xA;    &lt;property name=&quot;Item3&quot; isnull=&quot;true&quot; iskey=&quot;true&quot;&gt;&#xD;&#xA;      &lt;property name=&quot;CustomTotals&quot; iskey=&quot;true&quot; value=&quot;0&quot; /&gt;&#xD;&#xA;      &lt;property name=&quot;Options&quot; isnull=&quot;true&quot; iskey=&quot;true&quot;&gt;&#xD;&#xA;        &lt;property name=&quot;AllowRunTimeSummaryChange&quot;&gt;true&lt;/property&gt;&#xD;&#xA;      &lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;ImageIndex&quot;&gt;-1&lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;ToolTips&quot; isnull=&quot;true&quot; iskey=&quot;true&quot;&gt;&#xD;&#xA;        &lt;property name=&quot;HeaderText&quot; /&gt;&#xD;&#xA;        &lt;property name=&quot;ValueText&quot; /&gt;&#xD;&#xA;      &lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;FieldEditName&quot; /&gt;&#xD;&#xA;      &lt;property name=&quot;Name&quot;&gt;Field_IeForecastBalance&lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;Area&quot;&gt;DataArea&lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;FieldName&quot;&gt;IeForecastBalance&lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;Caption&quot;&gt;Затраты&lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;Index&quot;&gt;2&lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;SortBySummaryInfo&quot; isnull=&quot;true&quot; iskey=&quot;true&quot;&gt;&#xD;&#xA;        &lt;property name=&quot;Conditions&quot; iskey=&quot;true&quot; value=&quot;0&quot; /&gt;&#xD;&#xA;        &lt;property name=&quot;FieldComponentName&quot; /&gt;&#xD;&#xA;      &lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;FilterValues&quot; isnull=&quot;true&quot; iskey=&quot;true&quot;&gt;&#xD;&#xA;        &lt;property name=&quot;Values&quot;&gt;~Xtra#Array0, &lt;/property&gt;&#xD;&#xA;        &lt;property name=&quot;ValuesCore&quot; iskey=&quot;true&quot; value=&quot;0&quot; /&gt;&#xD;&#xA;        &lt;property name=&quot;DeferFilterString&quot; /&gt;&#xD;&#xA;        &lt;property name=&quot;ShowBlanks&quot;&gt;true&lt;/property&gt;&#xD;&#xA;        &lt;property name=&quot;FilterType&quot;&gt;Excluded&lt;/property&gt;&#xD;&#xA;      &lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;CellFormat&quot; isnull=&quot;true&quot; iskey=&quot;true&quot;&gt;&#xD;&#xA;        &lt;property name=&quot;FormatString&quot;&gt;{0:C}&lt;/property&gt;&#xD;&#xA;        &lt;property name=&quot;FormatType&quot;&gt;Custom&lt;/property&gt;&#xD;&#xA;      &lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;GrandTotalCellFormat&quot; isnull=&quot;true&quot; iskey=&quot;true&quot;&gt;&#xD;&#xA;        &lt;property name=&quot;FormatString&quot;&gt;{0:C}&lt;/property&gt;&#xD;&#xA;        &lt;property name=&quot;FormatType&quot;&gt;Custom&lt;/property&gt;&#xD;&#xA;      &lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;ValueFormat&quot; isnull=&quot;true&quot; iskey=&quot;true&quot;&gt;&#xD;&#xA;        &lt;property name=&quot;FormatString&quot;&gt;{0:C}&lt;/property&gt;&#xD;&#xA;        &lt;property name=&quot;FormatType&quot;&gt;Custom&lt;/property&gt;&#xD;&#xA;      &lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;AreaIndex&quot;&gt;0&lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;ActualSortMode&quot;&gt;Default&lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;SummaryFilter&quot; isnull=&quot;true&quot; iskey=&quot;true&quot;&gt;&#xD;&#xA;        &lt;property name=&quot;StartValue&quot; isnull=&quot;true&quot; /&gt;&#xD;&#xA;        &lt;property name=&quot;EndValue&quot; isnull=&quot;true&quot; /&gt;&#xD;&#xA;        &lt;property name=&quot;Mode&quot;&gt;LastLevel&lt;/property&gt;&#xD;&#xA;        &lt;property name=&quot;RowFieldComponentName&quot; /&gt;&#xD;&#xA;        &lt;property name=&quot;ColumnFieldComponentName&quot; /&gt;&#xD;&#xA;      &lt;/property&gt;&#xD;&#xA;    &lt;/property&gt;&#xD;&#xA;    &lt;property name=&quot;Item4&quot; isnull=&quot;true&quot; iskey=&quot;true&quot;&gt;&#xD;&#xA;      &lt;property name=&quot;CustomTotals&quot; iskey=&quot;true&quot; value=&quot;0&quot; /&gt;&#xD;&#xA;      &lt;property name=&quot;Options&quot; isnull=&quot;true&quot; iskey=&quot;true&quot;&gt;&#xD;&#xA;        &lt;property name=&quot;AllowRunTimeSummaryChange&quot;&gt;true&lt;/property&gt;&#xD;&#xA;      &lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;ImageIndex&quot;&gt;-1&lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;ToolTips&quot; isnull=&quot;true&quot; iskey=&quot;true&quot;&gt;&#xD;&#xA;        &lt;property name=&quot;HeaderText&quot; /&gt;&#xD;&#xA;        &lt;property name=&quot;ValueText&quot; /&gt;&#xD;&#xA;      &lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;FieldEditName&quot; /&gt;&#xD;&#xA;      &lt;property name=&quot;Name&quot;&gt;Field_DimFindeal.Article.HieArticleIeUp.Code&lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;Area&quot;&gt;RowArea&lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;FieldName&quot;&gt;DimFindeal.Article.HieArticleIeUp.Code&lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;Caption&quot;&gt;Раздел&lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;Index&quot;&gt;3&lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;SummaryType&quot;&gt;Count&lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;SortBySummaryInfo&quot; isnull=&quot;true&quot; iskey=&quot;true&quot;&gt;&#xD;&#xA;        &lt;property name=&quot;Conditions&quot; iskey=&quot;true&quot; value=&quot;0&quot; /&gt;&#xD;&#xA;        &lt;property name=&quot;FieldComponentName&quot; /&gt;&#xD;&#xA;      &lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;FilterValues&quot; isnull=&quot;true&quot; iskey=&quot;true&quot;&gt;&#xD;&#xA;        &lt;property name=&quot;Values&quot;&gt;~Xtra#Array0, &lt;/property&gt;&#xD;&#xA;        &lt;property name=&quot;ValuesCore&quot; iskey=&quot;true&quot; value=&quot;0&quot; /&gt;&#xD;&#xA;        &lt;property name=&quot;DeferFilterString&quot; /&gt;&#xD;&#xA;        &lt;property name=&quot;ShowBlanks&quot;&gt;true&lt;/property&gt;&#xD;&#xA;        &lt;property name=&quot;FilterType&quot;&gt;Excluded&lt;/property&gt;&#xD;&#xA;      &lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;AreaIndex&quot;&gt;1&lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;ActualSortMode&quot;&gt;Default&lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;SummaryFilter&quot; isnull=&quot;true&quot; iskey=&quot;true&quot;&gt;&#xD;&#xA;        &lt;property name=&quot;StartValue&quot; isnull=&quot;true&quot; /&gt;&#xD;&#xA;        &lt;property name=&quot;EndValue&quot; isnull=&quot;true&quot; /&gt;&#xD;&#xA;        &lt;property name=&quot;Mode&quot;&gt;LastLevel&lt;/property&gt;&#xD;&#xA;        &lt;property name=&quot;RowFieldComponentName&quot; /&gt;&#xD;&#xA;        &lt;property name=&quot;ColumnFieldComponentName&quot; /&gt;&#xD;&#xA;      &lt;/property&gt;&#xD;&#xA;    &lt;/property&gt;&#xD;&#xA;    &lt;property name=&quot;Item5&quot; isnull=&quot;true&quot; iskey=&quot;true&quot;&gt;&#xD;&#xA;      &lt;property name=&quot;CustomTotals&quot; iskey=&quot;true&quot; value=&quot;0&quot; /&gt;&#xD;&#xA;      &lt;property name=&quot;Options&quot; isnull=&quot;true&quot; iskey=&quot;true&quot;&gt;&#xD;&#xA;        &lt;property name=&quot;AllowRunTimeSummaryChange&quot;&gt;true&lt;/property&gt;&#xD;&#xA;      &lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;ImageIndex&quot;&gt;-1&lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;ToolTips&quot; isnull=&quot;true&quot; iskey=&quot;true&quot;&gt;&#xD;&#xA;        &lt;property name=&quot;HeaderText&quot; /&gt;&#xD;&#xA;        &lt;property name=&quot;ValueText&quot; /&gt;&#xD;&#xA;      &lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;FieldEditName&quot; /&gt;&#xD;&#xA;      &lt;property name=&quot;Name&quot;&gt;Field_DimPeriod.Year&lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;Area&quot;&gt;ColumnArea&lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;FieldName&quot;&gt;DimPeriod.Year&lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;Caption&quot;&gt;Год&lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;Index&quot;&gt;4&lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;SortBySummaryInfo&quot; isnull=&quot;true&quot; iskey=&quot;true&quot;&gt;&#xD;&#xA;        &lt;property name=&quot;Conditions&quot; iskey=&quot;true&quot; value=&quot;0&quot; /&gt;&#xD;&#xA;        &lt;property name=&quot;FieldComponentName&quot; /&gt;&#xD;&#xA;      &lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;FilterValues&quot; isnull=&quot;true&quot; iskey=&quot;true&quot;&gt;&#xD;&#xA;        &lt;property name=&quot;Values&quot;&gt;~Xtra#Array0, &lt;/property&gt;&#xD;&#xA;        &lt;property name=&quot;ValuesCore&quot; iskey=&quot;true&quot; value=&quot;0&quot; /&gt;&#xD;&#xA;        &lt;property name=&quot;DeferFilterString&quot; /&gt;&#xD;&#xA;        &lt;property name=&quot;ShowBlanks&quot;&gt;true&lt;/property&gt;&#xD;&#xA;        &lt;property name=&quot;FilterType&quot;&gt;Excluded&lt;/property&gt;&#xD;&#xA;      &lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;AreaIndex&quot;&gt;0&lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;ActualSortMode&quot;&gt;Default&lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;SummaryFilter&quot; isnull=&quot;true&quot; iskey=&quot;true&quot;&gt;&#xD;&#xA;        &lt;property name=&quot;StartValue&quot; isnull=&quot;true&quot; /&gt;&#xD;&#xA;        &lt;property name=&quot;EndValue&quot; isnull=&quot;true&quot; /&gt;&#xD;&#xA;        &lt;property name=&quot;Mode&quot;&gt;LastLevel&lt;/property&gt;&#xD;&#xA;        &lt;property name=&quot;RowFieldComponentName&quot; /&gt;&#xD;&#xA;        &lt;property name=&quot;ColumnFieldComponentName&quot; /&gt;&#xD;&#xA;      &lt;/property&gt;&#xD;&#xA;    &lt;/property&gt;&#xD;&#xA;    &lt;property name=&quot;Item6&quot; isnull=&quot;true&quot; iskey=&quot;true&quot;&gt;&#xD;&#xA;      &lt;property name=&quot;CustomTotals&quot; iskey=&quot;true&quot; value=&quot;0&quot; /&gt;&#xD;&#xA;      &lt;property name=&quot;Options&quot; isnull=&quot;true&quot; iskey=&quot;true&quot;&gt;&#xD;&#xA;        &lt;property name=&quot;AllowRunTimeSummaryChange&quot;&gt;true&lt;/property&gt;&#xD;&#xA;      &lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;ImageIndex&quot;&gt;-1&lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;ToolTips&quot; isnull=&quot;true&quot; iskey=&quot;true&quot;&gt;&#xD;&#xA;        &lt;property name=&quot;HeaderText&quot; /&gt;&#xD;&#xA;        &lt;property name=&quot;ValueText&quot; /&gt;&#xD;&#xA;      &lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;FieldEditName&quot; /&gt;&#xD;&#xA;      &lt;property name=&quot;Name&quot;&gt;Field_DimPeriod.Quarter&lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;Area&quot;&gt;ColumnArea&lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;FieldName&quot;&gt;DimPeriod.Quarter&lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;Caption&quot;&gt;Квартал&lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;Index&quot;&gt;5&lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;SortBySummaryInfo&quot; isnull=&quot;true&quot; iskey=&quot;true&quot;&gt;&#xD;&#xA;        &lt;property name=&quot;Conditions&quot; iskey=&quot;true&quot; value=&quot;0&quot; /&gt;&#xD;&#xA;        &lt;property name=&quot;FieldComponentName&quot; /&gt;&#xD;&#xA;      &lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;FilterValues&quot; isnull=&quot;true&quot; iskey=&quot;true&quot;&gt;&#xD;&#xA;        &lt;property name=&quot;Values&quot;&gt;~Xtra#Array0, &lt;/property&gt;&#xD;&#xA;        &lt;property name=&quot;ValuesCore&quot; iskey=&quot;true&quot; value=&quot;0&quot; /&gt;&#xD;&#xA;        &lt;property name=&quot;DeferFilterString&quot; /&gt;&#xD;&#xA;        &lt;property name=&quot;ShowBlanks&quot;&gt;true&lt;/property&gt;&#xD;&#xA;        &lt;property name=&quot;FilterType&quot;&gt;Excluded&lt;/property&gt;&#xD;&#xA;      &lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;AreaIndex&quot;&gt;1&lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;ActualSortMode&quot;&gt;Default&lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;SummaryFilter&quot; isnull=&quot;true&quot; iskey=&quot;true&quot;&gt;&#xD;&#xA;        &lt;property name=&quot;StartValue&quot; isnull=&quot;true&quot; /&gt;&#xD;&#xA;        &lt;property name=&quot;EndValue&quot; isnull=&quot;true&quot; /&gt;&#xD;&#xA;        &lt;property name=&quot;Mode&quot;&gt;LastLevel&lt;/property&gt;&#xD;&#xA;        &lt;property name=&quot;RowFieldComponentName&quot; /&gt;&#xD;&#xA;        &lt;property name=&quot;ColumnFieldComponentName&quot; /&gt;&#xD;&#xA;      &lt;/property&gt;&#xD;&#xA;    &lt;/property&gt;&#xD;&#xA;    &lt;property name=&quot;Item7&quot; isnull=&quot;true&quot; iskey=&quot;true&quot;&gt;&#xD;&#xA;      &lt;property name=&quot;CustomTotals&quot; iskey=&quot;true&quot; value=&quot;0&quot; /&gt;&#xD;&#xA;      &lt;property name=&quot;Options&quot; isnull=&quot;true&quot; iskey=&quot;true&quot;&gt;&#xD;&#xA;        &lt;property name=&quot;AllowRunTimeSummaryChange&quot;&gt;true&lt;/property&gt;&#xD;&#xA;      &lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;ImageIndex&quot;&gt;-1&lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;ToolTips&quot; isnull=&quot;true&quot; iskey=&quot;true&quot;&gt;&#xD;&#xA;        &lt;property name=&quot;HeaderText&quot; /&gt;&#xD;&#xA;        &lt;property name=&quot;ValueText&quot; /&gt;&#xD;&#xA;      &lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;FieldEditName&quot; /&gt;&#xD;&#xA;      &lt;property name=&quot;Name&quot;&gt;Field_DimPeriod.Month&lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;Area&quot;&gt;ColumnArea&lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;FieldName&quot;&gt;DimPeriod.Month&lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;Caption&quot;&gt;Месяц&lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;Index&quot;&gt;6&lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;SortBySummaryInfo&quot; isnull=&quot;true&quot; iskey=&quot;true&quot;&gt;&#xD;&#xA;        &lt;property name=&quot;Conditions&quot; iskey=&quot;true&quot; value=&quot;0&quot; /&gt;&#xD;&#xA;        &lt;property name=&quot;FieldComponentName&quot; /&gt;&#xD;&#xA;      &lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;FilterValues&quot; isnull=&quot;true&quot; iskey=&quot;true&quot;&gt;&#xD;&#xA;        &lt;property name=&quot;Values&quot;&gt;~Xtra#Array0, &lt;/property&gt;&#xD;&#xA;        &lt;property name=&quot;ValuesCore&quot; iskey=&quot;true&quot; value=&quot;0&quot; /&gt;&#xD;&#xA;        &lt;property name=&quot;DeferFilterString&quot; /&gt;&#xD;&#xA;        &lt;property name=&quot;ShowBlanks&quot;&gt;true&lt;/property&gt;&#xD;&#xA;        &lt;property name=&quot;FilterType&quot;&gt;Excluded&lt;/property&gt;&#xD;&#xA;      &lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;AreaIndex&quot;&gt;2&lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;ActualSortMode&quot;&gt;Default&lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;SummaryFilter&quot; isnull=&quot;true&quot; iskey=&quot;true&quot;&gt;&#xD;&#xA;        &lt;property name=&quot;StartValue&quot; isnull=&quot;true&quot; /&gt;&#xD;&#xA;        &lt;property name=&quot;EndValue&quot; isnull=&quot;true&quot; /&gt;&#xD;&#xA;        &lt;property name=&quot;Mode&quot;&gt;LastLevel&lt;/property&gt;&#xD;&#xA;        &lt;property name=&quot;RowFieldComponentName&quot; /&gt;&#xD;&#xA;        &lt;property name=&quot;ColumnFieldComponentName&quot; /&gt;&#xD;&#xA;      &lt;/property&gt;&#xD;&#xA;    &lt;/property&gt;&#xD;&#xA;    &lt;property name=&quot;Item8&quot; isnull=&quot;true&quot; iskey=&quot;true&quot;&gt;&#xD;&#xA;      &lt;property name=&quot;CustomTotals&quot; iskey=&quot;true&quot; value=&quot;0&quot; /&gt;&#xD;&#xA;      &lt;property name=&quot;Options&quot; isnull=&quot;true&quot; iskey=&quot;true&quot;&gt;&#xD;&#xA;        &lt;property name=&quot;AllowRunTimeSummaryChange&quot;&gt;true&lt;/property&gt;&#xD;&#xA;      &lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;ImageIndex&quot;&gt;-1&lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;ToolTips&quot; isnull=&quot;true&quot; iskey=&quot;true&quot;&gt;&#xD;&#xA;        &lt;property name=&quot;HeaderText&quot; /&gt;&#xD;&#xA;        &lt;property name=&quot;ValueText&quot; /&gt;&#xD;&#xA;      &lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;FieldEditName&quot; /&gt;&#xD;&#xA;      &lt;property name=&quot;Name&quot;&gt;Field_DimFindeal.Article.HieArticleIeUp.HieArticleIeUp.Code&lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;Area&quot;&gt;RowArea&lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;FieldName&quot;&gt;DimFindeal.Article.HieArticleIeUp.HieArticleIeUp.Code&lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;Caption&quot;&gt;Доходы/Расходы&lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;Index&quot;&gt;7&lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;SummaryType&quot;&gt;Count&lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;SortBySummaryInfo&quot; isnull=&quot;true&quot; iskey=&quot;true&quot;&gt;&#xD;&#xA;        &lt;property name=&quot;Conditions&quot; iskey=&quot;true&quot; value=&quot;0&quot; /&gt;&#xD;&#xA;        &lt;property name=&quot;FieldComponentName&quot; /&gt;&#xD;&#xA;      &lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;FilterValues&quot; isnull=&quot;true&quot; iskey=&quot;true&quot;&gt;&#xD;&#xA;        &lt;property name=&quot;Values&quot;&gt;~Xtra#Array0, &lt;/property&gt;&#xD;&#xA;        &lt;property name=&quot;ValuesCore&quot; iskey=&quot;true&quot; value=&quot;0&quot; /&gt;&#xD;&#xA;        &lt;property name=&quot;DeferFilterString&quot; /&gt;&#xD;&#xA;        &lt;property name=&quot;ShowBlanks&quot;&gt;true&lt;/property&gt;&#xD;&#xA;        &lt;property name=&quot;FilterType&quot;&gt;Excluded&lt;/property&gt;&#xD;&#xA;      &lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;AreaIndex&quot;&gt;0&lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;ActualSortMode&quot;&gt;Default&lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;SummaryFilter&quot; isnull=&quot;true&quot; iskey=&quot;true&quot;&gt;&#xD;&#xA;        &lt;property name=&quot;StartValue&quot; isnull=&quot;true&quot; /&gt;&#xD;&#xA;        &lt;property name=&quot;EndValue&quot; isnull=&quot;true&quot; /&gt;&#xD;&#xA;        &lt;property name=&quot;Mode&quot;&gt;LastLevel&lt;/property&gt;&#xD;&#xA;        &lt;property name=&quot;RowFieldComponentName&quot; /&gt;&#xD;&#xA;        &lt;property name=&quot;ColumnFieldComponentName&quot; /&gt;&#xD;&#xA;      &lt;/property&gt;&#xD;&#xA;    &lt;/property&gt;&#xD;&#xA;    &lt;property name=&quot;Item9&quot; isnull=&quot;true&quot; iskey=&quot;true&quot;&gt;&#xD;&#xA;      &lt;property name=&quot;CustomTotals&quot; iskey=&quot;true&quot; value=&quot;0&quot; /&gt;&#xD;&#xA;      &lt;property name=&quot;Options&quot; isnull=&quot;true&quot; iskey=&quot;true&quot;&gt;&#xD;&#xA;        &lt;property name=&quot;AllowRunTimeSummaryChange&quot;&gt;true&lt;/property&gt;&#xD;&#xA;      &lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;ImageIndex&quot;&gt;-1&lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;ToolTips&quot; isnull=&quot;true&quot; iskey=&quot;true&quot;&gt;&#xD;&#xA;        &lt;property name=&quot;HeaderText&quot; /&gt;&#xD;&#xA;        &lt;property name=&quot;ValueText&quot; /&gt;&#xD;&#xA;      &lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;FieldEditName&quot; /&gt;&#xD;&#xA;      &lt;property name=&quot;Name&quot;&gt;Field_DimFindeal.Party.Code&lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;Area&quot;&gt;RowArea&lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;FieldName&quot;&gt;DimFindeal.Party.Code&lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;Caption&quot;&gt;Контрагент&lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;Index&quot;&gt;8&lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;SummaryType&quot;&gt;Count&lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;SortBySummaryInfo&quot; isnull=&quot;true&quot; iskey=&quot;true&quot;&gt;&#xD;&#xA;        &lt;property name=&quot;Conditions&quot; iskey=&quot;true&quot; value=&quot;0&quot; /&gt;&#xD;&#xA;        &lt;property name=&quot;FieldComponentName&quot; /&gt;&#xD;&#xA;      &lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;FilterValues&quot; isnull=&quot;true&quot; iskey=&quot;true&quot;&gt;&#xD;&#xA;        &lt;property name=&quot;Values&quot;&gt;~Xtra#Array0, &lt;/property&gt;&#xD;&#xA;        &lt;property name=&quot;ValuesCore&quot; iskey=&quot;true&quot; value=&quot;0&quot; /&gt;&#xD;&#xA;        &lt;property name=&quot;DeferFilterString&quot; /&gt;&#xD;&#xA;        &lt;property name=&quot;ShowBlanks&quot;&gt;true&lt;/property&gt;&#xD;&#xA;        &lt;property name=&quot;FilterType&quot;&gt;Excluded&lt;/property&gt;&#xD;&#xA;      &lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;AreaIndex&quot;&gt;2&lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;ActualSortMode&quot;&gt;Default&lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;SummaryFilter&quot; isnull=&quot;true&quot; iskey=&quot;true&quot;&gt;&#xD;&#xA;        &lt;property name=&quot;StartValue&quot; isnull=&quot;true&quot; /&gt;&#xD;&#xA;        &lt;property name=&quot;EndValue&quot; isnull=&quot;true&quot; /&gt;&#xD;&#xA;        &lt;property name=&quot;Mode&quot;&gt;LastLevel&lt;/property&gt;&#xD;&#xA;        &lt;property name=&quot;RowFieldComponentName&quot; /&gt;&#xD;&#xA;        &lt;property name=&quot;ColumnFieldComponentName&quot; /&gt;&#xD;&#xA;      &lt;/property&gt;&#xD;&#xA;    &lt;/property&gt;&#xD;&#xA;  &lt;/property&gt;&#xD;&#xA;  &lt;property name=&quot;Prefilter&quot; isnull=&quot;true&quot; iskey=&quot;true&quot;&gt;&#xD;&#xA;    &lt;property name=&quot;Criteria&quot; isnull=&quot;true&quot; /&gt;&#xD;&#xA;    &lt;property name=&quot;ShowOperandTypeIcon&quot;&gt;false&lt;/property&gt;&#xD;&#xA;    &lt;property name=&quot;Enabled&quot;&gt;false&lt;/property&gt;&#xD;&#xA;  &lt;/property&gt;&#xD;&#xA;  &lt;property name=&quot;OptionsCustomization&quot; isnull=&quot;true&quot; iskey=&quot;true&quot;&gt;&#xD;&#xA;    &lt;property name=&quot;AllowPrefilter&quot;&gt;false&lt;/property&gt;&#xD;&#xA;  &lt;/property&gt;&#xD;&#xA;  &lt;property name=&quot;OptionsChartDataSource&quot; isnull=&quot;true&quot; iskey=&quot;true&quot;&gt;&#xD;&#xA;    &lt;property name=&quot;DataProvideMode&quot;&gt;UseCustomSettings&lt;/property&gt;&#xD;&#xA;  &lt;/property&gt;&#xD;&#xA;  &lt;property name=&quot;Groups&quot; iskey=&quot;true&quot; value=&quot;1&quot;&gt;&#xD;&#xA;    &lt;property name=&quot;Item1&quot; isnull=&quot;true&quot; iskey=&quot;true&quot;&gt;&#xD;&#xA;      &lt;property name=&quot;Fields&quot; iskey=&quot;true&quot; value=&quot;3&quot;&gt;&#xD;&#xA;        &lt;property name=&quot;Item1&quot;&gt;Field_DimPeriod.Year&lt;/property&gt;&#xD;&#xA;        &lt;property name=&quot;Item2&quot;&gt;Field_DimPeriod.Quarter&lt;/property&gt;&#xD;&#xA;        &lt;property name=&quot;Item3&quot;&gt;Field_DimPeriod.Month&lt;/property&gt;&#xD;&#xA;      &lt;/property&gt;&#xD;&#xA;      &lt;property name=&quot;Caption&quot; /&gt;&#xD;&#xA;      &lt;property name=&quot;Hierarchy&quot; isnull=&quot;true&quot; /&gt;&#xD;&#xA;      &lt;property name=&quot;FilterValues&quot; isnull=&quot;true&quot; iskey=&quot;true&quot;&gt;&#xD;&#xA;        &lt;property name=&quot;Values&quot; isnull=&quot;true&quot; iskey=&quot;true&quot;&gt;&#xD;&#xA;          &lt;property name=&quot;Items&quot; iskey=&quot;true&quot; value=&quot;0&quot; /&gt;&#xD;&#xA;        &lt;/property&gt;&#xD;&#xA;        &lt;property name=&quot;DeferFilterString&quot; /&gt;&#xD;&#xA;        &lt;property name=&quot;FilterType&quot;&gt;Excluded&lt;/property&gt;&#xD;&#xA;      &lt;/property&gt;&#xD;&#xA;    &lt;/property&gt;&#xD;&#xA;  &lt;/property&gt;&#xD;&#xA;  &lt;property name=&quot;FormatRules&quot; iskey=&quot;true&quot; value=&quot;0&quot; /&gt;&#xD;&#xA;  &lt;property name=&quot;FormatConditions&quot; iskey=&quot;true&quot; value=&quot;0&quot; /&gt;&#xD;&#xA;&lt;/XtraSerializer&gt;" IsNewNode="True" />
+    </ListView>
+    <ListView Id="ReportOrderPlanReport_DataPersIeBalances_VariantListView" ClassName="NpoMash.Erm.Mdf.Test.Templates.ReportOrderPlan.ReportOrderPlanDataPersIeBalance" IsNewNode="True">
+      <Variants Current="ReportOrderPlanReport_DataPersIeBalances_ListView" IsNewNode="True">
+        <Variant Id="ReportOrderPlanReport_DataPersIeBalances_ListView" ViewID="ReportOrderPlanReport_DataPersIeBalances_ListView" Caption="Pers Ie Balance List" Index="0" IsNewNode="True" />
+        <Variant Id="ReportOrderPlanReport_DataPersIeBalances_PivotView" ViewID="ReportOrderPlanReport_DataPersIeBalances_PivotView" Caption="Pers Ie Balance Pivot" Index="1" IsNewNode="True" />
+      </Variants>
+    </ListView>
+    <DetailView Id="ReportOrderPlanReport_DetailView">
+      <Items>
+        <PropertyEditor Id="DataPersCfBalances" View="ReportOrderPlanReport_DataPersCfBalances_VariantListView" />
+        <PropertyEditor Id="DataPersIeBalances" View="ReportOrderPlanReport_DataPersIeBalances_VariantListView" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="Header" Index="1" IsNewNode="True">
+            <LayoutItem Id="Order" ViewItem="Order" ShowCaption="" Index="0" IsNewNode="True" />
+          </LayoutGroup>
+          <TabbedGroup Id="Tabs" Index="2">
+            <LayoutGroup Id="Common" Index="0" IsNewNode="True">
+              <LayoutGroup Id="ReportOrderPlanReport" Index="0" Direction="Horizontal" ShowCaption="True" Caption="Report Order Plan Report" IsNewNode="True">
+                <LayoutGroup Id="ReportOrderPlanReport_col1" Index="0" ShowCaption="False" IsNewNode="True">
+                  <LayoutItem Id="ValueType" ViewItem="ValueType" ShowCaption="" Index="0" IsNewNode="True" />
+                  <LayoutItem Id="DateBegin" ViewItem="DateBegin" ShowCaption="" Index="1" IsNewNode="True" />
+                  <LayoutItem Id="DateEnd" ViewItem="DateEnd" ShowCaption="" Index="2" IsNewNode="True" />
+                  <LayoutItem Id="DateFact" ViewItem="DateFact" ShowCaption="" Index="3" IsNewNode="True" />
+                  <LayoutItem Id="Valuta" ViewItem="Valuta" ShowCaption="" Index="4" IsNewNode="True" />
+                  <LayoutItem Id="ValutaSale" ViewItem="ValutaSale" ShowCaption="" Index="5" IsNewNode="True" />
+                  <LayoutItem Id="Entity" ViewItem="Entity" ShowCaption="" Index="6" IsNewNode="True" />
+                </LayoutGroup>
+                <LayoutGroup Id="ReportOrderPlanReport_col2" Index="1" ShowCaption="False" IsNewNode="True">
+                  <LayoutItem Id="Corporator" ViewItem="Corporator" ShowCaption="" Index="1" IsNewNode="True" />
+                  <LayoutItem Id="StaffPrimaryValue" ViewItem="StaffPrimaryValue" ShowCaption="" Index="2" IsNewNode="True" />
+                  <LayoutItem Id="ReportOrderPlanTemplate" ViewItem="ReportOrderPlanTemplate" ShowCaption="" Index="3" IsNewNode="True" />
+                  <LayoutItem Id="VatMode" ViewItem="VatMode" ShowCaption="" Index="4" IsNewNode="True" />
+                  <LayoutItem Id="FinDealCount" ViewItem="FinDealCount" ShowCaption="" Index="5" IsNewNode="True" />
+                  <LayoutItem Id="PresentMult" ViewItem="Presentmult" IsNewNode="True" />
+                </LayoutGroup>
+              </LayoutGroup>
+              <LayoutGroup Id="MdfReport" Index="1" ShowCaption="False" IsNewNode="True">
+                <LayoutItem Id="DateCreated" ViewItem="DateCreated" ShowCaption="" Index="0" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="MdfContainer" Index="2" ShowCaption="False" IsNewNode="True">
+                <LayoutItem Id="Code" ViewItem="Code" ShowCaption="" Index="0" IsNewNode="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+            <LayoutGroup Id="ReportOrderPlanFindeals" Index="1" />
+            <LayoutGroup Id="DataPersIeBalances" Index="2" Caption="БСР" />
+            <LayoutGroup Id="DataPersCfBalances" Index="3" Caption="БДДС" />
+            <LayoutGroup Id="DataPersChecks" Index="5" />
+            <LayoutGroup Id="Forms" Index="6" />
+            <LayoutGroup Id="ReportOrderPlanEntitys" Index="7" />
+            <LayoutGroup Id="ReportOrderPlanDeals" Index="8" />
+            <LayoutGroup Id="ReportOrderPlanPeriods" Index="9" />
+          </TabbedGroup>
+          <LayoutGroup Id="SimpleEditors" Removed="True">
+            <LayoutGroup Id="MdfContainer" Removed="True" />
+            <LayoutGroup Id="MdfReport" Removed="True" />
+            <LayoutGroup Id="ReportOrderPlanReport" Removed="True" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+  </Views>
+</Application>

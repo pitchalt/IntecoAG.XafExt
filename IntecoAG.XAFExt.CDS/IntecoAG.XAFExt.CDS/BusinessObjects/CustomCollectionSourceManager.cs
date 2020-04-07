@@ -3,23 +3,24 @@ using System.Collections.Generic;
 using System.Linq;
 //
 using DevExpress.ExpressApp;
+using DevExpress.ExpressApp.Xpo;
 using DevExpress.ExpressApp.Model;
 //
-using IntecoAG.XAFExt.CDS.Model;
+using IntecoAG.XafExt.CDS.Model;
 //
-namespace IntecoAG.XAFExt.CDS 
+namespace IntecoAG.XafExt.CDS 
 {
     public static class CustomCollectionSourceManager
     {
-        private static IList<Type> _CollectionTypes = new List<Type>();
+        private static IDictionary<Type, IQueryDataSource> _CollectionTypes = new Dictionary<Type, IQueryDataSource>();
 
-        public static IList<Type> CollectionTypes {
+        public static IDictionary<Type, IQueryDataSource> CollectionTypes {
             get { return _CollectionTypes; }
         }
 
-        public static void Register(Type type) {
-            if (!CollectionTypes.Contains(type))
-                CollectionTypes.Add(type);
+        public static void Register(IQueryDataSource ds) {
+            if (!CollectionTypes.ContainsKey(ds.GetType()))
+                CollectionTypes[ds.GetType()] = ds;
         }
 
         public static CollectionSourceBase Create(XafApplication application, IObjectSpace objectSpace, IModelListView listViewNode) {
@@ -34,8 +35,11 @@ namespace IntecoAG.XAFExt.CDS
             //Type objectType = modelCustomDataSource.ObjectType;   // Тип выхода запроса
             //if (objectType == null) return null;
 
-            // Создание объекта запроса 
-            IQueryable query = Activator.CreateInstance(customDataSourceType, ((ObjectSpace)objectSpace).Session) as IQueryable;  // as IQueryable;
+            // Создание объекта запроса
+            
+//            IObjectSpace os = application.CreateObjectSpace();
+//            NonPersistentObjectSpace
+            IQueryable query = Activator.CreateInstance(customDataSourceType, objectSpace) as IQueryable;  // as IQueryable;
 
             // Создание коллекции с типом customDataSourceType
             //var outCollection = Activator.CreateInstance(customDataSourceType, objectSpace);

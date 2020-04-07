@@ -14,11 +14,11 @@ namespace IntecoAG.XAFExt.CDS.Tests
 
     [NavigationItem(true)]
     [NonPersistent]
-    public class testCountry4: LinqQuery<testCountry4, testCountry>
+    public class TestCountry4: LinqQuery<TestCountry4, testCountry>
     {
         #region ПОЛЯ КЛАССА
-        public testCountry4() : base(null) { }
-        public testCountry4(Session ses) : base(ses) { }
+        public TestCountry4() : base(null) { }
+        public TestCountry4(Session ses) : base(ses) { }
 
         private string _NameFull;
         private string _Comment;
@@ -41,9 +41,9 @@ namespace IntecoAG.XAFExt.CDS.Tests
 
         #region МЕТОДЫ
 
-        public override IQueryable<testCountry4> GetQuery() {
+        public override IQueryable<TestCountry4> GetQuery() {
             var queryCore = from item in Provider
-                            select new testCountry4 {
+                            select new TestCountry4 {
                                 NameFull = item.NameShort + " (" + item.NameFull + "): " + item.Comment,
                                 Comment = item.Comment
                             };

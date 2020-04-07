@@ -1,0 +1,65 @@
+domain account_kind : enum {
+	D,
+	C,
+}
+
+domain account : enum {
+	CF,
+	SB,
+	DC,
+	DC_DBT,
+	DC_CRD,
+	IE,
+}
+
+domain account_code : string;
+
+relation account {
+	dim account : account,
+	dim account_kind : account_kind,
+	dim account_code : account_code,
+	func account -> account_kind, account_code
+	func account_code -> account
+}
+
+domain article : enum {
+	INCOME,
+	EXPENSE,
+}
+
+domain value_kind : enum {
+	BALANCE
+}
+
+domain valuta : enum {
+	RUB,
+	EUR,
+	USD
+}
+
+domain entity : object;
+domain entity_code : string;
+
+relation entity  {
+	dim entity : entity,
+	dim entity_code : entity_code,
+	func entity -> entity_code,
+	func entity_code -> entity,
+}
+
+relation acc_book_synthetic {
+	dim entity : entity,
+	dim valuta_func : valuta,
+	dim account : account,
+	dim value_kind : value_kind,
+	dim value : monetary
+}
+
+relation acc_book_journal {
+	dim entity : entity,
+	dim valuta_func : valuta,
+	dim account : account,
+	dim value_kind : value_kind,
+	dim value : monetary
+}
+

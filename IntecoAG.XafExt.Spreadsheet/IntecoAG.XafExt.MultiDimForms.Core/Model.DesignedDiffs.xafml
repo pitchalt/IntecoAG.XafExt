@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application Title="IntecoAG.XafExt.Spreadsheet" Company="">
+  <SchemaModules>
+    <SchemaModule Name="CloneObjectModule" Version="17.2.4.0" IsNewNode="True" />
+    <SchemaModule Name="SystemModule" Version="17.2.4.0" IsNewNode="True" />
+  </SchemaModules>
+  <Views>
+    <DetailView Id="MdfCoreAxisOrdinate_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" Direction="Horizontal">
+          <LayoutGroup Id="Common" Caption="" Index="0" RelativeSize="60" IsNewNode="True">
+            <LayoutGroup Id="SimpleEditors" Index="0" ShowCaption="False" IsNewNode="True">
+              <LayoutGroup Id="MdfCoreAxisOrdinate" Index="0" Direction="Horizontal" ShowCaption="True" Caption="Mdf Core Axis Ordinate" ToolTipTitle="" IsNewNode="True">
+                <LayoutGroup Id="MdfCoreAxisOrdinate_col1" Index="0" ShowCaption="False" IsNewNode="True">
+                  <LayoutItem Id="Code" ViewItem="Code" ShowCaption="" Index="0" IsNewNode="True" />
+                  <LayoutItem Id="SortOrder" ViewItem="SortOrder" ShowCaption="" Index="1" IsNewNode="True" />
+                  <LayoutGroup Id="IsGroup" Index="2" Direction="Horizontal" IsNewNode="True">
+                    <LayoutItem Id="IsIntegrated" ViewItem="IsIntegrated" ShowCaption="" Index="2" IsNewNode="True" />
+                    <LayoutItem Id="IsForcePersistent" ViewItem="IsForcePersistent" IsNewNode="True" />
+                  </LayoutGroup>
+                  <LayoutItem Id="UpUi" ViewItem="UpUi" ShowCaption="" Index="3" IsNewNode="True" />
+                  <LayoutItem Id="Dimension" ViewItem="Dimension" ShowCaption="" Index="4" IsNewNode="True" />
+                  <LayoutItem Id="DimensionMember" ViewItem="DimensionMember" ShowCaption="" Index="5" IsNewNode="True" />
+                  <LayoutItem Id="DomainMember" ViewItem="DomainMember" ShowCaption="" Index="6" IsNewNode="True" />
+                </LayoutGroup>
+                <LayoutGroup Id="MdfCoreAxisOrdinate_col2" Index="1" ShowCaption="False" IsNewNode="True">
+                  <LayoutItem Id="CalcType" ViewItem="CalcType" ShowCaption="" Index="0" IsNewNode="True" />
+                  <LayoutItem Id="CalcDimension" ViewItem="CalcDimension" ShowCaption="" Index="1" IsNewNode="True" />
+                  <LayoutItem Id="CalcProperty" ViewItem="CalcProperty" ShowCaption="" Index="2" IsNewNode="True" />
+                  <LayoutItem Id="CategoryMember.Guid" ViewItem="CategoryMember.Guid" ShowCaption="" Index="5" IsNewNode="True" />
+                  <LayoutItem Id="CategoryMember.Code" ViewItem="CategoryMember.Code" ShowCaption="" Index="6" IsNewNode="True" />
+                  <LayoutItem Id="AxisLine" ViewItem="AxisLine" ShowCaption="" Index="7" IsNewNode="True" />
+                  <LayoutItem Id="NameExpressionType" ViewItem="NameExpressionType" IsNewNode="True" />
+                </LayoutGroup>
+                <LayoutGroup Id="MdfCoreAxisOrdinate_col3" IsNewNode="True">
+                  <LayoutItem Id="Guid" ViewItem="Guid" ShowCaption="" Index="0" IsNewNode="True" />
+                  <LayoutItem Id="Oid" ViewItem="Oid" ShowCaption="" Index="1" IsNewNode="True" />
+                  <LayoutItem Id="Order" ViewItem="Order" ShowCaption="" Index="2" IsNewNode="True" />
+                  <LayoutItem Id="Level" ViewItem="Level" ShowCaption="" Index="3" IsNewNode="True" />
+                  <LayoutItem Id="LevelLength" ViewItem="LevelLength" ShowCaption="" Index="9" IsNewNode="True" />
+                  <LayoutItem Id="LevelIndex" ViewItem="LevelIndex" ShowCaption="" Index="10" IsNewNode="True" />
+                </LayoutGroup>
+              </LayoutGroup>
+            </LayoutGroup>
+            <LayoutGroup Id="SizeableEditors" Index="1" ShowCaption="False" IsNewNode="True">
+              <LayoutItem Id="CategoryMember.Key" ViewItem="CategoryMember.Key" ShowCaption="" Index="0" IsNewNode="True" />
+              <LayoutItem Id="NameShort" ViewItem="NameShort" ShowCaption="" Index="2" IsNewNode="True" />
+              <LayoutItem Id="NameExpression" ViewItem="NameExpression" IsNewNode="True" />
+            </LayoutGroup>
+            <TabbedGroup Id="Tabs" Index="2" IsNewNode="True">
+              <LayoutGroup Id="Downs" Index="0" ShowCaption="True" IsNewNode="True">
+                <LayoutItem Id="Downs" ViewItem="Downs" ShowCaption="False" Index="0" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="CategoryMember.AxisOrdinates" Index="1" ShowCaption="True" IsNewNode="True">
+                <LayoutItem Id="CategoryMember.AxisOrdinates" ViewItem="CategoryMember.AxisOrdinates" ShowCaption="False" Index="0" IsNewNode="True" />
+              </LayoutGroup>
+            </TabbedGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="CategoryMember.CategoryMemberFields" Index="1" ShowCaption="True" RelativeSize="40" IsNewNode="True">
+            <LayoutItem Id="CategoryMember.CategoryMemberFields" ViewItem="CategoryMember.CategoryMemberFields" ShowCaption="False" Index="0" IsNewNode="True" />
+          </LayoutGroup>
+          <LayoutGroup Id="SimpleEditors" Removed="True" />
+          <LayoutGroup Id="SizeableEditors" Removed="True" />
+          <TabbedGroup Id="Tabs" Removed="True">
+            <LayoutGroup Id="CategoryMember.CategoryMemberFields" Removed="True" />
+          </TabbedGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="MdfCoreDataPointCalcLink_LinkFields_ListView" AllowEdit="True" />
+    <ListView Id="MdfCoreTable_Cells_ListView" AllowEdit="True">
+      <Columns>
+        <ColumnInfo Id="AxisOrdinate0" Index="0" AllowEdit="False" />
+        <ColumnInfo Id="AxisOrdinate1" Index="1" AllowEdit="False" />
+        <ColumnInfo Id="AxisOrdinate2" Index="2" AllowEdit="False" />
+        <ColumnInfo Id="DataPoint" AllowEdit="False" />
+      </Columns>
+    </ListView>
+    <DetailView Id="MdfCoreTemplate_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="Header" Index="2" Direction="Horizontal" IsNewNode="True">
+            <LayoutItem Id="Container.Code" ViewItem="Container.Code" ShowCaption="" Index="0" RelativeSize="20" CaptionLocation="Top" IsNewNode="True" />
+            <LayoutItem Id="Container.NameShort" ViewItem="Container.NameShort" ShowCaption="" Index="1" RelativeSize="80" CaptionLocation="Top" IsNewNode="True" />
+          </LayoutGroup>
+          <TabbedGroup Id="Tabs" Index="3">
+            <LayoutGroup Id="Common" Index="0" IsNewNode="True">
+              <LayoutGroup Id="MdfCoreTemplate_col1" Index="0" ShowCaption="False" IsNewNode="True">
+                <LayoutItem Id="Oid" ViewItem="Oid" ShowCaption="" Index="0" IsNewNode="True" />
+                <LayoutItem Id="Container.Guid" ViewItem="Container.Guid" ShowCaption="" Index="1" IsNewNode="True" />
+                <LayoutItem Id="PersistentNamespace" ViewItem="PersistentNamespace" ShowCaption="" Index="2" IsNewNode="True" />
+                <LayoutItem Id="PersistentTablePrefix" ViewItem="PersistentTablePrefix" ShowCaption="" Index="3" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="MdfCoreTemplate_col2" Index="1" ShowCaption="False" IsNewNode="True">
+                <LayoutItem Id="CodeFilePath" ViewItem="CodeFilePath" ShowCaption="" Index="0" IsNewNode="True" />
+                <LayoutItem Id="Axis" ViewItem="Axis" ShowCaption="" Index="1" IsNewNode="True" />
+                <LayoutItem Id="DomainReport" ViewItem="DomainReport" ShowCaption="" Index="2" IsNewNode="True" />
+                <LayoutItem Id="DomainTemplate" ViewItem="DomainTemplate" ShowCaption="" Index="3" IsNewNode="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+            <LayoutGroup Id="Container.Domains" Index="1" />
+            <LayoutGroup Id="Container.Dimensions" Index="2" />
+            <LayoutGroup Id="Container.Hierarchys" Index="3" />
+            <LayoutGroup Id="Container.Axiss" Index="4" />
+            <LayoutGroup Id="Container.Categorys" Index="5" />
+            <LayoutGroup Id="Container.DataPoints" Index="6" />
+            <LayoutGroup Id="Tables" Index="7" />
+            <LayoutGroup Id="Forms" Index="8" />
+            <LayoutGroup Id="Source" IsNewNode="True">
+              <LayoutItem Id="SourceCode" ViewItem="SourceCode" ShowCaption="" Index="1" IsNewNode="True" />
+            </LayoutGroup>
+          </TabbedGroup>
+          <LayoutGroup Id="SimpleEditors" Removed="True">
+            <LayoutGroup Id="MdfCoreTemplate">
+              <LayoutGroup Id="MdfCoreTemplate_col1" Removed="True">
+                <LayoutItem Id="Container.Code" Removed="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="MdfCoreTemplate_col2" Removed="True" />
+            </LayoutGroup>
+            <LayoutGroup Id="XPObject">
+              <LayoutItem Id="Oid" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="SizeableEditors" Removed="True">
+            <LayoutItem Id="Container.NameShort" Removed="True" />
+            <LayoutItem Id="SourceCode" Removed="True" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="MdfTemplateFormExcel_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="Header" Direction="Horizontal" IsNewNode="True">
+            <LayoutItem Id="Code" ViewItem="Code" ShowCaption="" Index="0" CaptionLocation="Top" RelativeSize="20" IsNewNode="True" />
+            <LayoutItem Id="NameShort" ViewItem="NameShort" ShowCaption="" Index="1" CaptionLocation="Top" RelativeSize="70" IsNewNode="True" />
+            <LayoutItem Id="Oid" ViewItem="Oid" ShowCaption="" Index="2" CaptionLocation="Top" RelativeSize="10" IsNewNode="True" />
+          </LayoutGroup>
+          <LayoutGroup Id="SimpleEditors" Direction="Horizontal" Removed="True">
+            <LayoutGroup Id="MdfTemplateForm">
+              <LayoutItem Id="Code" Removed="True" />
+              <LayoutItem Id="NameShort" Removed="True" />
+            </LayoutGroup>
+            <LayoutGroup Id="MdfTemplateFormExcel" Removed="True">
+              <LayoutItem Id="File" Removed="True" />
+            </LayoutGroup>
+            <LayoutGroup Id="XPObject">
+              <LayoutItem Id="Oid" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+          <TabbedGroup Id="Tabs" IsNewNode="True">
+            <LayoutGroup Id="Sheets" Index="1" Direction="Horizontal" ShowCaption="True" IsNewNode="True">
+              <LayoutItem Id="TemplateFormExcelSheets" ViewItem="TemplateFormExcelSheets" ShowCaption="" Index="0" IsNewNode="True" />
+            </LayoutGroup>
+            <LayoutGroup Id="Excel" IsNewNode="True">
+              <LayoutItem Id="File" ViewItem="File" ShowCaption="" Index="0" IsNewNode="True" />
+            </LayoutGroup>
+          </TabbedGroup>
+          <LayoutGroup Id="TemplateFormExcelSheets_Group" Removed="True" />
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+  </Views>
+</Application>

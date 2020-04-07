@@ -8,6 +8,7 @@ using DevExpress.ExpressApp.Security;
 using DevExpress.ExpressApp.StateMachine;
 using DevExpress.ExpressApp.Utils;
 using DevExpress.Persistent.Base;
+using DevExpress.Persistent.BaseImpl;
 using DevExpress.Persistent.Validation;
 using DevExpress.Xpo;
 //using Xpand.ExpressApp.PropertyEditors;
@@ -17,13 +18,16 @@ using DevExpress.Xpo;
 
 namespace IntecoAG.XAFExt.StateMachine {
 //    public class StateMachineTransitionOperationPermissionData : XpandPermissionData, IStateMachineTransitionPermission {
-    public class StateMachineTransitionPermissionData : PermissionData, IStateMachineTransitionPermission {
-        public StateMachineTransitionPermissionData(Session session)
+    //public class StateMachineTransitionPermissionData : PermissionData, IStateMachineTransitionPermission {
+    public class StateMachineTransitionPermissionData : PersistentPermission, IStateMachineTransitionPermission {
+            public StateMachineTransitionPermissionData(Session session)
             : base(session) {
         }
          IEnumerable<PropertyInfo> _propertyInfos;
 
-        protected override string GetPermissionInfoCaption() {
+
+        //       protected override string GetPermissionInfoCaption() {
+        protected String GetPermissionInfoCaption() {
             String capt = String.Empty;
             foreach (PropertyInfo info in _propertyInfos)
                 if (capt == String.Empty)
@@ -47,7 +51,8 @@ namespace IntecoAG.XAFExt.StateMachine {
 
         public StateMachineProxy StateMachineProxy;
 
-        public override IList<IOperationPermission> GetPermissions() {
+ //       public override IList<IOperationPermission> GetPermissions() {
+        public IList<IOperationPermission> GetPermissions() {
             return new IOperationPermission[] { new StateMachineTransitionPermission(this) };
         }
         private StateMachineTransitionModifier _modifier;
@@ -99,13 +104,14 @@ namespace IntecoAG.XAFExt.StateMachine {
         [Browsable(false)]
         public IList<StringObject> AvailableStatePropertyNames {
             get {
-                List<StringObject> result = new List<StringObject>();
-                if (TargetObjectType != null) {
-                    foreach (string item in new StateMachineLogic().FindAvailableStatePropertyNames(TargetObjectType)) {
-                        result.Add(new StringObject(item));
-                    }
-                }
-                return result;
+                throw new NotImplementedException();
+                //List<StringObject> result = new List<StringObject>();
+                //if (TargetObjectType != null) {
+                //    foreach (string item in new StateMachineLogic(IObjectSpace).FindAvailableStatePropertyNames(TargetObjectType)) {
+                //        result.Add(new StringObject(item));
+                //    }
+                //}
+                //return result;
             }
         }
 //        [DataSourceProperty("States")]

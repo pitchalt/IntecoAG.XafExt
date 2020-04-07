@@ -1,0 +1,43 @@
+
+DOMAIN<DATATYPE>
+DIMENSION<DOMAIN>
+CATEGORY<DIMENSION,...>
+CONCEPT<CATEGORY, DOMAIN>
+
+TABLE<CATEGORY>
+
+VALUES -------------------------
+
+AXIS {
+	INDEX = 
+	DIMENSION = 
+	DIMENSION_MEMBER =
+	CATEGORY = 
+	DATAPOINT = 
+	{
+		{
+			INDEX = 
+			DIMENSION = 
+			DIMENSION_MEMBER =
+			CATEGORY = 
+			DATAPOINT =
+			{
+			}
+		}
+		{
+			INDEX = 
+			DIMENSION = 
+			DIMENSION_MEMBER =
+			CATEGORY = 
+			DATAPOINT = 
+			{
+				INDEX = 
+				DIMENSION = 
+				DIMENSION_MEMBER =
+				CATEGORY = 
+				DATAPOINT = 
+			}
+		}
+	}
+}
+
