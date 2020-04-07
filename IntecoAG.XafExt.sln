@@ -1,0 +1,67 @@
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntecoAG.XAFExt.CDS", "IntecoAG.XAFExt.CDS\IntecoAG.XAFExt.CDS\IntecoAG.XAFExt.CDS.csproj", "{20194556-A061-4715-8C68-1B157F06F9C0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntecoAG.XAFExt.StateMachine", "IntecoAG.XAFExt.StateMachine\IntecoAG.XAFExt.StateMachine\IntecoAG.XAFExt.StateMachine.csproj", "{5F9E1E64-7384-475E-99A6-50407FAF329A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntecoAG.XafExt.Spreadsheet", "IntecoAG.XafExt.Spreadsheet\IntecoAG.XafExt.Spreadsheet\IntecoAG.XafExt.Spreadsheet.csproj", "{5F15837D-D1E5-44DC-92F0-4F2EBE9C3F8D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntecoAG.XafExt.Spreadsheet.Win", "IntecoAG.XafExt.Spreadsheet\IntecoAG.XafExt.Spreadsheet.Win\IntecoAG.XafExt.Spreadsheet.Win.csproj", "{7964F87D-BC5D-4C4E-8B2F-71E89739AA97}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntecoAG.XafExt.MultiDimForms", "IntecoAG.XafExt.Spreadsheet\IntecoAG.XafExt.MultiDimForms\IntecoAG.XafExt.MultiDimForms.csproj", "{93EF8656-3B2E-432B-B613-8C11DD5845F0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntecoAG.XafExt.RefReplace", "IntecoAG.XafExt.RefReplace\IntecoAG.XafExt.RefReplace\IntecoAG.XafExt.RefReplace.csproj", "{4AC917CA-D30E-4DF2-827B-CA129622ED0C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntecoAG.XafExt", "IntecoAG.XafExt\IntecoAG.XafExt.csproj", "{305884A4-55F8-4105-8463-3F96B0B2BD42}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntecoAG.XafExt.Win", "IntecoAG.XafExt.Win\IntecoAG.XafExt.Win.csproj", "{C5728AC8-50E4-4703-9D29-5741CA2FE8D1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntecoAG.XafExt.Tests.Module", "IntecoAG.XafExt.Tests\IntecoAG.XafExt.Tests.Module\IntecoAG.XafExt.Tests.Module.csproj", "{5F15837D-D1E5-44DC-92F0-4F2EBE9C3F8D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntecoAG.XafExt.Tests.Module.Win", "IntecoAG.XafExt.Tests\IntecoAG.XafExt.Tests.Module.Win\IntecoAG.XafExt.Tests.Module.Win.csproj", "{7964F87D-BC5D-4C4E-8B2F-71E89739AA97}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntecoAG.XafExt.Tests.Win", "IntecoAG.XafExt.Tests\IntecoAG.XafExt.Tests.Win\IntecoAG.XafExt.Tests.Win.csproj", "{D05D93DF-312D-4D4E-B980-726871EC7833}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{305884A4-55F8-4105-8463-3F96B0B2BD42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{305884A4-55F8-4105-8463-3F96B0B2BD42}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{305884A4-55F8-4105-8463-3F96B0B2BD42}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{305884A4-55F8-4105-8463-3F96B0B2BD42}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20194556-A061-4715-8C68-1B157F06F9C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20194556-A061-4715-8C68-1B157F06F9C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20194556-A061-4715-8C68-1B157F06F9C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20194556-A061-4715-8C68-1B157F06F9C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93EF8656-3B2E-432B-B613-8C11DD5845F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93EF8656-3B2E-432B-B613-8C11DD5845F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93EF8656-3B2E-432B-B613-8C11DD5845F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93EF8656-3B2E-432B-B613-8C11DD5845F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4AC917CA-D30E-4DF2-827B-CA129622ED0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4AC917CA-D30E-4DF2-827B-CA129622ED0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4AC917CA-D30E-4DF2-827B-CA129622ED0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4AC917CA-D30E-4DF2-827B-CA129622ED0C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F15837D-D1E5-44DC-92F0-4F2EBE9C3F8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F15837D-D1E5-44DC-92F0-4F2EBE9C3F8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F15837D-D1E5-44DC-92F0-4F2EBE9C3F8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F15837D-D1E5-44DC-92F0-4F2EBE9C3F8D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7964F87D-BC5D-4C4E-8B2F-71E89739AA97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7964F87D-BC5D-4C4E-8B2F-71E89739AA97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7964F87D-BC5D-4C4E-8B2F-71E89739AA97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7964F87D-BC5D-4C4E-8B2F-71E89739AA97}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F9E1E64-7384-475E-99A6-50407FAF329A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F9E1E64-7384-475E-99A6-50407FAF329A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F9E1E64-7384-475E-99A6-50407FAF329A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F9E1E64-7384-475E-99A6-50407FAF329A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D05D93DF-312D-4D4E-B980-726871EC7833}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D05D93DF-312D-4D4E-B980-726871EC7833}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D05D93DF-312D-4D4E-B980-726871EC7833}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D05D93DF-312D-4D4E-B980-726871EC7833}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5728AC8-50E4-4703-9D29-5741CA2FE8D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5728AC8-50E4-4703-9D29-5741CA2FE8D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5728AC8-50E4-4703-9D29-5741CA2FE8D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5728AC8-50E4-4703-9D29-5741CA2FE8D1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
