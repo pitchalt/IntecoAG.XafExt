@@ -1,23 +1,23 @@
-﻿using IntecoAG.XafExt.Emc;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DevExpress.Xpo;
 using DevExpress.Persistent.Base;
-using System.ComponentModel;
 using DevExpress.ExpressApp;
 using DevExpress.ExpressApp.Utils;
 using DevExpress.Persistent.Validation;
+using IntecoAG.XafExt.Ecm;
 
 namespace IntecoAG.XafExt.Tests.Module.BusinessObjects
 {
     [Persistent]
     [MapInheritance(MapInheritanceType.ParentTable)]
     //[DefaultProperty("FileName")]
-    public class TestDocument : EmcDocument, IEmptyCheckable
+    public class TestDocument : EcmDocument, IEmptyCheckable
     {
         private Stream tempSourceStream;
         private string tempFileName = string.Empty;
