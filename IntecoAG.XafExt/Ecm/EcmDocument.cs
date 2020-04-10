@@ -8,18 +8,18 @@ using System.Threading.Tasks;
 using DevExpress.Persistent.Base;
 using DevExpress.Xpo;
 
-namespace IntecoAG.XafExt.Emc
+namespace IntecoAG.XafExt.Ecm
 {
-    [Persistent(nameof(EmcDocument))]
+    [Persistent(nameof(EcmDocument))]
     //[DefaultProperty(nameof(Name))]
     [DefaultProperty("FileName")]
-    public abstract class EmcDocument : XPObject, IFileData
+    public abstract class EcmDocument : XPObject, IFileData
     { // Inherit from a different class to provide a custom primary key, concurrency and deletion behavior, etc. (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument113146.aspx).
-        protected EmcDocument(Session session)
+        protected EcmDocument(Session session)
             : base(session)
         {
         }
-        protected EmcDocument(Session session, String name) : base(session)
+        protected EcmDocument(Session session, String name) : base(session)
         {
             Name = name;
         }

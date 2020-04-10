@@ -82,7 +82,7 @@
   <ItemGroup>
     <Compile Include="ConverterType2FullNameString.cs" />
     <Compile Include="DatabaseUpdate\Updater.cs" />
-    <Compile Include="EmcDocument.cs" />
+    <Compile Include="Ecm\EcmDocument.cs" />
     <Compile Include="IagXafExtModule.cs">
       <SubType>Component</SubType>
     </Compile>
