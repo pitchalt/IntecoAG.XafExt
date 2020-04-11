@@ -27,9 +27,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntecoAG.XafExt.Tests.Win",
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{07DE8AF0-1778-4068-841E-088A57687545}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntecoAG.XafExt.Tests.Module.Web", "Tests2\IntecoAG.XafExt.Tests.Module.Web\IntecoAG.XafExt.Tests.Module.Web.csproj", "{0C729AAD-7626-4668-A7F1-35F7D240489D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntecoAG.XafExt.Tests.Module.Web", "IntecoAG.XafExt.Tests\IntecoAG.XafExt.Tests.Module.Web\IntecoAG.XafExt.Tests.Module.Web.csproj", "{0C729AAD-7626-4668-A7F1-35F7D240489D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntecoAG.XafExt.Tests.Web", "Tests2\IntecoAG.XafExt.Tests.Web\IntecoAG.XafExt.Tests.Web.csproj", "{82A6DBC9-B1B4-44E4-9718-55DF930CD349}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntecoAG.XafExt.Tests.Web", "IntecoAG.XafExt.Tests\IntecoAG.XafExt.Tests.Web\IntecoAG.XafExt.Tests.Web.csproj", "{82A6DBC9-B1B4-44E4-9718-55DF930CD349}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
