@@ -1,20 +1,25 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Options xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" TestRunTimeLimit="3">
-	<Applications>
-		<!-- Win -->
-		<Application
-			Name="IntecoAG.XafExt.TestsWin"
-			FileName="[WinAppBin]\IntecoAG.XafExt.Tests.Win.exe"
-			AdapterAssemblyName="[WinAdapterAssemblyName]"
-			CommunicationPort="4100"/>
-	</Applications>
-	<TestDatabases>
-		<Database xsi:type="TestMSSQLDatabase" Server="(localdb)\mssqllocaldb" DBName="IntecoAG.XafExt.TestsEasyTest"/>
-	</TestDatabases>
-
-	<Aliases>
-		<Alias Name="DomainUserName" Value="%USERDOMAIN%\%USERNAME%" />
-		<Alias Name="WinAdapterAssemblyName" Value="DevExpress.ExpressApp.EasyTest.WinAdapter.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-		<Alias Name="WinAppBin" Value="[ConfigPath]\..\..\IntecoAG.XafExt.Tests.Win\Bin\EasyTest" />
-	</Aliases>
+  <Applications>
+    <!-- Win -->
+    <Application Name="IntecoAG.XafExt.TestsWin" FileName="[WinAppBin]\IntecoAG.XafExt.Tests.Win.exe" AdapterAssemblyName="[WinAdapterAssemblyName]" CommunicationPort="4100" />
+    <!-- Web -->
+    <Application Name="IntecoAG.XafExt.TestsWeb" UseIISExpress="True" Url="http://localhost:4030" PhysicalPath="[WebAppBin]" AdapterAssemblyName="[WebAdapterAssemblyName]" IgnoreCase="true" />
+    <!-- For IIS -->
+    <!--Application
+			Name="IntecoAG.XafExt.TestsWeb"
+			Url="http://localhost/IntecoAG.XafExt.Tests.Web/Default.aspx"
+			AdapterAssemblyName="[WebAdapterAssemblyName]"
+			IgnoreCase="true"/-->
+  </Applications>
+  <TestDatabases>
+    <Database xsi:type="TestMSSQLDatabase" Server="(localdb)\mssqllocaldb" DBName="IntecoAG.XafExt.TestsEasyTest" />
+  </TestDatabases>
+  <Aliases>
+    <Alias Name="DomainUserName" Value="%USERDOMAIN%\%USERNAME%" />
+    <Alias Name="WinAdapterAssemblyName" Value="DevExpress.ExpressApp.EasyTest.WinAdapter.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Alias Name="WinAppBin" Value="[ConfigPath]\..\..\IntecoAG.XafExt.Tests.Win\Bin\EasyTest" />
+    <Alias Name="WebAdapterAssemblyName" Value="DevExpress.ExpressApp.EasyTest.WebAdapter.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Alias Name="WebAppBin" Value="[ConfigPath]\..\..\IntecoAG.XafExt.Tests.Web" />
+  </Aliases>
 </Options>

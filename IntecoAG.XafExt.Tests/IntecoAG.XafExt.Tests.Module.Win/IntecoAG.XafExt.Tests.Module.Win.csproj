@@ -242,9 +242,9 @@
       <Project>{C5728AC8-50E4-4703-9D29-5741CA2FE8D1}</Project>
       <Name>IntecoAG.XafExt.Win</Name>
     </ProjectReference>
-    <ProjectReference Include="..\IntecoAG.XafExt.Tests.Module\IntecoAG.XafExt.Tests.Module.csproj">
+    <ProjectReference Include="..\..\IntecoAG.XafExt.Spreadsheet\IntecoAG.XafExt.Spreadsheet\IntecoAG.XafExt.Spreadsheet.csproj">
       <Project>{5F15837D-D1E5-44DC-92F0-4F2EBE9C3F8D}</Project>
-      <Name>IntecoAG.XafExt.Tests.Module</Name>
+      <Name>IntecoAG.XafExt.Spreadsheet</Name>
       <Private>True</Private>
     </ProjectReference>
   </ItemGroup>
