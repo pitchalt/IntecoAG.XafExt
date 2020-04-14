@@ -315,15 +315,13 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\IntecoAG.XafExt.Spreadsheet\IntecoAG.XafExt.Spreadsheet.Win\IntecoAG.XafExt.Spreadsheet.Win.csproj">
-      <Project>{7964F87D-BC5D-4C4E-8B2F-71E89739AA97}</Project>
-      <Name>IntecoAG.XafExt.Spreadsheet.Win</Name>
-      <Private>True</Private>
+    <ProjectReference Include="..\IntecoAG.XafExt.Tests.Module.Win\IntecoAG.XafExt.Tests.Module.Win.csproj">
+      <Project>{366d15cc-3d4c-41ab-8c6e-b17efa9c6a74}</Project>
+      <Name>IntecoAG.XafExt.Tests.Module.Win</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\IntecoAG.XafExt.Spreadsheet\IntecoAG.XafExt.Spreadsheet\IntecoAG.XafExt.Spreadsheet.csproj">
-      <Project>{5F15837D-D1E5-44DC-92F0-4F2EBE9C3F8D}</Project>
-      <Name>IntecoAG.XafExt.Spreadsheet</Name>
-      <Private>True</Private>
+    <ProjectReference Include="..\IntecoAG.XafExt.Tests.Module\IntecoAG.XafExt.Tests.Module.csproj">
+      <Project>{a3ce18f9-2e3d-42c6-a5c6-b7feac6f42c7}</Project>
+      <Name>IntecoAG.XafExt.Tests.Module</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
